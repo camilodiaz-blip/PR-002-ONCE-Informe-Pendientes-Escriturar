@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "Bash(../.venv/Scripts/python.exe -c ' *)",
+      "Bash(./.venv/Scripts/python.exe -m py_compile src/6_dashboard.py)",
+      "Bash(awk '{print $6, $7, $8, $9}')",
+      "Bash(./.venv/Scripts/python.exe -m py_compile src/main.py src/1_cargue_clientes_raw.py)",
+      "Read(//g/Unidades compartidas/SPGC TI/8. Proyectos/**)",
+      "Bash(awk '{print $6,$7,$8,$9}')",
+      "Bash(./.venv/Scripts/python.exe -m pip list)"
+    ]
+  }
+}

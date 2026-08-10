@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Invoke-WebRequest -Uri \"https://api.smart-home.com.co/api/v1/getSales/10595/1007\" -UseBasicParsing | Select-Object -ExpandProperty Content | Out-File -FilePath \"$env:TEMP\\\\response.json\" -Encoding utf8; Get-Content \"$env:TEMP\\\\response.json\" -TotalCount 5)",
+      "PowerShell(& \".venv\\\\Scripts\\\\python.exe\" \"src\\\\cargue_clientes_raw.py\")",
+      "PowerShell(& \".venv\\\\Scripts\\\\python.exe\" -m pip install pyarrow)",
+      "PowerShell(& \".venv\\\\Scripts\\\\python.exe\" -c \"import pandas as pd; d = pd.read_parquet\\('data/raw/clientes/VERDELIMA.parquet'\\); print\\(d.shape\\); print\\(d[['firstName','lastName','raw_fecha_cargue']].head\\(\\)\\)\")",
+      "PowerShell(python -c \"import xmltodict; print\\(xmltodict.__version__\\)\")",
+      "PowerShell(python \"C:\\\\Users\\\\CAMILO~1.DIA\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\g--Unidades-compartidas-SPGC-TI-8--Proyectos-Transformacion-Digital-Once-PR-002-Informe-Pendientes-Escriturar\\\\3f39fa0e-32d4-4bc1-809f-1cc350eed8d9\\\\scratchpad\\\\test_parse.py\")",
+      "WebFetch(domain:documenter.getpostman.com)",
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "Bash(../.venv/Scripts/python.exe -c ' *)",
+      "Bash(./.venv/Scripts/python.exe -m py_compile src/api_utils.py src/3_no_escriturados__pagos_raw.py src/4_no_escriturados__tareas_raw.py src/5_no_escriturados_staging.py src/main.py)",
+      "Bash(./.venv/Scripts/python.exe -c \"import plotly; print\\('plotly', plotly.__version__\\)\")",
+      "Bash(./.venv/Scripts/python.exe -m pip install plotly)"
+    ]
+  }
+}
