@@ -240,6 +240,50 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
     )
 
 
+# Indicadores que se siguen en la seccion de seguimiento historico, con un color propio
+# (reutiliza los mismos colores de "Listos"/"Sin Cartas" para que se lean igual en todo el informe).
+COLORES_SEGUIMIENTO = {
+    'No escriturados': '#1f77b4',
+    'Listos': COLORES_CATEGORIA['Listos'],
+    'Sin Cartas': COLORES_CATEGORIA['Sin Cartas'],
+}
+
+
+def _serie_seguimiento(historico_por_proyecto, proyectos, fechas, indicador):
+    return [
+        sum(historico_por_proyecto.get(p, {}).get(f, {}).get(indicador, 0) for p in proyectos)
+        for f in fechas
+    ]
+
+
+def _fig_seguimiento(div_id, fechas, series):
+    # El titulo de cada grafica va en un <h3> por fuera (mas visible que el titulo interno
+    # de Plotly), asi que aca no se pone titulo -- solo se libera el espacio que ocuparia arriba.
+    fig = go.Figure()
+    for nombre, valores in series.items():
+        fig.add_trace(go.Scatter(
+            x=fechas, y=valores, mode='lines+markers+text',
+            name=nombre,
+            line=dict(color=COLORES_SEGUIMIENTO.get(nombre), width=3),
+            marker=dict(size=8),
+            text=[str(v) for v in valores],
+            textposition='top center',
+        ))
+    fig.update_layout(
+        xaxis_title='Corte',
+        yaxis_title='Cantidad de clientes',
+        margin=dict(t=20, b=40, l=40, r=20),
+        height=340,
+        autosize=True,
+        template='plotly_white',
+    )
+    return fig.to_html(
+        full_html=False, include_plotlyjs=False, div_id=div_id,
+        config={'displaylogo': False, 'responsive': True},
+        default_width='100%',
+    )
+
+
 def _sumar_metricas(lista_metricas):
     subsidio = [0] * len(ETAPAS_SUBSIDIO)
     credito = [0] * len(ETAPAS_CREDITO)
@@ -385,6 +429,25 @@ def run():
     div_barras_proyecto = _fig_barras_proyecto('fig_proyecto', proyectos_init, valores_init)
     div_barras_categorias = _fig_barras_categorias('fig_categorias', categorias, 'Clientes no escriturados por categoria y mes proyectado')
 
+    # Seccion de seguimiento historico: evolucion de No escriturados / Listos / Sin Cartas
+    # entre cortes. Igual que la variacion de los KPI, solo tiene datos reales para el año
+    # objetivo (anio_defecto) -- por eso usa el mismo historico_por_proyecto ya filtrado a ese año.
+    # "No escriturados" queda en su propia grafica (a la izquierda) porque esta en una escala
+    # bastante mas grande que "Listos"/"Sin Cartas" -- juntarlas aplastaria estas ultimas.
+    serie_no_escriturados_inicial = {
+        'No escriturados': _serie_seguimiento(historico_por_proyecto, proyectos, fechas_historico, 'No escriturados')
+    }
+    series_listos_sin_cartas_iniciales = {
+        ind: _serie_seguimiento(historico_por_proyecto, proyectos, fechas_historico, ind)
+        for ind in ['Listos', 'Sin Cartas']
+    }
+    div_seguimiento_no_escriturados = _fig_seguimiento(
+        'fig_seguimiento_no_escriturados', fechas_historico, serie_no_escriturados_inicial
+    )
+    div_seguimiento_listos_sin_cartas = _fig_seguimiento(
+        'fig_seguimiento_listos_sin_cartas', fechas_historico, series_listos_sin_cartas_iniciales
+    )
+
     checkboxes_proyecto_html = "".join(
         f'<label class="ms-opcion"><input type="checkbox" class="chk-proyecto" value="{p}" checked> {p}</label>'
         for p in proyectos
@@ -435,6 +498,7 @@ def run():
         .fila-embudos {{ grid-template-columns: 1fr; }}
     }}
     h2 {{ margin-top: 0; color: {COLOR_VERDE_OSCURO}; }}
+    .titulo-grafica {{ margin: 0 0 4px 0; font-size: 15px; color: {COLOR_VERDE_OSCURO}; text-align: center; }}
     table {{ width: 100%; border-collapse: collapse; font-size: 14px; }}
     thead th {{ text-align: left; background: {COLOR_VERDE}; color: #fff; padding: 8px 10px; position: sticky; top: 0; }}
     tbody td {{ padding: 6px 10px; border-bottom: 1px solid #eee; }}
@@ -489,6 +553,15 @@ def run():
 </div>
 
 <div class="seccion">
+<h2>Seguimiento</h2>
+<p id="seguimientoNota" style="color:#777;font-size:13px;"></p>
+<div class="fila-embudos">
+<div><h3 class="titulo-grafica">No escriturados</h3>{div_seguimiento_no_escriturados}</div>
+<div><h3 class="titulo-grafica">Listos vs. Sin Cartas</h3>{div_seguimiento_listos_sin_cartas}</div>
+</div>
+</div>
+
+<div class="seccion">
 <h2>Clientes pendientes de aprobación (subsidio y/o crédito)</h2>
 <p id="tablaContador"></p>
 <div class="tabla-contenedor">
@@ -517,6 +590,9 @@ const MAPEO_KPI_HISTORICO = {{
     0: 'Vendidos', 1: 'No escriturados', 2: 'Requieren subsidio', 3: 'Subsidio sin aprobar',
     5: 'Requieren crédito', 6: 'Crédito sin aprobar'
 }};
+
+// Seccion de seguimiento historico (evolucion de indicadores clave entre cortes).
+const COLORES_SEGUIMIENTO = {json.dumps(COLORES_SEGUIMIENTO)};
 
 function proyectosSeleccionados() {{
     const marcadas = Array.from(document.querySelectorAll('.chk-proyecto:checked')).map(c => c.value);
@@ -690,6 +766,57 @@ function actualizarDeltasKpi(seleccion, anio, kpis) {{
     }});
 }}
 
+function _tracesSeguimiento(seleccion, indicadores) {{
+    return indicadores.map(indicador => {{
+        const valores = FECHAS_HISTORICO.map(fecha => {{
+            let suma = 0;
+            seleccion.forEach(p => {{
+                const historicoProyecto = HISTORICO_POR_PROYECTO[p] || {{}};
+                suma += (historicoProyecto[fecha] || {{}})[indicador] || 0;
+            }});
+            return suma;
+        }});
+        return {{
+            type: 'scatter', mode: 'lines+markers+text',
+            name: indicador, x: FECHAS_HISTORICO, y: valores,
+            line: {{color: COLORES_SEGUIMIENTO[indicador], width: 3}},
+            marker: {{size: 8}},
+            text: valores.map(v => String(v)),
+            textposition: 'top center'
+        }};
+    }});
+}}
+
+function actualizarGraficaSeguimiento(seleccion, anio) {{
+    const nota = document.getElementById('seguimientoNota');
+    const idsGraficas = ['fig_seguimiento_no_escriturados', 'fig_seguimiento_listos_sin_cartas'];
+
+    // El historico solo tiene datos reales para el año objetivo -- igual que la variacion
+    // de los KPI. Con otro año seleccionado, o sin al menos 2 cortes, no hay nada que mostrar.
+    if (anio !== ANIO_DEFECTO_HISTORICO) {{
+        if (nota) nota.textContent = `El seguimiento histórico solo está disponible para el año objetivo (${{ANIO_DEFECTO_HISTORICO}}).`;
+        idsGraficas.forEach(id => Plotly.react(id, [], {{template: 'plotly_white'}}));
+        return;
+    }}
+    if (FECHAS_HISTORICO.length < 2) {{
+        if (nota) nota.textContent = 'Aún no hay suficientes cortes guardados para mostrar una tendencia.';
+        idsGraficas.forEach(id => Plotly.react(id, [], {{template: 'plotly_white'}}));
+        return;
+    }}
+    if (nota) nota.textContent = '';
+
+    // El titulo de cada grafica va en el <h3> de afuera, no aca.
+    const layoutBase = {{
+        xaxis: {{title: 'Corte'}},
+        yaxis: {{title: 'Cantidad de clientes'}},
+        margin: {{t: 20, b: 40, l: 40, r: 20}},
+        template: 'plotly_white'
+    }};
+
+    Plotly.react('fig_seguimiento_no_escriturados', _tracesSeguimiento(seleccion, ['No escriturados']), layoutBase);
+    Plotly.react('fig_seguimiento_listos_sin_cartas', _tracesSeguimiento(seleccion, ['Listos', 'Sin Cartas']), layoutBase);
+}}
+
 function actualizar() {{
     const seleccion = proyectosSeleccionados();
     const anio = document.getElementById('filtroAnio').value;
@@ -704,6 +831,9 @@ function actualizar() {{
 
     // 3. Actualizar Gráfica de categorías por mes
     actualizarGraficaCategorias(seleccion, anio);
+
+    // 3b. Actualizar seguimiento histórico
+    actualizarGraficaSeguimiento(seleccion, anio);
 
     // 4. Actualizar KPIs
     // OJO: los ids de las tarjetas no son consecutivos (falta kpi-4), por eso se usa
