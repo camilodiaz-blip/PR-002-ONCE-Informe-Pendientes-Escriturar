@@ -34,6 +34,13 @@ def run():
 
     df['escriturado']=df['fecha_escritura'].notnull().astype(int)
 
+    # La API de Smarthome entrega algunos nombres de proyecto/modulo con espacios de mas
+    # (ej. "VERDELIMA " con espacio al final) -- se limpia aca, en el cargue inicial, para que
+    # todo lo que viene despues (staging, cruces con pagos/tareas, dashboard, historico) ya
+    # trabaje con el nombre correcto, sin tener que repetir el strip() en cada script.
+    df['proyecto'] = df['proyecto'].astype(str).str.strip()
+    df['modulo'] = df['modulo'].astype(str).str.strip()
+
     os.makedirs(RUTA_STAGING, exist_ok=True)
     ruta_archivo = os.path.join(RUTA_STAGING, "clientes.parquet")
     df.to_parquet(ruta_archivo, index=False, compression='snappy')

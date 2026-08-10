@@ -142,8 +142,6 @@ def run():
     df['fecha_credito_radicado'] = df_id_limpio.map(_fecha_por_tarea(df_tareas, 'Radicacion documentos en banco'))
     df['credito_radicado'] = df['fecha_credito_radicado'].notna().astype(int)
 
-    # credito_radicado queda pendiente: ese campo/tarea aun no existe en Smarthome (confirmado con negocio).
-
     df['fecha_corte'] = datetime.now().strftime('%Y-%m-%d')
 
     # "Foto" actual para negocio: siempre el mismo nombre, se sobreescribe cada corrida.

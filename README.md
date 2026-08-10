@@ -1,10 +1,9 @@
 # Informe de Pendientes por Escriturar — ONCE Constructora
 
-Pipeline en Python que se conecta a la API de **Smart-Home** para armar, semana a semana, un
-informe de qué apartamentos vendidos aún no se han escriturado, cuáles requieren subsidio y/o
+Pipeline en Python que se conecta a la API de **Smart-Home** para generar un
+informe de unidades vendidas que aún no se han escriturado, cuáles requieren subsidio y/o
 crédito, y en qué etapa de aprobación/radicación va cada trámite. El resultado final es un
-**dashboard HTML interactivo** (gráficos Plotly, sin necesidad de servidor) pensado para
-adjuntar por correo, más un **histórico en CSV** para poder comparar la evolución entre cortes.
+**dashboard HTML interactivo**.
 
 ## Cómo correrlo
 
@@ -16,7 +15,7 @@ Requiere el entorno virtual en `.venv/` (Python 3.14, con `pandas`, `requests`, 
 ```
 
 Esto corre el pipeline completo (pasos 1 a 6, ver abajo) y deja el informe en
-`data/reportes/informe_escrituracion_<fecha>.html`, listo para adjuntar a un correo.
+`data/reportes/informe_escrituracion_<fecha>.html`, listo para acompartir.
 
 Cada paso también se puede correr solo, por ejemplo para reprocesar únicamente el dashboard
 sin volver a golpear la API:
@@ -45,8 +44,7 @@ expone una función `run()` (por eso se pueden correr solos o encadenados desde 
 | 5 | `5_no_escriturados_staging.py` | Cruza clientes + pagos (por Proyecto+Módulo) + tareas (por prospectId) para calcular subsidio/crédito requerido, aprobado y radicado | `data/analytics/clientes_detallado.csv` + snapshot en `data/historico/` |
 | 6 | `6_dashboard.py` | Arma el HTML interactivo (embudos, barras, tabla de pendientes, variación vs. corte anterior) y actualiza el histórico de indicadores | `data/reportes/informe_escrituracion_<fecha>.html` + `data/historico/indicadores_por_proyecto.csv` |
 
-`main.py` orquesta 1→2→3→4→5→6. Los pasos 3 y 4 **no** se combinan: el 3 es una sola llamada
-masiva (no por cliente), así que no gana nada compartiendo hilos con el 4.
+`main.py` orquesta 1→2→3→4→5→6. 
 
 `api_utils.py` es el módulo compartido: rutas absolutas centralizadas (para que no importe
 desde qué carpeta se ejecute cada script), sesión HTTP con reintentos automáticos, helpers de
@@ -54,7 +52,7 @@ guardado/lectura de parquet versionado, y el filtro común de "clientes no escri
 
 ## Configuración clave (`src/api_utils.py`)
 
-- `ANIO_OBJETIVO_ESCRITURA` (hoy `2026`) — año de escrituración que usan por defecto el
+- `ANIO_OBJETIVO_ESCRITURA`  — año de escrituración que usan por defecto el
   informe y el histórico de indicadores. Cambiarlo aquí afecta a los pasos 3, 4, 5 y 6.
 - `MAX_WORKERS` (8) — concurrencia para el paso 4 (~cientos/miles de clientes).
 - `MAX_WORKERS_RAFAGA_CORTA` (3) + `ESPERA_ENTRE_LANZAMIENTOS` — concurrencia reducida y
@@ -107,9 +105,7 @@ Dash, que sí necesitaría infraestructura corriendo para compartirse por correo
 
 ## Limitaciones conocidas
 
-- **Comentario desactualizado en el código**: `5_no_escriturados_staging.py` tiene una nota
-  vieja ("credito_radicado queda pendiente...") justo debajo de donde ya se calcula esa misma
-  columna — quedó de una version anterior y conviene borrarla para no confundir a futuro.
+
 - **Alcance del histórico de KPIs**: `indicadores_por_proyecto.csv` guarda una fila por
   proyecto **por cada año disponible** (no solo el año objetivo), pero la variación mostrada
   en las tarjetas KPI del dashboard sigue comparando solo dentro del año objetivo.
@@ -117,13 +113,8 @@ Dash, que sí necesitaría infraestructura corriendo para compartirse por correo
   (tareas) se hayan corrido con el mismo alcance de clientes que el paso 5 espera — si el
   paso 1 falla para algún proyecto (ver aviso de `main.py`), esos clientes seguirán
   reflejando datos de la corrida anterior.
-- Nombres de proyecto con espacios extra (ej. `"VERDELIMA "`) o encoding con tildes pueden
-  verse raros en la consola de algunas terminales — es solo un problema de despliegue del
-  terminal, los archivos en sí están correctamente en UTF-8.
+- Nombres de proyecto con tildes (ej. "Mañanitas") pueden verse raros en la consola de
+  algunas terminales — es solo un problema de despliegue del terminal, los archivos en sí
+  están correctamente en UTF-8. Los espacios extra que traía la API en algunos nombres de
+  proyecto (ej. `"VERDELIMA "`) ya se limpian en `2_cargue_clientes_staging.py`.
 
-## Otros archivos en `src/`
-
-- `3_no_escriturados__pagos_raw_1.py` y la carpeta `_archive/` son versiones anteriores del
-  script de pagos (antes de pasar a la llamada masiva de `3_cargue_pagos_raw.py`) — quedan
-  como referencia, no forman parte del pipeline activo (`main.py` no los usa).
-- `cargue_conversariones_raw.py` no es parte de este pipeline de escrituración.

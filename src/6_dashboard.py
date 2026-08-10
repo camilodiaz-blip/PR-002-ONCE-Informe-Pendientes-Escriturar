@@ -314,6 +314,11 @@ def _guardar_historico_indicadores(proyectos, datos, categorias, anios, fecha_co
         if 'anio' not in existente.columns:
             # Migracion: las corridas anteriores a este cambio solo guardaban el año objetivo.
             existente['anio'] = str(ANIO_OBJETIVO_ESCRITURA)
+        # Normaliza nombres de proyecto de corridas viejas (ej. "VERDELIMA " con espacio, de
+        # antes de limpiar la fuente en 2_cargue_clientes_staging.py). Si no se hace esto, un
+        # cambio de nombre como ese rompe la comparacion vs. el corte anterior: el proyecto
+        # queda guardado con dos nombres distintos y la variacion del KPI se ve inflada.
+        existente['proyecto'] = existente['proyecto'].astype(str).str.strip()
         existente = existente[existente['fecha_corte'] != fecha_corte]
         historico = pd.concat([existente, nuevo], ignore_index=True)
     else:
