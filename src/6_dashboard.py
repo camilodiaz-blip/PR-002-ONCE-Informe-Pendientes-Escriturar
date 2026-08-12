@@ -208,6 +208,11 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
             text=[str(v) if v > 0 else '' for v in valores],
             textposition='inside',
             insidetextanchor='middle',
+            # Sin esto, Plotly rota el numero a vertical cuando el segmento es angosto.
+            # Con textangle=0 se fuerza horizontal siempre; si de verdad no cabe, se oculta
+            # (en vez de rotarse), y con letra un poco mas chica caben mas numeros sin rotar.
+            textangle=0,
+            textfont=dict(size=11),
             marker_color=COLORES_CATEGORIA.get(categoria, COLOR_PENDIENTE),
             legendrank=legend_rank.get(categoria, 99),
         ))
@@ -229,7 +234,7 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
         barmode='stack',
         legend_title='Categoría',
         margin=dict(t=60, b=40, l=40, r=20),
-        height=360,
+        height=430,
         autosize=True,
         template='plotly_white',
         annotations=anotaciones_totales,
@@ -544,7 +549,6 @@ def run():
 <div>{div_funnel_subsidio}</div>
 <div>{div_funnel_credito}</div>
 </div>
-<p style="color:#777;font-size:13px;">Nota: aún no se hace seguimiento a la radicación de crédito porque ese campo/tarea no existe todavía en Smarthome.</p>
 </div>
 
 <div class="seccion">
@@ -552,6 +556,7 @@ def run():
 {div_barras_categorias}
 </div>
 
+<!--
 <div class="seccion">
 <h2>Seguimiento</h2>
 <p id="seguimientoNota" style="color:#777;font-size:13px;"></p>
@@ -559,7 +564,7 @@ def run():
 <div><h3 class="titulo-grafica">No escriturados</h3>{div_seguimiento_no_escriturados}</div>
 <div><h3 class="titulo-grafica">Listos vs. Sin Cartas</h3>{div_seguimiento_listos_sin_cartas}</div>
 </div>
-</div>
+</div>-->
 
 <div class="seccion">
 <h2>Clientes pendientes de aprobación (subsidio y/o crédito)</h2>
@@ -701,6 +706,8 @@ function actualizarGraficaCategorias(seleccion, anio) {{
             text: valores.map(v => v > 0 ? String(v) : ''),
             textposition: 'inside',
             insidetextanchor: 'middle',
+            textangle: 0,
+            textfont: {{ size: 11 }},
             marker: {{ color: COLORES_CATEGORIA[c] }},
             legendrank: legendRank[c]
         }};
@@ -722,6 +729,7 @@ function actualizarGraficaCategorias(seleccion, anio) {{
         yaxis: {{ title: 'Cantidad de clientes' }},
         legend: {{ title: {{ text: 'Categoría' }} }},
         margin: {{ t: 60, b: 40, l: 40, r: 20 }},
+        height: 430,
         template: 'plotly_white',
         annotations: anotacionesTotales
     }};
@@ -788,8 +796,17 @@ function _tracesSeguimiento(seleccion, indicadores) {{
 }}
 
 function actualizarGraficaSeguimiento(seleccion, anio) {{
-    const nota = document.getElementById('seguimientoNota');
     const idsGraficas = ['fig_seguimiento_no_escriturados', 'fig_seguimiento_listos_sin_cartas'];
+
+    // La seccion "Seguimiento" puede estar oculta/comentada en el HTML (<!-- ... -->). Si sus
+    // graficas no existen en el DOM, no hay nada que actualizar -- salir aca evita que
+    // Plotly.react truene ("No DOM element...") y detenga el resto de actualizar() a mitad
+    // de camino, incluida la tabla de pendientes que va despues.
+    if (!idsGraficas.every(id => document.getElementById(id))) {{
+        return;
+    }}
+
+    const nota = document.getElementById('seguimientoNota');
 
     // El historico solo tiene datos reales para el año objetivo -- igual que la variacion
     // de los KPI. Con otro año seleccionado, o sin al menos 2 cortes, no hay nada que mostrar.

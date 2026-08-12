@@ -2,12 +2,18 @@
 Orquesta el pipeline completo del informe de pendientes por escriturar:
 
 1 (clientes raw) -> 2 (clientes staging) -> 3 (pagos raw, 1 sola llamada masiva)
--> 4 (tareas de no escriturados, por cliente) -> 5 (consolidado final) -> 6 (dashboard HTML)
+-> 4 (tareas de no escriturados, por cliente) -> 5 (consolidado final)
+-> estado de cuentas raw (Drive) -> 6 (dashboard HTML)
 
 Los pasos 3 y 4 ya no se combinan: el paso 3 (3_cargue_pagos_raw.py) trae TODOS los pagos
 en una sola llamada a la API (GetPaymentsRecords), no una llamada por cliente, asi que ya
 no hay beneficio de rendimiento en compartir el ThreadPoolExecutor con el paso 4 (que si
 sigue siendo una llamada por cliente).
+
+El paso de estado de cuentas (cargue_estado_cuentas_raw.py) depende de la API de Google
+Drive (cuenta de servicio) en vez de la API de Smarthome, y hoy el dashboard todavia no
+consume ese archivo -- por eso, si falla (ej. credenciales no configuradas en esta maquina,
+sin red hacia Drive), se avisa pero NO se detiene el resto del pipeline.
 
 Cada paso sigue siendo ejecutable por separado (ej. `python 4_no_escriturados__tareas_raw.py`)
 para reprocesar solo uno sin correr todo el pipeline.
@@ -19,6 +25,7 @@ paso_2 = importlib.import_module("2_cargue_clientes_staging")
 paso_3 = importlib.import_module("3_cargue_pagos_raw")
 paso_4 = importlib.import_module("4_no_escriturados__tareas_raw")
 paso_5 = importlib.import_module("5_no_escriturados_staging")
+paso_estado_cuentas = importlib.import_module("cargue_estado_cuentas_raw")
 paso_6 = importlib.import_module("6_dashboard")
 
 
@@ -69,6 +76,13 @@ def main():
 
     print("\n=== Paso 5: consolidado final ===")
     paso_5.run()
+
+    print("\n=== Paso estado de cuentas (raw, desde Drive) ===")
+    try:
+        paso_estado_cuentas.run()
+    except Exception as e:
+        print(f"ADVERTENCIA: no se pudo actualizar el estado de cuentas desde Drive ({e}). "
+              "Se continua con el resto del pipeline igual.")
 
     print("\n=== Paso 6: dashboard HTML ===")
     paso_6.run()
