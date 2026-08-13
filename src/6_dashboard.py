@@ -16,6 +16,7 @@ COLOR_PENDIENTE = '#E8A33D'
 # Un solo mapa de color por categoria, compartido entre la grafica de barras y los
 # badges de la tabla de pendientes (Python y JS), para que nunca queden desincronizados.
 COLORES_CATEGORIA = {
+    'Unidad Atada': '#6A1B9A',
     'Listos': '#2E8B45',
     'Sin Crédito': "#0D2F66",
     'Falta 1 carta': '#E8A33D',
@@ -75,7 +76,13 @@ def _categoria_cliente(row):
     credito_aprobado = bool(row.get('credito_aprobado', 0) == 1)
     subsidio_radicado = bool(row.get('subsidio_radicado', 0) == 1)
     credito_radicado = bool(row.get('credito_radicado', 0) == 1)
+    unidad_atada = bool(row.get('unidades_atadas', 0) == 1)
 
+    # Se evalua antes que todo lo demas (incluso antes de "Listos"): si la identificacion no
+    # coincide con estado_cuentas para esta unidad, es un problema que bloquea sin importar
+    # que tan avanzado este el subsidio/credito.
+    if unidad_atada:
+        return 'Unidad Atada'
     if necesita_subsidio and subsidio_aprobado and necesita_credito and credito_aprobado:
         return 'Listos'
     if (not necesita_subsidio) and necesita_credito and not credito_aprobado:
@@ -195,8 +202,8 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
         )
 
     # Primera traza = base de la barra apilada. Queremos "Sin Cartas" arriba y "Listos" abajo.
-    orden_apilado = ['Listos', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas']
-    legend_rank = {'Listos': 1, 'Sin Crédito': 2, 'Falta 1 carta': 3, 'en Gestión': 4, 'Sin Cartas': 5}
+    orden_apilado = ['Listos', 'Unidad Atada', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas']
+    legend_rank = {'Listos': 1, 'Unidad Atada': 2, 'Sin Crédito': 3, 'Falta 1 carta': 4, 'en Gestión': 5, 'Sin Cartas': 6}
     periodos = list(dict.fromkeys(df['periodo'].tolist()))
     fig = go.Figure()
     for categoria in orden_apilado:
@@ -303,12 +310,12 @@ COLUMNAS_HISTORICO = [
     'fecha_corte', 'proyecto', 'anio', 'Vendidos', 'No escriturados',
     'Requieren subsidio', 'Subsidio sin aprobar', 'Subsidio sin radicar',
     'Requieren crédito', 'Crédito sin aprobar', 'Crédito sin radicar',
-    'Listos', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas',
+    'Unidad Atada', 'Listos', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas',
 ]
 
 
 def _fila_historico_indicador(proy, datos, conteo_categorias, anio):
-    """Los 13 indicadores del dashboard para un proyecto, en el año usado como alcance del corte."""
+    """Los 14 indicadores del dashboard para un proyecto, en el año usado como alcance del corte."""
     s = datos[proy][anio]['subsidio']
     c = datos[proy][anio]['credito']
     cat = conteo_categorias.get(proy, {})
@@ -321,6 +328,7 @@ def _fila_historico_indicador(proy, datos, conteo_categorias, anio):
         'Requieren crédito': c[2],
         'Crédito sin aprobar': c[3],
         'Crédito sin radicar': c[4],
+        'Unidad Atada': cat.get('Unidad Atada', 0),
         'Listos': cat.get('Listos', 0),
         'Sin Crédito': cat.get('Sin Crédito', 0),
         'Falta 1 carta': cat.get('Falta 1 carta', 0),
@@ -363,6 +371,10 @@ def _guardar_historico_indicadores(proyectos, datos, categorias, anios, fecha_co
         if 'anio' not in existente.columns:
             # Migracion: las corridas anteriores a este cambio solo guardaban el año objetivo.
             existente['anio'] = str(ANIO_OBJETIVO_ESCRITURA)
+        if 'Unidad Atada' not in existente.columns:
+            # Migracion: las corridas anteriores a la categoria "Unidad Atada" no la contaban;
+            # se deja en 0 (no se puede recalcular retroactivamente sin el estado_cuentas de esa fecha).
+            existente['Unidad Atada'] = 0
         # Normaliza nombres de proyecto de corridas viejas (ej. "VERDELIMA " con espacio, de
         # antes de limpiar la fuente en 2_cargue_clientes_staging.py). Si no se hace esto, un
         # cambio de nombre como ese rompe la comparacion vs. el corte anterior: el proyecto
@@ -684,13 +696,14 @@ function actualizarGraficaCategorias(seleccion, anio) {{
     );
 
     // Primera traza = base de la barra apilada. Queremos "Sin Cartas" arriba y "Listos" abajo.
-    const ordenApilado = ['Listos', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas'];
+    const ordenApilado = ['Listos', 'Unidad Atada', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas'];
     const legendRank = {{
         'Listos': 1,
-        'Sin Crédito': 2,
-        'Falta 1 carta': 3,
-        'en Gestión': 4,
-        'Sin Cartas': 5
+        'Unidad Atada': 2,
+        'Sin Crédito': 3,
+        'Falta 1 carta': 4,
+        'en Gestión': 5,
+        'Sin Cartas': 6
     }};
 
     const periodos = [...new Set(filtrados.map(p => p.periodo))];
