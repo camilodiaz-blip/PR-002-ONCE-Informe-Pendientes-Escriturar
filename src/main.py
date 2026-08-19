@@ -3,7 +3,8 @@ Orquesta el pipeline completo del informe de pendientes por escriturar:
 
 1 (clientes raw) -> 2 (clientes staging) -> 3 (pagos raw, 1 sola llamada masiva)
 -> 4 (tareas de no escriturados, por cliente) -> 5 (consolidado final)
--> estado de cuentas raw (Drive) -> 6 (dashboard HTML)
+-> estado de cuentas raw (Drive) -> unidades atadas (cruce vs. estado de cuentas)
+-> 6 (dashboard HTML)
 
 Los pasos 3 y 4 ya no se combinan: el paso 3 (3_cargue_pagos_raw.py) trae TODOS los pagos
 en una sola llamada a la API (GetPaymentsRecords), no una llamada por cliente, asi que ya
@@ -26,6 +27,7 @@ paso_3 = importlib.import_module("3_cargue_pagos_raw")
 paso_4 = importlib.import_module("4_no_escriturados__tareas_raw")
 paso_5 = importlib.import_module("5_no_escriturados_staging")
 paso_estado_cuentas = importlib.import_module("cargue_estado_cuentas_raw")
+paso_unidades_atadas = importlib.import_module("actualizar_unidades_atadas")
 paso_6 = importlib.import_module("6_dashboard")
 
 
@@ -83,6 +85,13 @@ def main():
     except Exception as e:
         print(f"ADVERTENCIA: no se pudo actualizar el estado de cuentas desde Drive ({e}). "
               "Se continua con el resto del pipeline igual.")
+
+    print("\n=== Paso unidades atadas (cruce clientes_detallado vs. estado de cuentas) ===")
+    try:
+        paso_unidades_atadas.run()
+    except Exception as e:
+        print(f"ADVERTENCIA: no se pudo actualizar 'unidades_atadas' ({e}). "
+              "La columna puede quedar desactualizada o ausente en clientes_detallado.csv.")
 
     print("\n=== Paso 6: dashboard HTML ===")
     paso_6.run()

@@ -8,23 +8,45 @@ import plotly.graph_objects as go
 
 from api_utils import RUTA_ANALYTICS, RUTA_REPORTES, RUTA_HISTORICO, ANIO_OBJETIVO_ESCRITURA
 
-# Paleta corporativa Once Constructora (verde) + ámbar como color de alerta/pendiente.
-COLOR_VERDE = '#2E8B45'
-COLOR_VERDE_OSCURO = '#1B5E20'
-COLOR_PENDIENTE = '#E8A33D'
-
-# Un solo mapa de color por categoria, compartido entre la grafica de barras y los
-# badges de la tabla de pendientes (Python y JS), para que nunca queden desincronizados.
-COLORES_CATEGORIA = {
-    'Unidad Atada': '#6A1B9A',
-    'Listos': '#2E8B45',
-    'Sin Crédito': "#0D2F66",
-    'Falta 1 carta': '#E8A33D',
-    'en Gestión': '#6C757D',
-    'Sin Cartas': '#C62828',
-}
+# --- Paleta base: un color con nombre por cada significado, usado en todo el archivo. ---
+# Cambiar un color de verdad es cambiar UNA sola linea aca; todo lo demas abajo son mapas
+# de "etiqueta -> color de esta paleta", no colores nuevos.
+COLOR_VERDE = '#2E8B45'           # bien / listo
+COLOR_VERDE_OSCURO = '#1B5E20'    # texto y acentos (titulos, encabezados)
+COLOR_PENDIENTE = '#E8A33D'       # ambar -- pendiente / en gestion (embudos y categorias)
+COLOR_ROJO = '#C62828'            # mal -- sin cartas / sin avance
+COLOR_MORADO = '#6A1B9A'          # bloqueo -- unidad atada
+COLOR_AZUL = '#1f77b4'            # informativo -- en aprobaciones / no escriturados
+COLOR_GRIS = '#C3C2B7'            # gris neutro, para texto secundario
+COLOR_CARBON = '#2C2C2A'        # terracota -- pendiente radicar credito
 
 TODOS = 'Todos'
+
+# Esquema de 3 categorias para "Clientes por categoria y mes proyectado" (independiente del
+# esquema de 6 categorias de arriba). Orden: mejor (bottom del apilado) -> peor (top).
+ORDEN_CATEGORIA_PRINCIPAL = ['Listos', 'En Gestión', 'Sin Cartas']
+COLORES_CATEGORIA_PRINCIPAL = {
+    'Listos': COLOR_VERDE_OSCURO,
+    'En Gestión': COLOR_PENDIENTE,
+    'Sin Cartas': COLOR_ROJO,
+}
+
+# Subcategorias del detalle de "En Gestión". "Unidad Atada" va primero (base/piso de la
+# barra apilada) porque es un bloqueo de identificacion aparte, no un tema de avance de
+# subsidio/credito. "Pendiente radicar subsidio" usa el mismo ambar que "En Gestión" para
+# relacionarla visualmente con esa categoria.
+ORDEN_SUBCATEGORIA_GESTION = ['Unidad Atada', 'En aprobaciones', 'Pendiente radicar subsidio', 'Pendiente radicar crédito']
+COLORES_SUBCATEGORIA_GESTION = {
+    'Unidad Atada': COLOR_CARBON,
+    'En aprobaciones': COLOR_GRIS,
+    'Pendiente radicar subsidio': COLOR_MORADO,
+    'Pendiente radicar crédito': COLOR_AZUL,
+}
+
+# Colores para los badges de la tabla de "Clientes pendientes de aprobación": mismas
+# categorias que la seccion de "en gestion" (subcategorias) + "Sin Cartas" para los que
+# todavia no tienen ni una radicacion.
+COLORES_CATEGORIA_TABLA = {**COLORES_SUBCATEGORIA_GESTION, 'Sin Cartas': COLOR_ROJO}
 
 ETAPAS_SUBSIDIO = ['Vendidos', 'No escriturados', 'Requieren subsidio', 'Subsidio sin aprobar', 'Subsidio sin radicar']
 ETAPAS_CREDITO = ['Vendidos', 'No escriturados', 'Requieren crédito', 'Crédito sin aprobar', 'Crédito sin radicar']
@@ -69,31 +91,6 @@ def _motivo_pendiente(row):
     return ' y '.join(partes)
 
 
-def _categoria_cliente(row):
-    necesita_subsidio = bool(row.get('subsidio', 0) == 1)
-    necesita_credito = bool(row.get('credito', 0) == 1)
-    subsidio_aprobado = bool(row.get('subsidio_aprobado', 0) == 1)
-    credito_aprobado = bool(row.get('credito_aprobado', 0) == 1)
-    subsidio_radicado = bool(row.get('subsidio_radicado', 0) == 1)
-    credito_radicado = bool(row.get('credito_radicado', 0) == 1)
-    unidad_atada = bool(row.get('unidades_atadas', 0) == 1)
-
-    # Se evalua antes que todo lo demas (incluso antes de "Listos"): si la identificacion no
-    # coincide con estado_cuentas para esta unidad, es un problema que bloquea sin importar
-    # que tan avanzado este el subsidio/credito.
-    if unidad_atada:
-        return 'Unidad Atada'
-    if necesita_subsidio and subsidio_aprobado and necesita_credito and credito_aprobado:
-        return 'Listos'
-    if (not necesita_subsidio) and necesita_credito and not credito_aprobado:
-        return 'Sin Crédito'
-    if (necesita_subsidio and subsidio_aprobado) ^ (necesita_credito and credito_aprobado):
-        return 'Falta 1 carta'
-    if (necesita_subsidio and not subsidio_aprobado and subsidio_radicado) or (necesita_credito and not credito_aprobado and credito_radicado):
-        return 'en Gestión'
-    return 'Sin Cartas'
-
-
 def _tabla_pendientes(df):
     """Clientes no escriturados con subsidio y/o crédito pendiente de aprobar."""
     no_esc = df[df['escriturado'] == 0].copy()
@@ -113,13 +110,20 @@ def _tabla_pendientes(df):
             periodo = f"{MESES[int(mes_val)]} {anio_str}"
 
         cliente = f"{str(r['nombre'] or '').strip()} {str(r['apellido'] or '').strip()}".strip()
+        # La categoria que se muestra en la tabla usa el mismo esquema que la seccion "en
+        # gestion": si el cliente cae en "En Gestión", se muestra su subcategoria puntual
+        # (Unidad Atada / En aprobaciones / Pendiente radicar subsidio o crédito) en vez del
+        # nombre generico "En Gestión". Si no, se muestra la categoria principal (Sin Cartas
+        # -- nunca deberia salir "Listos" aqui, porque estos clientes SI tienen algo pendiente).
+        categoria_principal, subcategoria = _clasificar_tramites(r)
+        categoria_mostrar = subcategoria if categoria_principal == 'En Gestión' else categoria_principal
         registros.append({
             'proyecto': r['proyecto'],
             'anio': anio_str,
             'modulo': r['modulo'],
             'cliente': cliente,
             'motivo': _motivo_pendiente(r),
-            'categoria': _categoria_cliente(r),
+            'categoria': categoria_mostrar,
             'periodo': periodo,
             'orden': orden,
         })
@@ -128,13 +132,73 @@ def _tabla_pendientes(df):
     return registros
 
 
-def _tabla_categorias(df):
-    """Non-written clients requiring subsidy and/or credit, grouped by category."""
+def _estado_tramite(necesita, aprobado, radicado):
+    """
+    Estado de un tramite (subsidio o credito), como valor ordinal:
+        2 = aprobado, o no se requiere (regla base: lo que no se requiere cuenta como ya
+            resuelto, no hay nada que gestionar ahi).
+        1 = radicado, pendiente de aprobar.
+        0 = sin radicar (no ha arrancado nada).
+    """
+    if not necesita or aprobado:
+        return 2
+    if radicado:
+        return 1
+    return 0
+
+
+def _clasificar_tramites(row):
+    """
+    Clasifica a un cliente en 3 categorias -- 'Listos', 'Sin Cartas' o 'En Gestión' -- y, si
+    queda en 'En Gestión', ademas en una subcategoria. El orden de las preguntas importa:
+
+    0) ¿la unidad esta atada (identificacion no coincide con estado_cuentas)? Si es asi, es
+       un bloqueo que no tiene que ver con el avance de subsidio/credito -- entra directo a
+       "En Gestión", subcategoria "Unidad Atada".
+    1) ¿todo aprobado (o no se requiere)? -> Listos. Aqui entra tambien el cliente de
+       contado, que no requiere ni subsidio ni credito.
+    2) ¿no hay ni una sola radicacion de lo que SI se requiere? -> Sin Cartas.
+    3) lo demas -> En Gestión, con subcategoria segun cual tramite le falta radicar
+       (nunca faltan los dos a la vez dentro de "En Gestión": si faltaran los dos, seria
+       "Sin Cartas" por el punto 2).
+
+    Retorna (categoria, subcategoria) -- subcategoria es None si categoria no es 'En Gestión'.
+    """
+    if bool(row.get('unidades_atadas', 0) == 1):
+        return 'En Gestión', 'Unidad Atada'
+
+    necesita_subsidio = bool(row.get('subsidio', 0) == 1)
+    necesita_credito = bool(row.get('credito', 0) == 1)
+    e_subsidio = _estado_tramite(necesita_subsidio, row.get('subsidio_aprobado', 0) == 1, row.get('subsidio_radicado', 0) == 1)
+    e_credito = _estado_tramite(necesita_credito, row.get('credito_aprobado', 0) == 1, row.get('credito_radicado', 0) == 1)
+
+    if e_subsidio == 2 and e_credito == 2:
+        return 'Listos', None
+
+    nada_radicado = (not necesita_subsidio or e_subsidio == 0) and (not necesita_credito or e_credito == 0)
+    if nada_radicado:
+        return 'Sin Cartas', None
+
+    if necesita_credito and e_credito == 0:
+        subcategoria = 'Pendiente radicar crédito'
+    elif necesita_subsidio and e_subsidio == 0:
+        subcategoria = 'Pendiente radicar subsidio'
+    else:
+        subcategoria = 'En aprobaciones'
+    return 'En Gestión', subcategoria
+
+
+def _tabla_categoria_tramites(df):
+    """
+    Registros (uno por cliente no escriturado) con la categoria/subcategoria de avance de
+    tramites (ver _clasificar_tramites). Incluye tambien a los clientes que no requieren ni
+    subsidio ni credito (cliente de contado), porque la regla los clasifica como 'Listos' de
+    entrada.
+    """
     no_esc = df[df['escriturado'] == 0].copy()
-    con_requisito = no_esc[(no_esc['subsidio'] == 1) | (no_esc['credito'] == 1)].copy()
 
     registros = []
-    for _, r in con_requisito.iterrows():
+    for _, r in no_esc.iterrows():
         anio_val = r['escritura_programada_anio']
         mes_val = r['escritura_programada_mes']
         if pd.isna(anio_val) or pd.isna(mes_val):
@@ -144,16 +208,148 @@ def _tabla_categorias(df):
             orden = int(anio_val) * 100 + int(mes_val)
             periodo = f"{MESES[int(mes_val)]} {anio_str}"
 
+        categoria, subcategoria = _clasificar_tramites(r)
         registros.append({
             'proyecto': r['proyecto'],
             'anio': anio_str,
-            'categoria': _categoria_cliente(r),
+            'categoria': categoria,
+            'subcategoria': subcategoria,
             'periodo': periodo,
             'orden': orden,
         })
 
     registros.sort(key=lambda x: (x['orden'], x['proyecto']))
     return registros
+
+
+# Columnas del historico de categorias por mes proyectado (para el comparativo de "corte
+# anterior" en la grafica "Clientes por categoría y mes proyectado"). Granularidad: una fila
+# por proyecto + año (del cliente) + mes proyectado -- no hace falta por cliente, solo los
+# totales de las 3 categorias principales.
+COLUMNAS_HISTORICO_CATEGORIA = [
+    'fecha_corte', 'proyecto', 'anio', 'periodo', 'orden', 'Listos', 'En Gestión', 'Sin Cartas',
+]
+
+
+def _tabla_historico_categoria_principal(categoria_tramites):
+    """Agrega los registros (uno por cliente) de _tabla_categoria_tramites en conteos de las
+    3 categorias principales por proyecto + año + mes proyectado."""
+    conteos = defaultdict(lambda: defaultdict(int))
+    ordenes = {}
+    for r in categoria_tramites:
+        clave = (r['proyecto'], r['anio'], r['periodo'])
+        conteos[clave][r['categoria']] += 1
+        ordenes[clave] = r['orden']
+
+    filas = []
+    for (proyecto, anio, periodo), cats in conteos.items():
+        filas.append({
+            'proyecto': proyecto,
+            'anio': anio,
+            'periodo': periodo,
+            'orden': ordenes[(proyecto, anio, periodo)],
+            'Listos': cats.get('Listos', 0),
+            'En Gestión': cats.get('En Gestión', 0),
+            'Sin Cartas': cats.get('Sin Cartas', 0),
+        })
+    return filas
+
+
+def _guardar_historico_categoria_principal(categoria_tramites, fecha_corte):
+    """
+    Agrega al historico (data/historico/indicadores_por_proyecto.csv) una fila por proyecto +
+    año + mes proyectado con el conteo de hoy de las 3 categorias principales (Listos / En
+    Gestión / Sin Cartas). Sirve para el comparativo "corte anterior" que se agrega a la
+    grafica "Clientes por categoría y mes proyectado" (ver JS mas abajo).
+
+    Si ya existen filas con la misma fecha_corte, se reemplazan (evita duplicar si el
+    dashboard se corre mas de una vez el mismo dia).
+    """
+    filas = _tabla_historico_categoria_principal(categoria_tramites)
+    for fila in filas:
+        fila['fecha_corte'] = fecha_corte
+    nuevo = (
+        pd.DataFrame(filas)[COLUMNAS_HISTORICO_CATEGORIA] if filas
+        else pd.DataFrame(columns=COLUMNAS_HISTORICO_CATEGORIA)
+    )
+
+    os.makedirs(RUTA_HISTORICO, exist_ok=True)
+    ruta = os.path.join(RUTA_HISTORICO, 'indicadores_por_proyecto.csv')
+    if os.path.exists(ruta):
+        existente = pd.read_csv(ruta, encoding='utf-8-sig')
+        # El esquema anterior (6 categorias, sin desglose por mes proyectado) es incompatible
+        # con este -- se descarta en vez de migrarse, porque no hay forma de reconstruir el
+        # desglose mensual de corridas pasadas a partir de esos totales agregados.
+        if 'periodo' not in existente.columns:
+            existente = pd.DataFrame(columns=COLUMNAS_HISTORICO_CATEGORIA)
+        existente['proyecto'] = existente['proyecto'].astype(str).str.strip()
+        existente = existente[existente['fecha_corte'] != fecha_corte]
+        historico = pd.concat([existente, nuevo], ignore_index=True)
+    else:
+        historico = nuevo
+
+    historico.to_csv(ruta, index=False, encoding='utf-8-sig')
+    print(f"Historico de categorias actualizado en {ruta} ({len(nuevo)} filas de hoy, {len(historico)} filas totales)")
+    return ruta
+
+
+# Columnas del historico de KPI por proyecto (para la variacion vs. el corte anterior en las
+# tarjetas KPI). Granularidad: una fila por proyecto + año -- igual que `datos[proy][anio]`,
+# no hace falta desglosar por mes proyectado aca (los embudos tampoco se filtran por mes).
+COLUMNAS_HISTORICO_KPI = [
+    'fecha_corte', 'proyecto', 'anio',
+    'Vendidos', 'No escriturados', 'Requieren subsidio', 'Subsidio sin aprobar',
+    'Requieren crédito', 'Crédito sin aprobar',
+]
+
+
+def _fila_historico_kpi(proy, datos, anio):
+    """Los 6 KPI que se muestran en las tarjetas, para un proyecto y un año (u 'Todos')."""
+    s = datos[proy][anio]['subsidio']
+    c = datos[proy][anio]['credito']
+    return {
+        'Vendidos': s[0],
+        'No escriturados': s[1],
+        'Requieren subsidio': s[2],
+        'Subsidio sin aprobar': s[3],
+        'Requieren crédito': c[2],
+        'Crédito sin aprobar': c[3],
+    }
+
+
+def _guardar_historico_kpis(proyectos, datos, anios, fecha_corte):
+    """
+    Agrega al historico (data/historico/kpis_por_proyecto.csv) una fila por proyecto y por
+    cada año disponible (incluido 'Todos') con el snapshot de hoy de los 6 KPI de las
+    tarjetas. Sirve para la variacion vs. el corte anterior que se muestra debajo de cada
+    tarjeta (ver JS mas abajo).
+
+    Si ya existen filas con la misma fecha_corte, se reemplazan (evita duplicar si el
+    dashboard se corre mas de una vez el mismo dia).
+    """
+    filas = []
+    for anio in anios:
+        for proy in proyectos:
+            fila = _fila_historico_kpi(proy, datos, anio)
+            fila['fecha_corte'] = fecha_corte
+            fila['proyecto'] = proy
+            fila['anio'] = anio
+            filas.append(fila)
+    nuevo = pd.DataFrame(filas)[COLUMNAS_HISTORICO_KPI]
+
+    os.makedirs(RUTA_HISTORICO, exist_ok=True)
+    ruta = os.path.join(RUTA_HISTORICO, 'kpis_por_proyecto.csv')
+    if os.path.exists(ruta):
+        existente = pd.read_csv(ruta, encoding='utf-8-sig')
+        existente['proyecto'] = existente['proyecto'].astype(str).str.strip()
+        existente = existente[existente['fecha_corte'] != fecha_corte]
+        historico = pd.concat([existente, nuevo], ignore_index=True)
+    else:
+        historico = nuevo
+
+    historico.to_csv(ruta, index=False, encoding='utf-8-sig')
+    print(f"Historico de KPI actualizado en {ruta} ({len(nuevo)} filas de hoy, {len(historico)} filas totales)")
+    return ruta
 
 
 def _fig_funnel(div_id, stages, values, titulo):
@@ -191,8 +387,14 @@ def _fig_barras_proyecto(div_id, proyectos, valores):
     )
 
 
-def _fig_barras_categorias(div_id, pendientes, titulo):
-    df = pd.DataFrame(pendientes)
+def _fig_barras_apiladas_por_mes(div_id, registros, campo_categoria, orden_apilado, colores, titulo):
+    """
+    Barra apilada por mes proyectado de escrituracion, contando `registros` segun el valor de
+    `campo_categoria` (ej. 'categoria' o 'subcategoria'). Generica para reutilizarla con
+    distintos esquemas de categorizacion (categoria principal, subcategoria de gestion, etc.).
+    Primera traza de `orden_apilado` = base de la barra (queda abajo).
+    """
+    df = pd.DataFrame(registros)
     if df.empty:
         fig = go.Figure()
         fig.update_layout(title=titulo, xaxis_title='Mes de escrituración', yaxis_title='Cantidad de clientes')
@@ -201,13 +403,11 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
             config={'displaylogo': False, 'responsive': True},
         )
 
-    # Primera traza = base de la barra apilada. Queremos "Sin Cartas" arriba y "Listos" abajo.
-    orden_apilado = ['Listos', 'Unidad Atada', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas']
-    legend_rank = {'Listos': 1, 'Unidad Atada': 2, 'Sin Crédito': 3, 'Falta 1 carta': 4, 'en Gestión': 5, 'Sin Cartas': 6}
+    legend_rank = {categoria: i + 1 for i, categoria in enumerate(orden_apilado)}
     periodos = list(dict.fromkeys(df['periodo'].tolist()))
     fig = go.Figure()
     for categoria in orden_apilado:
-        valores = [len(df[(df['periodo'] == periodo) & (df['categoria'] == categoria)]) for periodo in periodos]
+        valores = [len(df[(df['periodo'] == periodo) & (df[campo_categoria] == categoria)]) for periodo in periodos]
         fig.add_trace(go.Bar(
             name=categoria,
             x=periodos,
@@ -220,7 +420,7 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
             # (en vez de rotarse), y con letra un poco mas chica caben mas numeros sin rotar.
             textangle=0,
             textfont=dict(size=11),
-            marker_color=COLORES_CATEGORIA.get(categoria, COLOR_PENDIENTE),
+            marker_color=colores.get(categoria, COLOR_PENDIENTE),
             legendrank=legend_rank.get(categoria, 99),
         ))
 
@@ -252,50 +452,6 @@ def _fig_barras_categorias(div_id, pendientes, titulo):
     )
 
 
-# Indicadores que se siguen en la seccion de seguimiento historico, con un color propio
-# (reutiliza los mismos colores de "Listos"/"Sin Cartas" para que se lean igual en todo el informe).
-COLORES_SEGUIMIENTO = {
-    'No escriturados': '#1f77b4',
-    'Listos': COLORES_CATEGORIA['Listos'],
-    'Sin Cartas': COLORES_CATEGORIA['Sin Cartas'],
-}
-
-
-def _serie_seguimiento(historico_por_proyecto, proyectos, fechas, indicador):
-    return [
-        sum(historico_por_proyecto.get(p, {}).get(f, {}).get(indicador, 0) for p in proyectos)
-        for f in fechas
-    ]
-
-
-def _fig_seguimiento(div_id, fechas, series):
-    # El titulo de cada grafica va en un <h3> por fuera (mas visible que el titulo interno
-    # de Plotly), asi que aca no se pone titulo -- solo se libera el espacio que ocuparia arriba.
-    fig = go.Figure()
-    for nombre, valores in series.items():
-        fig.add_trace(go.Scatter(
-            x=fechas, y=valores, mode='lines+markers+text',
-            name=nombre,
-            line=dict(color=COLORES_SEGUIMIENTO.get(nombre), width=3),
-            marker=dict(size=8),
-            text=[str(v) for v in valores],
-            textposition='top center',
-        ))
-    fig.update_layout(
-        xaxis_title='Corte',
-        yaxis_title='Cantidad de clientes',
-        margin=dict(t=20, b=40, l=40, r=20),
-        height=340,
-        autosize=True,
-        template='plotly_white',
-    )
-    return fig.to_html(
-        full_html=False, include_plotlyjs=False, div_id=div_id,
-        config={'displaylogo': False, 'responsive': True},
-        default_width='100%',
-    )
-
-
 def _sumar_metricas(lista_metricas):
     subsidio = [0] * len(ETAPAS_SUBSIDIO)
     credito = [0] * len(ETAPAS_CREDITO)
@@ -303,91 +459,6 @@ def _sumar_metricas(lista_metricas):
         subsidio = [a + b for a, b in zip(subsidio, m['subsidio'])]
         credito = [a + b for a, b in zip(credito, m['credito'])]
     return {'subsidio': subsidio, 'credito': credito}
-
-
-# Columnas del historico de indicadores, en el orden pedido para el seguimiento semanal.
-COLUMNAS_HISTORICO = [
-    'fecha_corte', 'proyecto', 'anio', 'Vendidos', 'No escriturados',
-    'Requieren subsidio', 'Subsidio sin aprobar', 'Subsidio sin radicar',
-    'Requieren crédito', 'Crédito sin aprobar', 'Crédito sin radicar',
-    'Unidad Atada', 'Listos', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas',
-]
-
-
-def _fila_historico_indicador(proy, datos, conteo_categorias, anio):
-    """Los 14 indicadores del dashboard para un proyecto, en el año usado como alcance del corte."""
-    s = datos[proy][anio]['subsidio']
-    c = datos[proy][anio]['credito']
-    cat = conteo_categorias.get(proy, {})
-    return {
-        'Vendidos': s[0],
-        'No escriturados': s[1],
-        'Requieren subsidio': s[2],
-        'Subsidio sin aprobar': s[3],
-        'Subsidio sin radicar': s[4],
-        'Requieren crédito': c[2],
-        'Crédito sin aprobar': c[3],
-        'Crédito sin radicar': c[4],
-        'Unidad Atada': cat.get('Unidad Atada', 0),
-        'Listos': cat.get('Listos', 0),
-        'Sin Crédito': cat.get('Sin Crédito', 0),
-        'Falta 1 carta': cat.get('Falta 1 carta', 0),
-        'en Gestión': cat.get('en Gestión', 0),
-        'Sin Cartas': cat.get('Sin Cartas', 0),
-    }
-
-
-def _guardar_historico_indicadores(proyectos, datos, categorias, anios, fecha_corte):
-    """
-    Agrega al historico de indicadores (data/historico/indicadores_por_proyecto.csv) una fila
-    por proyecto POR CADA año disponible de escrituracion (incluido 'Todos'), con el snapshot
-    de hoy. No genera ningun reporte nuevo -- solo deja la base para que un futuro script de
-    seguimiento semanal la lea y compare la evolucion entre corridas (por proyecto y por año).
-
-    Si ya existen filas con la misma fecha_corte, se reemplazan (evita duplicar si el
-    dashboard se corre mas de una vez el mismo dia).
-    """
-    filas = []
-    for anio in anios:
-        conteo_categorias = defaultdict(lambda: defaultdict(int))
-        for r in categorias:
-            if anio != TODOS and r['anio'] != anio:
-                continue
-            conteo_categorias[r['proyecto']][r['categoria']] += 1
-
-        for proy in proyectos:
-            fila = _fila_historico_indicador(proy, datos, conteo_categorias, anio)
-            fila['fecha_corte'] = fecha_corte
-            fila['proyecto'] = proy
-            fila['anio'] = anio
-            filas.append(fila)
-
-    nuevo = pd.DataFrame(filas)[COLUMNAS_HISTORICO]
-
-    os.makedirs(RUTA_HISTORICO, exist_ok=True)
-    ruta = os.path.join(RUTA_HISTORICO, 'indicadores_por_proyecto.csv')
-    if os.path.exists(ruta):
-        existente = pd.read_csv(ruta)
-        if 'anio' not in existente.columns:
-            # Migracion: las corridas anteriores a este cambio solo guardaban el año objetivo.
-            existente['anio'] = str(ANIO_OBJETIVO_ESCRITURA)
-        if 'Unidad Atada' not in existente.columns:
-            # Migracion: las corridas anteriores a la categoria "Unidad Atada" no la contaban;
-            # se deja en 0 (no se puede recalcular retroactivamente sin el estado_cuentas de esa fecha).
-            existente['Unidad Atada'] = 0
-        # Normaliza nombres de proyecto de corridas viejas (ej. "VERDELIMA " con espacio, de
-        # antes de limpiar la fuente en 2_cargue_clientes_staging.py). Si no se hace esto, un
-        # cambio de nombre como ese rompe la comparacion vs. el corte anterior: el proyecto
-        # queda guardado con dos nombres distintos y la variacion del KPI se ve inflada.
-        existente['proyecto'] = existente['proyecto'].astype(str).str.strip()
-        existente = existente[existente['fecha_corte'] != fecha_corte]
-        historico = pd.concat([existente, nuevo], ignore_index=True)
-    else:
-        historico = nuevo
-
-    historico.to_csv(ruta, index=False, encoding='utf-8-sig')
-    print(f"Historico de indicadores actualizado en {ruta} ({len(nuevo)} filas de hoy, {len(historico)} filas totales)")
-    return ruta
 
 
 def run():
@@ -407,31 +478,45 @@ def run():
         datos[proy] = {anio: _calcular_metricas(df_proy, anio) for anio in opciones_anio}
 
     pendientes = _tabla_pendientes(df)
-    categorias = _tabla_categorias(df)
+    categoria_tramites = _tabla_categoria_tramites(df)
 
-    # El historico ahora guarda una fila por proyecto POR CADA año disponible (no solo el
-    # año objetivo), para que a futuro se pueda dar seguimiento a cualquier año, no solo 2026.
-    ruta_historico_ind = _guardar_historico_indicadores(proyectos, datos, categorias, opciones_anio, fecha_corte)
+    # Guarda el corte de hoy en el historico y recupera el corte anterior (si existe) para el
+    # comparativo de la grafica "Clientes por categoría y mes proyectado" (ver JS mas abajo).
+    ruta_historico_cat = _guardar_historico_categoria_principal(categoria_tramites, fecha_corte)
+    hist_cat = pd.read_csv(ruta_historico_cat, encoding='utf-8-sig')
+    hist_cat['proyecto'] = hist_cat['proyecto'].astype(str).str.strip()
+    # 'anio' vuelve del CSV como float (ej. 2026.0, o NaN para "Sin fecha proyectada") -- se
+    # normaliza a string para que las comparaciones "===" contra el filtro de año en JS
+    # (siempre string, viene del <select>) funcionen igual que con CATEGORIA_TRAMITES.
+    hist_cat['anio'] = hist_cat['anio'].apply(lambda v: None if pd.isna(v) else str(int(v)))
+    fechas_hist_cat = sorted(hist_cat['fecha_corte'].astype(str).unique().tolist())
+    fecha_corte_anterior = fechas_hist_cat[-2] if len(fechas_hist_cat) >= 2 else None
+    if fecha_corte_anterior:
+        columnas_comparativo = ['proyecto', 'anio', 'periodo', 'orden', 'Listos', 'En Gestión', 'Sin Cartas']
+        historico_categoria_anterior = (
+            hist_cat[hist_cat['fecha_corte'].astype(str) == fecha_corte_anterior][columnas_comparativo]
+            .to_dict('records')
+        )
+    else:
+        historico_categoria_anterior = []
 
-    # Datos para la variacion vs. el corte anterior en las tarjetas KPI (ver JS mas abajo).
-    # Las tarjetas KPI de hoy siguen atadas al año objetivo (anio_defecto), asi que la
-    # variacion tambien se calcula solo con ese año -- aunque el CSV completo ya tiene todos.
-    hist_ind = pd.read_csv(ruta_historico_ind, encoding='utf-8-sig')
-    hist_ind_defecto = hist_ind[hist_ind['anio'] == anio_defecto]
-    fechas_historico = sorted(hist_ind_defecto['fecha_corte'].unique().tolist())
-    columnas_indicador = [c for c in COLUMNAS_HISTORICO if c not in ('fecha_corte', 'proyecto', 'anio')]
-    historico_por_proyecto = {
-        proy: {
-            fila['fecha_corte']: {col: int(fila[col]) for col in columnas_indicador}
-            for _, fila in hist_ind_defecto[hist_ind_defecto['proyecto'] == proy].iterrows()
-        }
-        for proy in proyectos
-    }
-    fecha_corte_anterior = fechas_historico[-2] if len(fechas_historico) >= 2 else None
-    nota_corte_anterior = (
-        f" · Variación de los KPI calculada contra el corte anterior ({fecha_corte_anterior})"
-        if fecha_corte_anterior else ""
-    )
+    # Igual que arriba, pero para los 6 KPI de las tarjetas (variacion vs. el corte anterior).
+    ruta_historico_kpi = _guardar_historico_kpis(proyectos, datos, opciones_anio, fecha_corte)
+    hist_kpi = pd.read_csv(ruta_historico_kpi, encoding='utf-8-sig')
+    hist_kpi['proyecto'] = hist_kpi['proyecto'].astype(str).str.strip()
+    hist_kpi['anio'] = hist_kpi['anio'].astype(str)
+    fechas_hist_kpi = sorted(hist_kpi['fecha_corte'].astype(str).unique().tolist())
+    fecha_corte_anterior_kpi = fechas_hist_kpi[-2] if len(fechas_hist_kpi) >= 2 else None
+    if fecha_corte_anterior_kpi:
+        columnas_kpi = ['proyecto', 'anio'] + [c for c in COLUMNAS_HISTORICO_KPI if c not in ('fecha_corte', 'proyecto', 'anio')]
+        historico_kpi_anterior = (
+            hist_kpi[hist_kpi['fecha_corte'].astype(str) == fecha_corte_anterior_kpi][columnas_kpi]
+            .to_dict('records')
+        )
+        nota_corte_anterior = f" · Variación calculada contra el corte anterior ({fecha_corte_anterior_kpi})"
+    else:
+        historico_kpi_anterior = []
+        nota_corte_anterior = ""
 
     metricas_iniciales = _sumar_metricas([datos[p][anio_defecto] for p in proyectos])
 
@@ -444,25 +529,17 @@ def run():
     div_funnel_subsidio = _fig_funnel('fig_subsidio', ETAPAS_SUBSIDIO, metricas_iniciales['subsidio'], 'Embudo de Subsidio')
     div_funnel_credito = _fig_funnel('fig_credito', ETAPAS_CREDITO, metricas_iniciales['credito'], 'Embudo de Crédito')
     div_barras_proyecto = _fig_barras_proyecto('fig_proyecto', proyectos_init, valores_init)
-    div_barras_categorias = _fig_barras_categorias('fig_categorias', categorias, 'Clientes no escriturados por categoria y mes proyectado')
 
-    # Seccion de seguimiento historico: evolucion de No escriturados / Listos / Sin Cartas
-    # entre cortes. Igual que la variacion de los KPI, solo tiene datos reales para el año
-    # objetivo (anio_defecto) -- por eso usa el mismo historico_por_proyecto ya filtrado a ese año.
-    # "No escriturados" queda en su propia grafica (a la izquierda) porque esta en una escala
-    # bastante mas grande que "Listos"/"Sin Cartas" -- juntarlas aplastaria estas ultimas.
-    serie_no_escriturados_inicial = {
-        'No escriturados': _serie_seguimiento(historico_por_proyecto, proyectos, fechas_historico, 'No escriturados')
-    }
-    series_listos_sin_cartas_iniciales = {
-        ind: _serie_seguimiento(historico_por_proyecto, proyectos, fechas_historico, ind)
-        for ind in ['Listos', 'Sin Cartas']
-    }
-    div_seguimiento_no_escriturados = _fig_seguimiento(
-        'fig_seguimiento_no_escriturados', fechas_historico, serie_no_escriturados_inicial
+    registros_gestion_iniciales = [r for r in categoria_tramites if r['categoria'] == 'En Gestión']
+    div_categoria_principal = _fig_barras_apiladas_por_mes(
+        'fig_categoria_principal', categoria_tramites, 'categoria',
+        ORDEN_CATEGORIA_PRINCIPAL, COLORES_CATEGORIA_PRINCIPAL,
+        'Clientes por categoría y mes proyectado',
     )
-    div_seguimiento_listos_sin_cartas = _fig_seguimiento(
-        'fig_seguimiento_listos_sin_cartas', fechas_historico, series_listos_sin_cartas_iniciales
+    div_subcategoria_gestion = _fig_barras_apiladas_por_mes(
+        'fig_subcategoria_gestion', registros_gestion_iniciales, 'subcategoria',
+        ORDEN_SUBCATEGORIA_GESTION, COLORES_SUBCATEGORIA_GESTION,
+        'Detalle de clientes en gestión por mes proyectado',
     )
 
     checkboxes_proyecto_html = "".join(
@@ -565,18 +642,13 @@ def run():
 
 <div class="seccion">
 <h2>Clientes por categoría y mes proyectado</h2>
-{div_barras_categorias}
+{div_categoria_principal}
 </div>
 
-<!--
 <div class="seccion">
-<h2>Seguimiento</h2>
-<p id="seguimientoNota" style="color:#777;font-size:13px;"></p>
-<div class="fila-embudos">
-<div><h3 class="titulo-grafica">No escriturados</h3>{div_seguimiento_no_escriturados}</div>
-<div><h3 class="titulo-grafica">Listos vs. Sin Cartas</h3>{div_seguimiento_listos_sin_cartas}</div>
+<h2>Detalle de clientes en gestión por mes proyectado</h2>
+{div_subcategoria_gestion}
 </div>
-</div>-->
 
 <div class="seccion">
 <h2>Clientes pendientes de aprobación (subsidio y/o crédito)</h2>
@@ -592,24 +664,32 @@ def run():
 <script>
 const DATOS = {json.dumps(datos)};
 const PENDIENTES = {json.dumps(pendientes)};
-const CATEGORIAS = {json.dumps(categorias)};
+const CATEGORIA_TRAMITES = {json.dumps(categoria_tramites)};
 const TODOS_PROYECTOS = {json.dumps(proyectos)};
-const COLORES_CATEGORIA = {json.dumps(COLORES_CATEGORIA)};
+const COLORES_CATEGORIA_TABLA = {json.dumps(COLORES_CATEGORIA_TABLA)};
+const ORDEN_CATEGORIA_PRINCIPAL = {json.dumps(ORDEN_CATEGORIA_PRINCIPAL)};
+const COLORES_CATEGORIA_PRINCIPAL = {json.dumps(COLORES_CATEGORIA_PRINCIPAL)};
+const ORDEN_SUBCATEGORIA_GESTION = {json.dumps(ORDEN_SUBCATEGORIA_GESTION)};
+const COLORES_SUBCATEGORIA_GESTION = {json.dumps(COLORES_SUBCATEGORIA_GESTION)};
 
-// Historico de indicadores por proyecto (para la variacion vs. el corte anterior en los KPI).
-const HISTORICO_POR_PROYECTO = {json.dumps(historico_por_proyecto)};
-const FECHAS_HISTORICO = {json.dumps(fechas_historico)};
-const ANIO_DEFECTO_HISTORICO = {json.dumps(anio_defecto)};
-// id de tarjeta KPI -> nombre de indicador en el historico (los ids no son consecutivos:
-// no existe kpi-4, ese es "Subsidio sin radicar" que solo se muestra en el embudo).
+// Comparativo "corte anterior" para la grafica "Clientes por categoría y mes proyectado"
+// (ver _actualizarCategoriaPrincipalConComparativo mas abajo). Vacio si todavia no hay un
+// corte previo guardado en el historico (ej. la primera corrida con este esquema).
+const FECHA_CORTE_ANTERIOR_CATEGORIA = {json.dumps(fecha_corte_anterior)};
+const HISTORICO_CATEGORIA_ANTERIOR = {json.dumps(historico_categoria_anterior)};
+
+// id de tarjeta KPI -> indice en el arreglo `kpis` de actualizar() (los ids no son
+// consecutivos: no existe kpi-4, ese es "Subsidio sin radicar" que solo se muestra en el embudo).
 const IDS_KPI = [0, 1, 2, 3, 5, 6];
-const MAPEO_KPI_HISTORICO = {{
+// id de tarjeta KPI -> nombre de indicador en el historico de KPI (mismo orden que IDS_KPI).
+const NOMBRES_KPI_HISTORICO = {{
     0: 'Vendidos', 1: 'No escriturados', 2: 'Requieren subsidio', 3: 'Subsidio sin aprobar',
     5: 'Requieren crédito', 6: 'Crédito sin aprobar'
 }};
 
-// Seccion de seguimiento historico (evolucion de indicadores clave entre cortes).
-const COLORES_SEGUIMIENTO = {json.dumps(COLORES_SEGUIMIENTO)};
+// Corte anterior para la variacion de las tarjetas KPI (ver actualizarDeltasKpi mas abajo).
+// Vacio si todavia no hay un corte previo guardado en el historico.
+const HISTORICO_KPI_ANTERIOR = {json.dumps(historico_kpi_anterior)};
 
 function proyectosSeleccionados() {{
     const marcadas = Array.from(document.querySelectorAll('.chk-proyecto:checked')).map(c => c.value);
@@ -658,7 +738,7 @@ function actualizarTabla(seleccion, anio) {{
             tbody.appendChild(trGrupo);
         }}
         const tr = document.createElement('tr');
-        const colorBadge = COLORES_CATEGORIA[p.categoria] || '#999';
+        const colorBadge = COLORES_CATEGORIA_TABLA[p.categoria] || '#999';
         tr.innerHTML = `<td>${{p.proyecto}}</td><td>${{p.modulo}}</td><td>${{p.cliente}}</td><td>${{p.motivo}}</td><td><span class="categoria-badge" style="background:${{colorBadge}}">${{p.categoria}}</span></td>`;
         tbody.appendChild(tr);
     }});
@@ -689,27 +769,15 @@ function actualizarGraficaBarras(seleccion, anio) {{
     Plotly.relayout('fig_proyecto', {{ height: nuevaAltura }});
 }}
 
-function actualizarGraficaCategorias(seleccion, anio) {{
-    const filtrados = CATEGORIAS.filter(p =>
-        seleccion.includes(p.proyecto) &&
-        (anio === '{TODOS}' || p.anio === anio)
-    );
-
-    // Primera traza = base de la barra apilada. Queremos "Sin Cartas" arriba y "Listos" abajo.
-    const ordenApilado = ['Listos', 'Unidad Atada', 'Sin Crédito', 'Falta 1 carta', 'en Gestión', 'Sin Cartas'];
-    const legendRank = {{
-        'Listos': 1,
-        'Unidad Atada': 2,
-        'Sin Crédito': 3,
-        'Falta 1 carta': 4,
-        'en Gestión': 5,
-        'Sin Cartas': 6
-    }};
+function _actualizarBarraApiladaPorMes(divId, filtrados, campo, ordenApilado, colores, tituloTexto) {{
+    // Primera traza = base de la barra apilada (queda abajo).
+    const legendRank = {{}};
+    ordenApilado.forEach((c, i) => {{ legendRank[c] = i + 1; }});
 
     const periodos = [...new Set(filtrados.map(p => p.periodo))];
     const traces = ordenApilado.map(c => {{
         const valores = periodos.map(periodo =>
-            filtrados.filter(p => p.periodo === periodo && p.categoria === c).length
+            filtrados.filter(p => p.periodo === periodo && p[campo] === c).length
         );
         return {{
             type: 'bar',
@@ -721,7 +789,7 @@ function actualizarGraficaCategorias(seleccion, anio) {{
             insidetextanchor: 'middle',
             textangle: 0,
             textfont: {{ size: 11 }},
-            marker: {{ color: COLORES_CATEGORIA[c] }},
+            marker: {{ color: colores[c] }},
             legendrank: legendRank[c]
         }};
     }});
@@ -737,7 +805,7 @@ function actualizarGraficaCategorias(seleccion, anio) {{
 
     const layout = {{
         barmode: 'stack',
-        title: 'Clientes no escriturados por categoria y mes proyectado',
+        title: tituloTexto,
         xaxis: {{ title: 'Mes de escrituración' }},
         yaxis: {{ title: 'Cantidad de clientes' }},
         legend: {{ title: {{ text: 'Categoría' }} }},
@@ -747,7 +815,145 @@ function actualizarGraficaCategorias(seleccion, anio) {{
         annotations: anotacionesTotales
     }};
 
-    Plotly.react('fig_categorias', traces, layout);
+    Plotly.react(divId, traces, layout);
+}}
+
+function _actualizarCategoriaPrincipalConComparativo(divId, actualFiltrado, anteriorFiltrado, ordenApilado, colores, tituloTexto) {{
+    // Primera traza = base de la barra apilada (queda abajo).
+    const legendRank = {{}};
+    ordenApilado.forEach((c, i) => {{ legendRank[c] = i + 1; }});
+
+    // Periodos de ambos cortes, en orden cronologico (campo 'orden' de cada registro). Si un
+    // mes solo existe en el corte anterior (ya no quedan clientes ahi hoy), igual se muestra
+    // para no perder la comparacion.
+    const ordenPorPeriodo = {{}};
+    actualFiltrado.forEach(p => {{ ordenPorPeriodo[p.periodo] = p.orden; }});
+    anteriorFiltrado.forEach(p => {{ if (!(p.periodo in ordenPorPeriodo)) ordenPorPeriodo[p.periodo] = p.orden; }});
+    const periodos = Object.keys(ordenPorPeriodo).sort((a, b) => ordenPorPeriodo[a] - ordenPorPeriodo[b]);
+
+    const hayComparativo = anteriorFiltrado.length > 0;
+
+    if (!hayComparativo) {{
+        // Sin corte anterior disponible todavia (ej. primer dia de este esquema): barra
+        // simple por mes, igual que antes de tener comparativo.
+        const traces = ordenApilado.map(c => {{
+            const valores = periodos.map(periodo =>
+                actualFiltrado.filter(p => p.periodo === periodo && p.categoria === c).length
+            );
+            return {{
+                type: 'bar', name: c, x: periodos, y: valores,
+                text: valores.map(v => v > 0 ? String(v) : ''),
+                textposition: 'inside', insidetextanchor: 'middle', textangle: 0,
+                textfont: {{ size: 11 }}, marker: {{ color: colores[c] }}, legendrank: legendRank[c]
+            }};
+        }});
+        const anotacionesTotales = periodos.map(periodo => {{
+            const total = actualFiltrado.filter(p => p.periodo === periodo).length;
+            return {{
+                x: periodo, y: total, text: `<b>${{total}}</b>`, showarrow: false, yshift: 10,
+                font: {{ color: '{COLOR_VERDE_OSCURO}', size: 13 }}
+            }};
+        }});
+        Plotly.react(divId, traces, {{
+            barmode: 'stack', title: tituloTexto,
+            xaxis: {{ title: 'Mes de escrituración' }}, yaxis: {{ title: 'Cantidad de clientes' }},
+            legend: {{ title: {{ text: 'Categoría' }} }}, margin: {{ t: 60, b: 40, l: 40, r: 20 }},
+            height: 430, template: 'plotly_white', annotations: anotacionesTotales
+        }});
+        return;
+    }}
+
+    // Con comparativo: eje x de 2 niveles (mes, grupo) -- 'Hoy' y 'Corte anterior (fecha)'
+    // lado a lado dentro de cada mes, cada uno apilado por categoria.
+    const grupoActual = 'Hoy';
+    const grupoAnterior = `Corte anterior (${{FECHA_CORTE_ANTERIOR_CATEGORIA}})`;
+
+    const nivel0 = [];
+    const nivel1 = [];
+    const opacidades = [];
+    const etiquetasHover = [];
+    periodos.forEach(periodo => {{
+        nivel0.push(periodo, periodo);
+        // "Corte anterior" va primero, "Hoy" despues -- misma lectura izquierda->derecha que
+        // el orden cronologico (lo viejo antes que lo nuevo).
+        // El segundo nivel del eje x se deja en blanco (2 valores distintos pero invisibles,
+        // para que Plotly siga separando las 2 barras de cada mes): en el eje solo se ve el
+        // mes, y el detalle "Corte anterior" / "Hoy" queda en el hover (ver mas abajo).
+        nivel1.push('', ' ');
+        opacidades.push(0.45, 1);
+        etiquetasHover.push(`${{periodo}} · ${{grupoAnterior}}`, `${{periodo}} · ${{grupoActual}}`);
+    }});
+
+    const traces = ordenApilado.map(c => {{
+        const valores = [];
+        periodos.forEach(periodo => {{
+            const suma = anteriorFiltrado
+                .filter(p => p.periodo === periodo)
+                .reduce((acc, p) => acc + (p[c] || 0), 0);
+            valores.push(suma);
+            valores.push(actualFiltrado.filter(p => p.periodo === periodo && p.categoria === c).length);
+        }});
+        return {{
+            type: 'bar', name: c, x: [nivel0, nivel1], y: valores,
+            text: valores.map(v => v > 0 ? String(v) : ''),
+            textposition: 'inside', insidetextanchor: 'middle', textangle: 0,
+            textfont: {{ size: 11 }}, marker: {{ color: colores[c], opacity: opacidades }}, legendrank: legendRank[c],
+            customdata: etiquetasHover,
+            hovertemplate: '%{{customdata}}<br>' + c + ': %{{y}}<extra></extra>'
+        }};
+    }});
+
+    const anotacionesTotales = [];
+    periodos.forEach(periodo => {{
+        const totalActual = actualFiltrado.filter(p => p.periodo === periodo).length;
+        const totalAnterior = anteriorFiltrado
+            .filter(p => p.periodo === periodo)
+            .reduce((acc, p) => acc + (p['Listos'] || 0) + (p['En Gestión'] || 0) + (p['Sin Cartas'] || 0), 0);
+        anotacionesTotales.push({{
+            x: [periodo, ' '], y: totalActual, text: `<b>${{totalActual}}</b>`, showarrow: false,
+            yshift: 10, font: {{ color: '{COLOR_VERDE_OSCURO}', size: 13 }}
+        }});
+        anotacionesTotales.push({{
+            x: [periodo, ''], y: totalAnterior, text: `<b>${{totalAnterior}}</b>`, showarrow: false,
+            yshift: 10, font: {{ color: '#888', size: 13 }}
+        }});
+    }});
+
+    Plotly.react(divId, traces, {{
+        barmode: 'stack', title: tituloTexto,
+        xaxis: {{ title: 'Mes de escrituración' }}, yaxis: {{ title: 'Cantidad de clientes' }},
+        legend: {{ title: {{ text: 'Categoría' }} }}, margin: {{ t: 60, b: 40, l: 40, r: 20 }},
+        height: 430, template: 'plotly_white', annotations: anotacionesTotales
+    }});
+}}
+
+function actualizarGraficaCategoriaPrincipal(seleccion, anio) {{
+    const filtrados = CATEGORIA_TRAMITES.filter(p =>
+        seleccion.includes(p.proyecto) &&
+        (anio === '{TODOS}' || p.anio === anio)
+    );
+    const anteriorFiltrado = HISTORICO_CATEGORIA_ANTERIOR.filter(p =>
+        seleccion.includes(p.proyecto) &&
+        (anio === '{TODOS}' || p.anio === anio)
+    );
+    _actualizarCategoriaPrincipalConComparativo(
+        'fig_categoria_principal', filtrados, anteriorFiltrado,
+        ORDEN_CATEGORIA_PRINCIPAL, COLORES_CATEGORIA_PRINCIPAL,
+        'Clientes por categoría y mes proyectado'
+    );
+}}
+
+function actualizarGraficaSubcategoriaGestion(seleccion, anio) {{
+    const filtrados = CATEGORIA_TRAMITES.filter(p =>
+        seleccion.includes(p.proyecto) &&
+        (anio === '{TODOS}' || p.anio === anio) &&
+        p.categoria === 'En Gestión'
+    );
+    _actualizarBarraApiladaPorMes(
+        'fig_subcategoria_gestion', filtrados, 'subcategoria',
+        ORDEN_SUBCATEGORIA_GESTION, COLORES_SUBCATEGORIA_GESTION,
+        'Detalle de clientes en gestión por mes proyectado'
+    );
 }}
 
 function actualizarDeltasKpi(seleccion, anio, kpis) {{
@@ -756,24 +962,20 @@ function actualizarDeltasKpi(seleccion, anio, kpis) {{
         if (el) el.textContent = '';
     }});
 
-    // El historico solo registra el año objetivo -- si el usuario esta viendo otro año
-    // (o "Todos"), o todavia no hay un corte anterior con que comparar, no hay nada que mostrar.
-    if (anio !== ANIO_DEFECTO_HISTORICO || FECHAS_HISTORICO.length < 2) {{
+    // El historico de KPI guarda una fila por proyecto y por cada año (incluido 'Todos'), asi
+    // que el filtro de año se compara igual que en DATOS -- sin necesidad de un caso especial
+    // para 'Todos'.
+    const filasAnterior = HISTORICO_KPI_ANTERIOR.filter(p =>
+        seleccion.includes(p.proyecto) && p.anio === anio
+    );
+    if (filasAnterior.length === 0) {{
         limpiar();
         return;
     }}
 
-    const fechaAnterior = FECHAS_HISTORICO[FECHAS_HISTORICO.length - 2];
-
     IDS_KPI.forEach((idx, pos) => {{
-        const indicador = MAPEO_KPI_HISTORICO[idx];
-        let anterior = 0;
-        seleccion.forEach(p => {{
-            const historicoProyecto = HISTORICO_POR_PROYECTO[p] || {{}};
-            const filaAnterior = historicoProyecto[fechaAnterior] || {{}};
-            anterior += filaAnterior[indicador] || 0;
-        }});
-
+        const indicador = NOMBRES_KPI_HISTORICO[idx];
+        const anterior = filasAnterior.reduce((acc, p) => acc + (p[indicador] || 0), 0);
         const el = document.getElementById('kpi-delta-' + idx);
         if (!el) return;
 
@@ -785,66 +987,6 @@ function actualizarDeltasKpi(seleccion, anio, kpis) {{
             el.textContent = `${{signo}} ${{delta > 0 ? '+' : ''}}${{delta}}`;
         }}
     }});
-}}
-
-function _tracesSeguimiento(seleccion, indicadores) {{
-    return indicadores.map(indicador => {{
-        const valores = FECHAS_HISTORICO.map(fecha => {{
-            let suma = 0;
-            seleccion.forEach(p => {{
-                const historicoProyecto = HISTORICO_POR_PROYECTO[p] || {{}};
-                suma += (historicoProyecto[fecha] || {{}})[indicador] || 0;
-            }});
-            return suma;
-        }});
-        return {{
-            type: 'scatter', mode: 'lines+markers+text',
-            name: indicador, x: FECHAS_HISTORICO, y: valores,
-            line: {{color: COLORES_SEGUIMIENTO[indicador], width: 3}},
-            marker: {{size: 8}},
-            text: valores.map(v => String(v)),
-            textposition: 'top center'
-        }};
-    }});
-}}
-
-function actualizarGraficaSeguimiento(seleccion, anio) {{
-    const idsGraficas = ['fig_seguimiento_no_escriturados', 'fig_seguimiento_listos_sin_cartas'];
-
-    // La seccion "Seguimiento" puede estar oculta/comentada en el HTML (<!-- ... -->). Si sus
-    // graficas no existen en el DOM, no hay nada que actualizar -- salir aca evita que
-    // Plotly.react truene ("No DOM element...") y detenga el resto de actualizar() a mitad
-    // de camino, incluida la tabla de pendientes que va despues.
-    if (!idsGraficas.every(id => document.getElementById(id))) {{
-        return;
-    }}
-
-    const nota = document.getElementById('seguimientoNota');
-
-    // El historico solo tiene datos reales para el año objetivo -- igual que la variacion
-    // de los KPI. Con otro año seleccionado, o sin al menos 2 cortes, no hay nada que mostrar.
-    if (anio !== ANIO_DEFECTO_HISTORICO) {{
-        if (nota) nota.textContent = `El seguimiento histórico solo está disponible para el año objetivo (${{ANIO_DEFECTO_HISTORICO}}).`;
-        idsGraficas.forEach(id => Plotly.react(id, [], {{template: 'plotly_white'}}));
-        return;
-    }}
-    if (FECHAS_HISTORICO.length < 2) {{
-        if (nota) nota.textContent = 'Aún no hay suficientes cortes guardados para mostrar una tendencia.';
-        idsGraficas.forEach(id => Plotly.react(id, [], {{template: 'plotly_white'}}));
-        return;
-    }}
-    if (nota) nota.textContent = '';
-
-    // El titulo de cada grafica va en el <h3> de afuera, no aca.
-    const layoutBase = {{
-        xaxis: {{title: 'Corte'}},
-        yaxis: {{title: 'Cantidad de clientes'}},
-        margin: {{t: 20, b: 40, l: 40, r: 20}},
-        template: 'plotly_white'
-    }};
-
-    Plotly.react('fig_seguimiento_no_escriturados', _tracesSeguimiento(seleccion, ['No escriturados']), layoutBase);
-    Plotly.react('fig_seguimiento_listos_sin_cartas', _tracesSeguimiento(seleccion, ['Listos', 'Sin Cartas']), layoutBase);
 }}
 
 function actualizar() {{
@@ -859,11 +1001,9 @@ function actualizar() {{
     // 2. Actualizar Gráfica de Barras por Proyecto
     actualizarGraficaBarras(seleccion, anio);
 
-    // 3. Actualizar Gráfica de categorías por mes
-    actualizarGraficaCategorias(seleccion, anio);
-
-    // 3b. Actualizar seguimiento histórico
-    actualizarGraficaSeguimiento(seleccion, anio);
+    // 3. Actualizar Gráfica de categorías por mes (principal + detalle de en gestión)
+    actualizarGraficaCategoriaPrincipal(seleccion, anio);
+    actualizarGraficaSubcategoriaGestion(seleccion, anio);
 
     // 4. Actualizar KPIs
     // OJO: los ids de las tarjetas no son consecutivos (falta kpi-4), por eso se usa
@@ -874,8 +1014,7 @@ function actualizar() {{
         if (el) el.textContent = v.toLocaleString('es-CO');
     }});
 
-    // 4b. Variacion vs. el corte anterior (solo si el año filtrado es el que registra el
-    // historico, y ya hay al menos 2 cortes guardados para comparar).
+    // 4b. Variacion vs. el corte anterior (si ya hay un corte previo guardado).
     actualizarDeltasKpi(seleccion, anio, kpis);
 
     // 5. Actualizar Estado de Controles y Tabla
