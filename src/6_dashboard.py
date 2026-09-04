@@ -54,6 +54,56 @@ ETAPAS_CREDITO = ['Vendidos', 'No escriturados', 'Requieren crédito', 'Crédito
 MESES = ['', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
 
+SIN_TORRE = 'Sin torre'
+
+
+def _torre_o_default(valor):
+    """El bucket 'Sin torre' agrupa casas y otros registros sin torre identificable (ver
+    _extraer_torre en 2_cargue_clientes_staging.py) -- se usa un string fijo en vez de dejar
+    NaN/None para que el filtro de torre en JS no tenga que manejar nulos aparte."""
+    return valor if pd.notna(valor) else SIN_TORRE
+
+
+def _torres_por_proyecto(df):
+    """proyecto -> lista de torres presentes (orden numerico, 'Sin torre' al final si aplica).
+    Alimenta el filtro de torre del dashboard, que depende de que proyectos esten marcados."""
+    resultado = {}
+    for proyecto, grupo in df.groupby('proyecto'):
+        torres = sorted(grupo['torre'].dropna().unique().tolist(), key=lambda t: int(t.split()[1]))
+        if grupo['torre'].isna().any():
+            torres.append(SIN_TORRE)
+        resultado[proyecto] = torres
+    return resultado
+
+
+def _tabla_clientes_funnel(df):
+    """
+    Una fila por cliente (TODOS, escriturados o no -- 'Vendidos' en el embudo cuenta a todos)
+    con los campos crudos que necesita el embudo/KPI. Reemplaza el precalculo de 'datos' para
+    la actualizacion en vivo del dashboard, porque ese precalculo es por proyecto+año y no
+    puede filtrarse ademas por torre sin volver a agregar del lado del cliente (JS).
+    """
+    columnas = [
+        'proyecto', 'torre', 'escriturado', 'escritura_programada_anio',
+        'subsidio', 'subsidio_aprobado', 'subsidio_radicado',
+        'credito', 'credito_aprobado', 'credito_radicado',
+    ]
+    registros = []
+    for _, r in df[columnas].iterrows():
+        anio_val = r['escritura_programada_anio']
+        registros.append({
+            'proyecto': r['proyecto'],
+            'torre': _torre_o_default(r['torre']),
+            'anio': None if pd.isna(anio_val) else str(int(anio_val)),
+            'escriturado': int(r['escriturado']),
+            'subsidio': int(r['subsidio']), 'subsidio_aprobado': int(r['subsidio_aprobado']),
+            'subsidio_radicado': int(r['subsidio_radicado']),
+            'credito': int(r['credito']), 'credito_aprobado': int(r['credito_aprobado']),
+            'credito_radicado': int(r['credito_radicado']),
+        })
+    return registros
+
+
 def _calcular_metricas(df_proyecto, anio):
     """Métricas de los dos embudos para un subconjunto ya filtrado por proyecto y un año dado."""
     total_aptos = len(df_proyecto)
@@ -119,6 +169,7 @@ def _tabla_pendientes(df):
         categoria_mostrar = subcategoria if categoria_principal == 'En Gestión' else categoria_principal
         registros.append({
             'proyecto': r['proyecto'],
+            'torre': _torre_o_default(r['torre']),
             'anio': anio_str,
             'modulo': r['modulo'],
             'cliente': cliente,
@@ -211,6 +262,7 @@ def _tabla_categoria_tramites(df):
         categoria, subcategoria = _clasificar_tramites(r)
         registros.append({
             'proyecto': r['proyecto'],
+            'torre': _torre_o_default(r['torre']),
             'anio': anio_str,
             'categoria': categoria,
             'subcategoria': subcategoria,
@@ -479,6 +531,8 @@ def run():
 
     pendientes = _tabla_pendientes(df)
     categoria_tramites = _tabla_categoria_tramites(df)
+    clientes_funnel = _tabla_clientes_funnel(df)
+    torres_por_proyecto = _torres_por_proyecto(df)
 
     # Guarda el corte de hoy en el historico y recupera el corte anterior (si existe) para el
     # comparativo de la grafica "Clientes por categoría y mes proyectado" (ver JS mas abajo).
@@ -620,6 +674,17 @@ def run():
             {checkboxes_proyecto_html}
         </div>
     </div>
+    <div class="ms-wrap">
+        <label>Torre:</label>
+        <button type="button" class="ms-boton" id="btnFiltroTorre">Todos ▾</button>
+        <div class="ms-panel" id="panelFiltroTorre" style="display:none;">
+            <div class="ms-acciones">
+                <a id="lnkTodosTorres">Todos</a>
+                <a id="lnkNingunaTorre">Ninguno</a>
+            </div>
+            <div id="checkboxesTorre"></div>
+        </div>
+    </div>
 </div>
 
 <div class="kpi-row" id="kpiRow">
@@ -666,6 +731,14 @@ const DATOS = {json.dumps(datos)};
 const PENDIENTES = {json.dumps(pendientes)};
 const CATEGORIA_TRAMITES = {json.dumps(categoria_tramites)};
 const TODOS_PROYECTOS = {json.dumps(proyectos)};
+// Filtro de torre: se rearma cada vez que cambia la seleccion de proyecto (ver
+// renderizarPanelTorres mas abajo), porque el numero de torre se repite entre proyectos.
+const TORRES_POR_PROYECTO = {json.dumps(torres_por_proyecto)};
+const SIN_TORRE = {json.dumps(SIN_TORRE)};
+// Un registro por cliente (TODOS, no solo no escriturados) para recalcular embudos/KPI en
+// vivo respetando proyecto+torre+año -- el precalculo DATOS[proy][anio] no tiene dimension
+// de torre, asi que ya no se usa para la actualizacion en vivo (solo para el historico).
+const CLIENTES_FUNNEL = {json.dumps(clientes_funnel)};
 const COLORES_CATEGORIA_TABLA = {json.dumps(COLORES_CATEGORIA_TABLA)};
 const ORDEN_CATEGORIA_PRINCIPAL = {json.dumps(ORDEN_CATEGORIA_PRINCIPAL)};
 const COLORES_CATEGORIA_PRINCIPAL = {json.dumps(COLORES_CATEGORIA_PRINCIPAL)};
@@ -696,15 +769,88 @@ function proyectosSeleccionados() {{
     return marcadas;
 }}
 
-function sumarMetricas(seleccion, anio) {{
-    const subsidio = [0, 0, 0, 0, 0];
-    const credito = [0, 0, 0, 0, 0];
-    seleccion.forEach(p => {{
-        const m = DATOS[p][anio];
-        m.subsidio.forEach((v, i) => subsidio[i] += v);
-        m.credito.forEach((v, i) => credito[i] += v);
+// --- Filtro de torre: depende de cuales proyectos esten marcados (el numero de torre se
+// repite entre proyectos), asi que el panel se rearma cada vez que cambia esa seleccion. ---
+
+function torresDisponibles(seleccionProyectos) {{
+    const torres = [];
+    seleccionProyectos.forEach(p => {{
+        (TORRES_POR_PROYECTO[p] || []).forEach(t => {{ if (!torres.includes(t)) torres.push(t); }});
     }});
-    return {{subsidio, credito}};
+    torres.sort((a, b) => {{
+        const na = a === SIN_TORRE ? Infinity : parseInt(a.split(' ')[1], 10);
+        const nb = b === SIN_TORRE ? Infinity : parseInt(b.split(' ')[1], 10);
+        return na - nb;
+    }});
+    return torres;
+}}
+
+function renderizarPanelTorres(seleccionProyectos) {{
+    // Se reinicia a "todas marcadas" cada vez que cambia el proyecto -- no se intenta
+    // conservar una seleccion parcial de torres entre proyectos distintos.
+    const torres = torresDisponibles(seleccionProyectos);
+    const contenedor = document.getElementById('checkboxesTorre');
+    contenedor.innerHTML = torres.map(t =>
+        `<label class="ms-opcion"><input type="checkbox" class="chk-torre" value="${{t}}" checked> ${{t}}</label>`
+    ).join('');
+    contenedor.querySelectorAll('.chk-torre').forEach(chk => chk.addEventListener('change', actualizar));
+}}
+
+function torresSeleccionadas() {{
+    return Array.from(document.querySelectorAll('.chk-torre:checked')).map(c => c.value);
+}}
+
+function actualizarBotonTorre(seleccionProyectos, seleccionTorres) {{
+    const disponibles = torresDisponibles(seleccionProyectos);
+    const boton = document.getElementById('btnFiltroTorre');
+    if (seleccionTorres.length === disponibles.length) {{
+        boton.textContent = 'Todos ▾';
+    }} else if (seleccionTorres.length === 1) {{
+        boton.textContent = seleccionTorres[0] + ' ▾';
+    }} else if (seleccionTorres.length === 0) {{
+        boton.textContent = 'Ninguno ▾';
+    }} else {{
+        boton.textContent = seleccionTorres.length + ' seleccionadas ▾';
+    }}
+}}
+
+// El historico (comparativo de categorias y variacion de KPI) solo se guarda por proyecto+año,
+// sin desglose por torre -- si la seleccion de torre es un subconjunto, ya no hay una base
+// valida de comparacion, asi que esas 2 mejoras se ocultan (ver mas abajo) en vez de mostrar
+// un numero que en realidad corresponde al proyecto completo.
+function seleccionCubreTodasLasTorres(seleccionProyectos, seleccionTorres) {{
+    const disponibles = torresDisponibles(seleccionProyectos);
+    return disponibles.length === seleccionTorres.length && disponibles.every(t => seleccionTorres.includes(t));
+}}
+
+function clientesFunnelFiltrados(seleccionProyectos, seleccionTorres) {{
+    return CLIENTES_FUNNEL.filter(c =>
+        seleccionProyectos.includes(c.proyecto) && seleccionTorres.includes(c.torre)
+    );
+}}
+
+function calcularMetricasFuncional(clientes, anio) {{
+    const totalAptos = clientes.length;
+    let noEscriturados = clientes.filter(c => c.escriturado === 0);
+    if (anio !== '{TODOS}') noEscriturados = noEscriturados.filter(c => c.anio === anio);
+    const nNoEscriturados = noEscriturados.length;
+
+    const reqSubsidio = noEscriturados.filter(c => c.subsidio === 1);
+    const subsidioSinAprobar = reqSubsidio.filter(c => c.subsidio_aprobado === 0);
+    const subsidioSinRadicar = subsidioSinAprobar.filter(c => c.subsidio_radicado === 0);
+
+    const reqCredito = noEscriturados.filter(c => c.credito === 1);
+    const creditoSinAprobar = reqCredito.filter(c => c.credito_aprobado === 0);
+    const creditoSinRadicar = creditoSinAprobar.filter(c => c.credito_radicado === 0);
+
+    return {{
+        subsidio: [totalAptos, nNoEscriturados, reqSubsidio.length, subsidioSinAprobar.length, subsidioSinRadicar.length],
+        credito: [totalAptos, nNoEscriturados, reqCredito.length, creditoSinAprobar.length, creditoSinRadicar.length],
+    }};
+}}
+
+function sumarMetricas(seleccionProyectos, seleccionTorres, anio) {{
+    return calcularMetricasFuncional(clientesFunnelFiltrados(seleccionProyectos, seleccionTorres), anio);
 }}
 
 function actualizarBotonProyecto(seleccion) {{
@@ -720,9 +866,9 @@ function actualizarBotonProyecto(seleccion) {{
     }}
 }}
 
-function actualizarTabla(seleccion, anio) {{
+function actualizarTabla(seleccionProyectos, seleccionTorres, anio) {{
     const filtrados = PENDIENTES.filter(p =>
-        seleccion.includes(p.proyecto) &&
+        seleccionProyectos.includes(p.proyecto) && seleccionTorres.includes(p.torre) &&
         (anio === '{TODOS}' || p.anio === anio)
     );
 
@@ -745,11 +891,12 @@ function actualizarTabla(seleccion, anio) {{
     document.getElementById('tablaContador').textContent = filtrados.length.toLocaleString('es-CO') + ' clientes pendientes';
 }}
 
-function actualizarGraficaBarras(seleccion, anio) {{
-    // Filtrar aptos no escriturados para cada proyecto en la selección actual
-    let items = seleccion.map(p => ({{
+function actualizarGraficaBarras(seleccionProyectos, seleccionTorres, anio) {{
+    // Filtrar aptos no escriturados para cada proyecto en la selección actual (respetando
+    // torre -- por eso ya no se usa el precalculo DATOS[proy][anio], que no tiene esa dimension).
+    let items = seleccionProyectos.map(p => ({{
         proyecto: p,
-        valor: DATOS[p][anio].subsidio[1] // posición 1 es n_no_escriturados
+        valor: calcularMetricasFuncional(clientesFunnelFiltrados([p], seleccionTorres), anio).subsidio[1]
     }}));
 
     // Orden ascendente para que en barra horizontal la barra más larga quede arriba
@@ -927,15 +1074,19 @@ function _actualizarCategoriaPrincipalConComparativo(divId, actualFiltrado, ante
     }});
 }}
 
-function actualizarGraficaCategoriaPrincipal(seleccion, anio) {{
+function actualizarGraficaCategoriaPrincipal(seleccionProyectos, seleccionTorres, anio) {{
     const filtrados = CATEGORIA_TRAMITES.filter(p =>
-        seleccion.includes(p.proyecto) &&
+        seleccionProyectos.includes(p.proyecto) && seleccionTorres.includes(p.torre) &&
         (anio === '{TODOS}' || p.anio === anio)
     );
-    const anteriorFiltrado = HISTORICO_CATEGORIA_ANTERIOR.filter(p =>
-        seleccion.includes(p.proyecto) &&
+    // El historico (comparativo "corte anterior") solo se guarda por proyecto+año, sin torre
+    // -- si la torre seleccionada es un subconjunto, se omite el comparativo (cae al fallback
+    // de barra simple dentro de _actualizarCategoriaPrincipalConComparativo).
+    const cubreTodo = seleccionCubreTodasLasTorres(seleccionProyectos, seleccionTorres);
+    const anteriorFiltrado = cubreTodo ? HISTORICO_CATEGORIA_ANTERIOR.filter(p =>
+        seleccionProyectos.includes(p.proyecto) &&
         (anio === '{TODOS}' || p.anio === anio)
-    );
+    ) : [];
     _actualizarCategoriaPrincipalConComparativo(
         'fig_categoria_principal', filtrados, anteriorFiltrado,
         ORDEN_CATEGORIA_PRINCIPAL, COLORES_CATEGORIA_PRINCIPAL,
@@ -943,9 +1094,9 @@ function actualizarGraficaCategoriaPrincipal(seleccion, anio) {{
     );
 }}
 
-function actualizarGraficaSubcategoriaGestion(seleccion, anio) {{
+function actualizarGraficaSubcategoriaGestion(seleccionProyectos, seleccionTorres, anio) {{
     const filtrados = CATEGORIA_TRAMITES.filter(p =>
-        seleccion.includes(p.proyecto) &&
+        seleccionProyectos.includes(p.proyecto) && seleccionTorres.includes(p.torre) &&
         (anio === '{TODOS}' || p.anio === anio) &&
         p.categoria === 'En Gestión'
     );
@@ -956,17 +1107,24 @@ function actualizarGraficaSubcategoriaGestion(seleccion, anio) {{
     );
 }}
 
-function actualizarDeltasKpi(seleccion, anio, kpis) {{
+function actualizarDeltasKpi(seleccionProyectos, seleccionTorres, anio, kpis) {{
     const limpiar = () => IDS_KPI.forEach(idx => {{
         const el = document.getElementById('kpi-delta-' + idx);
         if (el) el.textContent = '';
     }});
 
+    // Igual que en la grafica de categoria: el historico de KPI no tiene desglose por torre,
+    // asi que la variacion solo se muestra cuando estan todas las torres del proyecto marcadas.
+    if (!seleccionCubreTodasLasTorres(seleccionProyectos, seleccionTorres)) {{
+        limpiar();
+        return;
+    }}
+
     // El historico de KPI guarda una fila por proyecto y por cada año (incluido 'Todos'), asi
     // que el filtro de año se compara igual que en DATOS -- sin necesidad de un caso especial
     // para 'Todos'.
     const filasAnterior = HISTORICO_KPI_ANTERIOR.filter(p =>
-        seleccion.includes(p.proyecto) && p.anio === anio
+        seleccionProyectos.includes(p.proyecto) && p.anio === anio
     );
     if (filasAnterior.length === 0) {{
         limpiar();
@@ -990,20 +1148,21 @@ function actualizarDeltasKpi(seleccion, anio, kpis) {{
 }}
 
 function actualizar() {{
-    const seleccion = proyectosSeleccionados();
+    const seleccionProyectos = proyectosSeleccionados();
+    const seleccionTorres = torresSeleccionadas();
     const anio = document.getElementById('filtroAnio').value;
-    const m = sumarMetricas(seleccion, anio);
+    const m = sumarMetricas(seleccionProyectos, seleccionTorres, anio);
 
     // 1. Actualizar Embudos
     Plotly.restyle('fig_subsidio', {{x: [m.subsidio]}}, [0]);
     Plotly.restyle('fig_credito', {{x: [m.credito]}}, [0]);
 
     // 2. Actualizar Gráfica de Barras por Proyecto
-    actualizarGraficaBarras(seleccion, anio);
+    actualizarGraficaBarras(seleccionProyectos, seleccionTorres, anio);
 
     // 3. Actualizar Gráfica de categorías por mes (principal + detalle de en gestión)
-    actualizarGraficaCategoriaPrincipal(seleccion, anio);
-    actualizarGraficaSubcategoriaGestion(seleccion, anio);
+    actualizarGraficaCategoriaPrincipal(seleccionProyectos, seleccionTorres, anio);
+    actualizarGraficaSubcategoriaGestion(seleccionProyectos, seleccionTorres, anio);
 
     // 4. Actualizar KPIs
     // OJO: los ids de las tarjetas no son consecutivos (falta kpi-4), por eso se usa
@@ -1015,24 +1174,33 @@ function actualizar() {{
     }});
 
     // 4b. Variacion vs. el corte anterior (si ya hay un corte previo guardado).
-    actualizarDeltasKpi(seleccion, anio, kpis);
+    actualizarDeltasKpi(seleccionProyectos, seleccionTorres, anio, kpis);
 
     // 5. Actualizar Estado de Controles y Tabla
-    actualizarBotonProyecto(seleccion);
-    actualizarTabla(seleccion, anio);
+    actualizarBotonProyecto(seleccionProyectos);
+    actualizarBotonTorre(seleccionProyectos, seleccionTorres);
+    actualizarTabla(seleccionProyectos, seleccionTorres, anio);
+}}
+
+// Al cambiar el proyecto, el panel de torre se rearma (torres del/de los proyecto(s) nuevo(s),
+// todas marcadas) antes de recalcular todo -- por eso estos 3 disparadores usan este wrapper
+// en vez de llamar actualizar() directo.
+function alCambiarProyecto() {{
+    renderizarPanelTorres(proyectosSeleccionados());
+    actualizar();
 }}
 
 document.getElementById('filtroAnio').addEventListener('change', actualizar);
 
-document.querySelectorAll('.chk-proyecto').forEach(chk => chk.addEventListener('change', actualizar));
+document.querySelectorAll('.chk-proyecto').forEach(chk => chk.addEventListener('change', alCambiarProyecto));
 
 document.getElementById('lnkTodosProyectos').addEventListener('click', () => {{
     document.querySelectorAll('.chk-proyecto').forEach(c => c.checked = true);
-    actualizar();
+    alCambiarProyecto();
 }});
 document.getElementById('lnkNingunProyecto').addEventListener('click', () => {{
     document.querySelectorAll('.chk-proyecto').forEach(c => c.checked = false);
-    actualizar();
+    alCambiarProyecto();
 }});
 
 const btnFiltroProyecto = document.getElementById('btnFiltroProyecto');
@@ -1041,13 +1209,34 @@ btnFiltroProyecto.addEventListener('click', (ev) => {{
     ev.stopPropagation();
     panelFiltroProyecto.style.display = (panelFiltroProyecto.style.display === 'none') ? 'block' : 'none';
 }});
+
+const btnFiltroTorre = document.getElementById('btnFiltroTorre');
+const panelFiltroTorre = document.getElementById('panelFiltroTorre');
+btnFiltroTorre.addEventListener('click', (ev) => {{
+    ev.stopPropagation();
+    panelFiltroTorre.style.display = (panelFiltroTorre.style.display === 'none') ? 'block' : 'none';
+}});
+document.getElementById('lnkTodosTorres').addEventListener('click', () => {{
+    document.querySelectorAll('.chk-torre').forEach(c => c.checked = true);
+    actualizar();
+}});
+document.getElementById('lnkNingunaTorre').addEventListener('click', () => {{
+    document.querySelectorAll('.chk-torre').forEach(c => c.checked = false);
+    actualizar();
+}});
+
 document.addEventListener('click', (ev) => {{
     if (!panelFiltroProyecto.contains(ev.target) && ev.target !== btnFiltroProyecto) {{
         panelFiltroProyecto.style.display = 'none';
     }}
+    if (!panelFiltroTorre.contains(ev.target) && ev.target !== btnFiltroTorre) {{
+        panelFiltroTorre.style.display = 'none';
+    }}
 }});
 
-// Renderizado inicial
+// Renderizado inicial: primero arma el panel de torre para los proyectos ya marcados
+// (todos, por defecto), despues calcula todo lo demas.
+renderizarPanelTorres(proyectosSeleccionados());
 actualizar();
 </script>
 

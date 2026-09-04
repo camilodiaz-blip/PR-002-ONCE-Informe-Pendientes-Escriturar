@@ -1,9 +1,18 @@
+import importlib
 from datetime import datetime
 import os
 import pandas as pd
 import requests
 
-from api_utils import get_session, fetch_in_parallel, MAX_WORKERS, REQUEST_TIMEOUT
+from api_utils import (
+    get_session, fetch_in_parallel, guardar_parquet_versionado, MAX_WORKERS, REQUEST_TIMEOUT,
+    ANIO_OBJETIVO_ESCRITURA, RUTA_ANALYTICS, RUTA_RAW_CONVERSACIONES,
+)
+
+# Reutiliza la clasificacion de tramites del dashboard (Listos / En Gestión / Sin Cartas), para
+# no duplicar esa logica de negocio aca. 6_dashboard.py empieza con un digito, por eso se
+# importa con importlib (igual que en main.py).
+_dashboard = importlib.import_module("6_dashboard")
 
 #Cargue de conversaciones de estos clientes
 
@@ -37,16 +46,18 @@ def prospects_events(proyecto_id, prospect_id):
 
 
 #Cargue de clientes con valores detallados
-df = pd.read_csv(r"data\analytics\clientes_detallado.csv")
-df_filtrado = df[(df['escriturado']==0) &
-                 (df['escritura_programada_anio']==2026) &
-                  (( #Requiere subsidio
-                      (df['subsidio']==1) & (df['subsidio_aprobado']==0)
-                  )
-                   |
-                    ( #Requiere Credito
-                       (df['credito']==1) & (df['credito_aprobado']==0)
-                   ))]
+df = pd.read_csv(os.path.join(RUTA_ANALYTICS, "clientes_detallado.csv"))
+no_escriturados = df[
+    (df['escriturado'] == 0) &
+    (df['escritura_programada_anio'] == ANIO_OBJETIVO_ESCRITURA)
+].copy()
+
+# Solo los clientes "Sin Cartas": los que no tienen ni una sola radicacion (ni de subsidio ni
+# de credito) de lo que realmente necesitan -- ver _clasificar_tramites en 6_dashboard.py.
+no_escriturados['categoria'] = no_escriturados.apply(
+    lambda r: _dashboard._clasificar_tramites(r)[0], axis=1
+)
+df_filtrado = no_escriturados[no_escriturados['categoria'] == 'Sin Cartas']
 
 
 
@@ -63,15 +74,6 @@ else:
 
 ## Guardar Archivos tramites
 
-CARPETA_BASE_RAW = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)),
-    'data',
-    'raw',
-    'no_escriturados'
-)
-os.makedirs(CARPETA_BASE_RAW, exist_ok=True)
-
 df_events['raw_fecha_cargue'] = datetime.now().strftime('%Y%m%d')
-ruta_archivo_eventos = os.path.join(CARPETA_BASE_RAW, "eventos.parquet")
-df_events.to_parquet(ruta_archivo_eventos, index=False, compression='snappy')
-print("Eventos Guardados")
+ruta_archivo_eventos = guardar_parquet_versionado(df_events, RUTA_RAW_CONVERSACIONES, "eventos")
+print(f"Eventos Guardados en {ruta_archivo_eventos}")

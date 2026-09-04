@@ -5,9 +5,40 @@ import pandas as pd
 
 from api_utils import (
     cargar_clientes_staging, ANIO_OBJETIVO_ESCRITURA,
-    RUTA_RAW_NO_ESCRITURADOS, RUTA_RAW_PAGOS, RUTA_ANALYTICS, RUTA_HISTORICO,
+    RUTA_RAW_NO_ESCRITURADOS, RUTA_RAW_PAGOS, RUTA_RAW_USUARIOS, RUTA_ANALYTICS, RUTA_HISTORICO,
     leer_ultimo_parquet, leer_parquet_mas_antigua, guardar_parquet_versionado,
 )
+
+
+def _nombre_asesor(id_asesor_serie):
+    """
+    Reemplaza el UUID crudo de 'id_asesor' (columna 'ownerId' de Smarthome) por el nombre
+    completo del asesor, cruzando con el cargue de usuarios (cargue_usuarios_raw.py).
+
+    Si ese archivo aun no se ha generado, o algun id_asesor no tiene coincidencia, se deja el
+    UUID original en vez de fallar -- este cruce es informativo, no bloquea el resto del CSV.
+    """
+    try:
+        df_usuarios = leer_ultimo_parquet(RUTA_RAW_USUARIOS, "usuarios")
+    except FileNotFoundError as e:
+        print(f"ADVERTENCIA: {e} No se pudo resolver el nombre del asesor; 'asesor' queda como UUID.")
+        return id_asesor_serie
+
+    nombre_completo = (
+        df_usuarios['firstName'].fillna('').str.strip() + ' ' + df_usuarios['lastName'].fillna('').str.strip()
+    ).str.strip()
+    mapa_asesor = (
+        pd.DataFrame({'userId': df_usuarios['userId'], 'nombre': nombre_completo})
+        .drop_duplicates(subset='userId')
+        .set_index('userId')['nombre']
+    )
+
+    sin_match = (~id_asesor_serie.isin(mapa_asesor.index)).sum()
+    if sin_match:
+        print(f"ADVERTENCIA: {sin_match} clientes tienen id_asesor sin coincidencia en usuarios "
+              "(queda el UUID original para esos).")
+
+    return id_asesor_serie.map(mapa_asesor).fillna(id_asesor_serie)
 
 def _fecha_por_tarea(df_tareas, nombre_tarea):
     """
@@ -143,6 +174,12 @@ def run():
     df['credito_radicado'] = df['fecha_credito_radicado'].notna().astype(int)
 
     df['fecha_corte'] = datetime.now().strftime('%Y-%m-%d')
+
+    # Se muestra el nombre del asesor en vez de su UUID -- 'id_asesor' pasa a llamarse
+    # 'asesor' porque ya no guarda un id, guarda el nombre (o el UUID como fallback si no
+    # se encontro coincidencia en usuarios).
+    df['id_asesor'] = _nombre_asesor(df['id_asesor'])
+    df = df.rename(columns={'id_asesor': 'asesor'})
 
     # "Foto" actual para negocio: siempre el mismo nombre, se sobreescribe cada corrida.
     os.makedirs(RUTA_ANALYTICS, exist_ok=True)
