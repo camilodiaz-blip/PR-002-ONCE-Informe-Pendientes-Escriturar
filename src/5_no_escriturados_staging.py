@@ -6,7 +6,7 @@ import pandas as pd
 from api_utils import (
     cargar_clientes_staging, ANIO_OBJETIVO_ESCRITURA,
     RUTA_RAW_NO_ESCRITURADOS, RUTA_RAW_PAGOS, RUTA_RAW_USUARIOS, RUTA_ANALYTICS, RUTA_HISTORICO,
-    leer_ultimo_parquet, leer_parquet_mas_antigua, guardar_parquet_versionado,
+    leer_ultimo_parquet, guardar_parquet_versionado,
 )
 
 
@@ -67,20 +67,13 @@ def run():
     df = cargar_clientes_staging()
 
     # Cargue de archivos de los detalles.
-    # Los pagos se toman de la carpeta de pagos raw y se lee la version mas antigua.
-    df_pagos = leer_parquet_mas_antigua(RUTA_RAW_PAGOS, "pagos_raw")
+    # Los pagos se toman de la carpeta de pagos raw y se lee la version MAS RECIENTE -- antes
+    # se leia la mas antigua (pagos_raw.parquet, 2026-07-27) y el pipeline entero (subsidio,
+    # credito, pago_6_cuotas, y el respaldo de fecha programada de escritura) quedo corriendo
+    # casi 3 meses con el plan de pagos desactualizado, sin que nadie se diera cuenta hasta que
+    # un cliente aparecio con un año proyectado mas viejo del que realmente le correspondia.
+    df_pagos = leer_ultimo_parquet(RUTA_RAW_PAGOS, "pagos_raw")
     df_tareas = leer_ultimo_parquet(RUTA_RAW_NO_ESCRITURADOS, "tareas_tramites")
-
-    #Creacion de Columna de programcion escritura
-    df['escritura_programada_anio']= pd.to_datetime(df['fecha_escritura_programada']).dt.year
-    df['escritura_programada_mes']= pd.to_datetime(df['fecha_escritura_programada']).dt.month
-
-    # Solo para estos clientes se consultaron pagos y tareas (scripts 3 y 4).
-    # Para el resto, subsidio/credito/aprobado/radicado quedan en 0 pero NO significa "no requiere":
-    # significa que no se evaluo, porque no estan en el alcance de escritura del anio objetivo.
-    df['en_alcance_no_escriturado'] = (
-        (df['escriturado'] == 0) & (df['escritura_programada_anio'] == ANIO_OBJETIVO_ESCRITURA)
-    ).astype(int)
 
     #Normalizamos temporalmente la columna del DataFrame principal para comparar con Pagos
     df_id_limpio = df['id_prospecto'].astype(str).str.strip().str.lower()
@@ -92,6 +85,38 @@ def run():
 
     df['proyecto_limpio'] = df['proyecto'].astype(str).str.strip().str.lower()
     df['modulo_limpio'] = df['modulo'].astype(str).str.strip().str.lower()
+
+    #Creacion de Columna de programcion escritura
+    # Si Smarthome no trae una fecha programada de escritura para la unidad
+    # ('fecha_escritura_programada' vacia), se usa de respaldo la fecha de la ULTIMA cuota
+    # (PaymentType == 1, "Cuota") de su plan de pagos -- es la mejor aproximacion disponible de
+    # cuando deberia estar lista para escriturar, a falta de una fecha programada explicita.
+    # SOLO aplica a clientes NO escriturados: es el unico caso donde "fecha proyectada de
+    # escritura" tiene sentido de negocio -- si ya se escrituro, da igual cuando fue la ultima
+    # cuota, y dejar esas unidades sin año proyectado evita que el selector de año del
+    # dashboard se llene de años viejos (ej. 2020/2021) donde no hay NINGUN pendiente que mostrar.
+    ultima_fecha_cuota = (
+        pagos_con_clave[pagos_con_clave['PaymentType'] == 1]
+        .groupby(['Project_limpio', 'Module_limpio'])['Date']
+        .max()
+        .reset_index()
+        .rename(columns={
+            'Project_limpio': 'proyecto_limpio', 'Module_limpio': 'modulo_limpio', 'Date': 'ultima_fecha_cuota',
+        })
+    )
+    df = df.merge(ultima_fecha_cuota, on=['proyecto_limpio', 'modulo_limpio'], how='left')
+    fecha_respaldo = pd.to_datetime(df['ultima_fecha_cuota'], errors='coerce').where(df['escriturado'] == 0)
+    fecha_escritura_programada_efectiva = pd.to_datetime(df['fecha_escritura_programada']).fillna(fecha_respaldo)
+    df['escritura_programada_anio'] = fecha_escritura_programada_efectiva.dt.year
+    df['escritura_programada_mes'] = fecha_escritura_programada_efectiva.dt.month
+    df = df.drop(columns=['ultima_fecha_cuota'])
+
+    # Solo para estos clientes se consultaron pagos y tareas (scripts 3 y 4).
+    # Para el resto, subsidio/credito/aprobado/radicado quedan en 0 pero NO significa "no requiere":
+    # significa que no se evaluo, porque no estan en el alcance de escritura del anio objetivo.
+    df['en_alcance_no_escriturado'] = (
+        (df['escriturado'] == 0) & (df['escritura_programada_anio'] == ANIO_OBJETIVO_ESCRITURA)
+    ).astype(int)
 
     # Validacion si el cliente requiere subsidio
     clientes_con_subsidio = (

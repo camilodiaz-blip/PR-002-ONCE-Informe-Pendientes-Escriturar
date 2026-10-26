@@ -4,7 +4,12 @@ Orquesta el pipeline completo del informe de pendientes por escriturar:
 1 (clientes raw) -> 2 (clientes staging) -> 3 (pagos raw, 1 sola llamada masiva)
 -> 4 (tareas de no escriturados, por cliente) -> 5 (consolidado final)
 -> estado de cuentas raw (Drive) -> unidades atadas (cruce vs. estado de cuentas)
+-> unidades atadas por fiducia (cruce vs. tareas/tramites)
 -> 6 (dashboard HTML)
+
+El circuito de conversaciones (cargue_conversaciones_raw.py -> cargue_conversaciones_staging.py
+-> analisis_conversaciones.py) NO esta incluido aca por el momento -- se saco de main.py a
+pedido explicito (2026-09-28), se corre aparte, manualmente, cuando se pide.
 
 Los pasos 3 y 4 ya no se combinan: el paso 3 (3_cargue_pagos_raw.py) trae TODOS los pagos
 en una sola llamada a la API (GetPaymentsRecords), no una llamada por cliente, asi que ya
@@ -15,6 +20,10 @@ El paso de estado de cuentas (cargue_estado_cuentas_raw.py) depende de la API de
 Drive (cuenta de servicio) en vez de la API de Smarthome, y hoy el dashboard todavia no
 consume ese archivo -- por eso, si falla (ej. credenciales no configuradas en esta maquina,
 sin red hacia Drive), se avisa pero NO se detiene el resto del pipeline.
+
+Las 2 fuentes de "unidades atadas" (estado de cuentas y fiducia, ver actualizar_unidades_atadas.py
+y actualizar_unidades_atadas_fiducia.py) son procesos independientes que se pueden correr en
+cualquier orden -- cada uno agrega sus propios hallazgos con OR, sin pisar al otro.
 
 Cada paso sigue siendo ejecutable por separado (ej. `python 4_no_escriturados__tareas_raw.py`)
 para reprocesar solo uno sin correr todo el pipeline.
@@ -28,6 +37,7 @@ paso_4 = importlib.import_module("4_no_escriturados__tareas_raw")
 paso_5 = importlib.import_module("5_no_escriturados_staging")
 paso_estado_cuentas = importlib.import_module("cargue_estado_cuentas_raw")
 paso_unidades_atadas = importlib.import_module("actualizar_unidades_atadas")
+paso_unidades_atadas_fiducia = importlib.import_module("actualizar_unidades_atadas_fiducia")
 paso_6 = importlib.import_module("6_dashboard")
 
 
@@ -37,10 +47,15 @@ def _validar_actualizacion_clientes(resultado):
     el resto del pipeline seguiria usando el archivo raw VIEJO de ese proyecto sin que nadie
     se entere. Avisamos y preguntamos si de todas formas se quiere continuar.
 
-    NOTA: usa input(), pensado para corridas manuales/atendidas. Si en algun momento se
-    programa main.py para correr desatendido (ej. Task Scheduler sin nadie mirando), este
-    prompt se quedaria esperando para siempre -- avisame si llegamos a ese punto para
-    cambiarlo por un umbral automatico en vez de una pregunta interactiva.
+    Si hay quien conteste, pregunta con input() como antes. Si NO (corrida desatendida --
+    background, pipe, Task Scheduler), ya no se queda esperando una respuesta que nunca llega
+    ni revienta con EOFError: avisa y continua automaticamente con el archivo raw viejo de los
+    proyectos fallidos (comportamiento no destructivo, el mismo que "s" en el modo interactivo).
+
+    NOTA: sys.stdin.isatty() NO es confiable aca para detectar "sin terminal" -- en git-bash/
+    MSYS2, un proceso lanzado en background puede seguir reportando isatty()==True aunque no
+    haya nadie que vaya a escribir nada, y el input() igual revienta con EOFError al intentar
+    leer. Por eso se captura EOFError directamente en vez de confiar en isatty().
     """
     if not resultado:
         return
@@ -56,7 +71,13 @@ def _validar_actualizacion_clientes(resultado):
     print("Si continuas, el resto del pipeline usara el archivo raw VIEJO de estos proyectos "
           "(si existia una corrida anterior).")
 
-    respuesta = input("\n¿Deseas continuar de todas formas? (s/n): ").strip().lower()
+    try:
+        respuesta = input("\n¿Deseas continuar de todas formas? (s/n): ").strip().lower()
+    except EOFError:
+        print("Corrida no interactiva (no hay quien conteste) -- se continua automaticamente "
+              "con el archivo raw viejo de los proyectos fallidos.")
+        return
+
     if respuesta not in ('s', 'si', 'sí', 'y', 'yes'):
         print("Pipeline detenido por el usuario.")
         raise SystemExit(1)
@@ -92,6 +113,13 @@ def main():
     except Exception as e:
         print(f"ADVERTENCIA: no se pudo actualizar 'unidades_atadas' ({e}). "
               "La columna puede quedar desactualizada o ausente en clientes_detallado.csv.")
+
+    print("\n=== Paso unidades atadas por fiducia (cruce clientes_detallado vs. tareas/tramites) ===")
+    try:
+        paso_unidades_atadas_fiducia.run()
+    except Exception as e:
+        print(f"ADVERTENCIA: no se pudo actualizar 'unidades_atadas' por fiducia ({e}). "
+              "Se continua con el resto del pipeline igual.")
 
     print("\n=== Paso 6: dashboard HTML ===")
     paso_6.run()

@@ -1,0 +1,269 @@
+﻿id_prospecto,proyecto,modulo,cliente,categoria_comite,categoria_hoy,escriturado_comite,escriturado_hoy,unidades_atadas_comite,unidades_atadas_hoy,tipo_cambio
+88118688-c7f8-4c90-8bb1-3a572187676d,VERDELIMA,Torre 6 Apto 1307,Pedro Luis Romero Clavijo,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d246ee47-6646-4210-9200-3b09fa7aedfe,VERDELIMA,Torre 2 Apto 1004,NESTOR ARNULFO ECHEVERRIA ECHEVERRIA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+c3ddae93-4da3-4bf4-b2ab-c7717e8fc0b9,VERDELIMA,Torre 2 Apto 0705,ERIN NICOLE OROZCO OLMOS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+9f59dd90-3ffc-46c1-8000-cd68381c4ff4,VERDELIMA,Torre 6 Apto 0707,ANDREA MARCELA RODRIGUEZ VARGAS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+302afc51-1dd5-422e-af00-efab4076da23,VERDELIMA,Torre 5 Apto 0404,Jan Carolina Barreto Marquez,Pdt un Radicado,Sin Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Sin Radicados; Unidad atada
+d85b9f8a-394f-49db-9041-6ad551c3efef,VERDELIMA,Torre 5 Apto 1202,Jenny Alexandra Fonseca Pabon,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+81141a1e-5a46-4183-a30d-bc9c49a4cac4,VERDELIMA,Torre 1 Apto 1102,CHRISTIAN CAMILO GIRALDO CHAPARRO,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+0494f78c-434c-4797-9802-d2ee2e999b6a,VERDELIMA,Torre 3 Apto 0503,MARTHA LILIANA HERNANDEZ VIZCAINO,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+e0870bfd-ce64-48c9-b584-5ea7534e96fd,VERDELIMA,Torre 3 Apto 0101,José Fernando Montenegro Sánchez,Listo,Listo,0.0,0,0.0,1,Unidad atada
+913b19bc-17d6-4cd5-88a2-9145cce7ce02,VERDELIMA,Torre 5 Apto 0804,GOVANNY QUITIAN VANEGAS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+0bafd4a0-5019-47ea-963d-b81e68585e36,VERDELIMA,Torre 5 Apto 0306,MARIA FERNANDA CRISTIANO ÑEZCO,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+00219194-b6ce-4dc3-b86d-d892754575b8,VERDELIMA,Torre 2 Apto 0203,Anyi Liset Velasquez Vergara,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+31f0f4f8-c305-44e1-955c-03e5e767d267,VERDELIMA,Torre 5 Apto 0203,TANIA YULIETH BELTRAN COLORADO,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+336f86c2-71e5-4b4b-bc92-262bcc7acf6c,VERDELIMA,Torre 3 Apto 0201,JHON FREDY TIERRADENTRO SONS,Listo,Listo,0.0,0,0.0,1,Unidad atada
+267eff49-a5d9-49a0-9961-2859e42042af,VERDELIMA,Torre 4 Apto 0203,KRISTEL ALEXANDRA REY PAREDES,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+43ecd21e-c35d-41dd-b187-2e805af6b711,VERDELIMA,Torre 6 Apto 0103,ANDERSON STEVEN SANABRIA CORREA,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+4fa3d2cd-5200-4aca-9525-37e8ef07a1af,VERDELIMA,Torre 2 Apto 0101,ALEXANDRA RUIZ FIERRO,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+e45d6058-3fe1-4346-90e4-3acaaf5f5148,VERDELIMA,Torre 3 Apto 1002,SANDRA MILENA VARGAS SUAREZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+1233b5c6-0c00-49db-a91b-3c7b1eca38e7,VERDELIMA,Torre 6 Apto 0808,ERIKA MARCELA RODRÍGUEZ FLÓREZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+34253da8-882e-4eb6-9207-4bb23d5a3b28,VERDELIMA,Torre 2 Apto 0907,ANGIE NATALIA CLAVIJO RODRIGUEZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+8d100b2c-f057-48de-bd93-56aabb2b65b5,VERDELIMA,Torre 6 Apto 1001,MARCO ANTONIO ARENALES BELTRAN,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+d1011969-2878-4225-a5da-5a65ec5c737a,VERDELIMA,Torre 1 Apto 1307,DERLY ANDREA ALVARADO GALLEGO,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+fefb42d9-dfdd-4626-9240-5a77797f6038,VERDELIMA,Torre 1 Apto 1208,LAURA ESTEFANI TORRES CALLE,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+b1aa226d-3b61-4d27-97e3-6a4c27ba3622,VERDELIMA,Torre 2 Apto 1307,PAHOLA ALEXANDRA PARRA HERRERA,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+2f3d0272-f293-43b6-9e61-6bbd5d570c2c,VERDELIMA,Torre 4 Apto 0901,ANA ROCIO GUETE OBANDO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+975e78c6-56b3-411f-9b70-77889c3e5ae5,VERDELIMA,Torre 5 Apto 1306,SEBASTIAN MAURICIO CHAMORRO NARANJO,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+9c925201-bbb0-4235-9bd0-77e9364da405,VERDELIMA,Torre 1 Apto 0704,CRISTIAN CAMILO PEREZ RODRIGUEZ,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+2cb44c08-89bb-47ae-8aba-7d403814f490,VERDELIMA,Torre 5 Apto 0607,Nancy Calderón Castro,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+d4a90ac4-1799-4d93-8a16-82d88e65a5f9,VERDELIMA,Torre 5 Apto 0106,Camilo Andrés Preciado Rojas,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+5a987048-02d0-4203-aacb-853e97fd60ff,VERDELIMA,Torre 6 Apto 1208,JORGE ARMANDO CACERES MESA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+1d199007-aefa-4fea-8694-882b90845b95,VERDELIMA,Torre 2 Apto 0105,Juan Camilo Montañez Saenz,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+1159da13-27f7-44b5-aa0b-8cded541034b,VERDELIMA,Torre 4 Apto 1203,KATTY JOHANNA BOHORQUEZ SANABRIA,Listo,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Sin Radicados
+dbfc263a-5954-4add-aa38-948be38d530d,VERDELIMA,Torre 6 Apto 1206,MARTHA EDILMA LARA AVILA,Radicados,Listo,0.0,0,0.0,1,Categoria: Radicados -> Listo; Unidad atada
+ee2d9b71-c84f-490c-abef-9a672692dc22,VERDELIMA,Torre 4 Apto 1006,ANDRES MAURICIO BASTIDAS PARDO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+545b100c-749c-4b7b-a86e-a284248a563f,VERDELIMA,Torre 1 Apto 0507,DEISSY VERONICA MEJIA CUERVO,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+9321cb40-853b-4e82-bd07-acc783638a9f,VERDELIMA,Torre 1 Apto 1007,MANUEL FERNANDO GONZALEZ CUEVAS,Listo,Listo,0.0,0,0.0,1,Unidad atada
+0d265fd5-57d2-42a2-bfd0-b6c0a0a658c9,VERDELIMA,Torre 5 Apto 0406,ANDERSSON PARRA MONTEALEGRE,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+c1b5caf5-72a1-4a20-92b5-b8636fead07a,VERDELIMA,Torre 6 Apto 0504,JENNY CAROLINA MANCIPE MARTINEZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+fd33152d-3a4a-4e3b-afca-b9d60e5b4156,VERDELIMA,Torre 5 Apto 1201,HERNAN GIOVANNI LONDOÑO LONDOÑO,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+cecd591a-c5f4-4ee5-b8c6-beca3473b892,VERDELIMA,Torre 3 Apto 1106,ANGIE JIMENA GOMEZ OSORIO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+510fab51-a9e3-444b-b7e4-bfe2591320cc,VERDELIMA,Torre 6 Apto 1005,KAREN JULIETH CUERVO PINILLA,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+f5c1714b-8a79-44f9-9387-ca58722a540f,VERDELIMA,Torre 5 Apto 1206,Ivan Camilo Ibáñez Ramírez,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+8def079d-f948-4f09-bf18-caf744756862,VERDELIMA,Torre 6 Apto 0101,Marco Antonio Vargas Osuna,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+6735e1d3-7bb3-4acd-a51d-d08b2c076334,VERDELIMA,Torre 3 Apto 0901,ROSA EVELIA SOLERA HORTUA,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+b92e25c2-74bc-4d22-8a17-dc05856341c5,VERDELIMA,Torre 6 Apto 1201,JAIR JOSE NIETO RAMOS,Sin Radicados,Radicados,0.0,0,0.0,1,Categoria: Sin Radicados -> Radicados; Unidad atada
+ef2b091b-7d60-4504-a709-e372631ab87e,VERDELIMA,Torre 2 Apto 0704,JASBLEIDY GERALDINE ALARCON DIAZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+7e5e8f6b-e38d-4a18-abd4-e453643a164b,VERDELIMA,Torre 3 Apto 0506,YENNIFER JULYETH SANCHEZ OVIEDO,Listo,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Sin Radicados
+46eab22a-9dd2-4748-8d15-ecc8963b2c93,VERDELIMA,Torre 2 Apto 0104,JUAN DAVID GUZMAN TORRES,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+3d0b3389-28f3-4de0-8486-f38819f2814f,VERDELIMA,Torre 5 Apto 0602,OSCAR JULIAN GAITAN QUEVEDO,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+9cbc7a7f-2974-434b-81a2-ffa432c846fa,VERDELIMA,Torre 4 Apto 1201,LEIDY MARCELA MARTINEZ SANCHEZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+b99f34d5-4dc0-49ce-871a-1413dc31f708,VERDELIMA,Torre 2 Apto 0401,Angie Viviana Rodriguez Quitian,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+84c4c4cd-2017-445b-a870-15abbb023721,VERDELIMA,Torre 6 Apto 0408,Yerly Yamile Linares Agatón,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+7c03613e-1229-4856-8f96-2d8f163119cc,VERDELIMA,Torre 4 Apto 1101,Nidia Lorena Pedraza Chaparro,Listo,Listo,0.0,0,0.0,1,Unidad atada
+6a931c04-269e-402c-9330-2dea4a63c3d2,VERDELIMA,Torre 2 Apto 1203,Nicole Stefania Montoya Toro,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+6eeb9234-64e6-411f-a48f-71d8946928bf,VERDELIMA,Torre 5 Apto 0601,Jamilton alexis Galindo Pinzon,Sin Radicados,Pdt un Radicado,0.0,0,0.0,1,Categoria: Sin Radicados -> Pdt un Radicado; Unidad atada
+4239cc39-173d-4eee-b44b-73868bcf235b,VERDELIMA,Torre 4 Apto 0303,Jhonny Esneider Leon Cubillos,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+f347be47-b519-4bc2-af92-c17eb954427f,VERDELIMA,Torre 2 Apto 0406,edgar julian sierra diaz,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+8110f84a-cac5-4654-866c-eea8f5424db2,VERDELIMA,Torre 3 Apto 0801,Laura Katherine Botia Ñuñez,Listo,Listo,0.0,0,0.0,1,Unidad atada
+d08647fd-5760-4fb2-b59e-fdd1b4af1ebe,VERDELIMA,Torre 3 Apto 1103,Gina Katherine Cuellar Romero,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+98c803c0-9451-4781-9ed1-19cffb064a1f,VERDELIMA,Torre 6 Apto 0601,CESAR STID TRUJILLO MEDINA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+2d9325a7-338e-4ca7-9cc0-2af765673cc3,VERDELIMA,Torre 6 Apto 0302,VALENTINA LOPEZ ELEJALDE,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+b4f97938-3dc4-41e3-9a95-6e79f0990f15,VERDELIMA,Torre 5 Apto 1301,DIEGO ANDRES LOPEZ MARTINEZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+816e5c6a-45f8-41e6-b202-82ddcb85cfc5,VERDELIMA,Torre 1 Apto 0308,ERIKA MAYERLI PRIETO CASTAÑEDA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+819481bd-5f0b-4581-95ea-fc0c99726599,VERDELIMA,Torre 4 Apto 0706,THANIA ISABEL CALDAS GARCIA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+449462fd-c85f-4c6b-959d-af173c0717bc,Azul Club Residencial Celeste,Torre 6 Apto 1201,ANA ISABEL SUAREZ ALVARADO,Pdt un Radicado,Pdt un Radicado,0.0,1,0.0,0,Se escrituro
+67d06850-4b58-457b-8fde-e5f1b325e06f,Azul Club Residencial Turquesa,Torre 2 Apto 1001,GERZON EDUARDO BELTRAN MURCIA,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+f968a804-d201-4979-a744-4f40c0f570ee,Azul Club Residencial Turquesa,TORRE 1 Apto 1106,Diana Ximena Morales Caicedo,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+fb2cf9aa-6d12-41aa-94ad-67496cbd17e5,Candil,Torre 2 Apto 0401,JAIME EDGARDO MESA  ALVAREZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+eb93e751-276c-4eef-80a0-d6cac184f2a7,Candil,Torre 2 Apto 1104,JENNIFER KATHERIN GUAQUETA SUAREZ,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+87c2aed5-fe71-48fb-838d-03dc5affb023,Candil,Torre 1 Apto 206,CARLOS GIOVANNY LOPEZ RODRIGUEZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+984db7bb-6519-43fd-b374-19540b31a386,Candil,Torre 1 Apto 601,EDITH YOLIMA LIZARAZO ROJAS,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+9dee7495-66c4-4a22-969b-20a16fa5c203,Candil,Torre 1 Apto 907,FABIO ROJAS ALVAREZ,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+2c2bba03-67aa-4322-8598-2b6d888a94f7,Candil,Torre 7 Apto 1201,BRAYAN DAVID OSORIO CRUZ,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+9ec12a41-df96-47a7-8055-44c52541e64e,Candil,Torre 1 Apto 408,YULIETH ALEJANDRA YEPES MORA,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+25043ad2-bc1f-429c-b81b-690ba09f79ea,Candil,Torre 7 Apto 1204,JAVIER GUTIERREZ DIAZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+752675c1-1e33-427a-b5ae-696b5e367c90,Candil,Torre 7 Apto 402,LENIS PATRICIA VILLALOBOS DELGADO,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+7905893f-b39e-40b5-a506-809e38db28b8,Candil,Torre 7 Apto 703,PAULA ALEJANDRA RODRIGUEZ MENDIVELSO,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+54ef0dd8-f35e-4be4-b928-954cd361e2f4,Candil,Torre 7 Apto 1104,SARA CATALINA CONTRERAS RICO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+ac5a07c2-a942-4e75-989f-9f10b06666eb,Candil,Torre 7 Apto 306,CARLOS SEBASTIAN PEÑA MONTAÑO,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+b867362a-9692-46fb-8b5e-e9af72cc2485,Candil,Torre 1 Apto 1106,BRAYAN STIVEN MORENO AYALA,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+9e519a05-0f5b-4a74-9ddf-48ea872262b5,Candil,Torre 2 Apto 0108,JENIFER PAOLA SALAS CONDE,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+b9f6b186-95ff-4da9-b791-fe98ec43ecbf,Candil,Torre 2 Apto 0208,EDITH JOHANNA ESTUPIÑAN FORERO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+88401db2-3332-4ee7-88c7-22e9dabec57d,Cristales,Torre 6 Apto 1003,MARIBEL GUZMAN ORTIZ,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+bb1d0661-f281-4a06-9471-30446b0a75bc,Cristales,Torre 7 Apto 1106,DEWIN DAVID DIAZ CAVADIA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+aeb460aa-bc22-4948-b018-0bda2541fb85,Cristales,Torre 8 Apto 1203,JULIAN SNEITHER GAYON BAYONA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d36c7008-344f-417c-b967-45aa82470147,Cristales,Torre 1 Apto 301,ROCIO ESPINOSA CALVACHE,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+03ea4fea-2a2c-4884-8308-55220cff92f6,Cristales,Torre 1 Apto 1106,FREDY ALBERTO FANDIÑO HURTADO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+941c1772-616d-46d1-b340-572d6e068347,Cristales,Torre 1 Apto 703,CLAUDIA PATRICIA GARZON CORTES,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+b28546e5-d508-45d9-83b4-71837bbd2c5d,Cristales,Torre 1 Apto 306,LADY JOHANA ALVAREZ FORERO,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+57283029-9aea-45a7-a463-8bb07ac1be63,Cristales,Torre 8 Apto 1208,LUZ YANETH QUINTERO ROJAS,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+8acda1c4-174b-4e8d-a046-9f182e8351da,Cristales,Torre 1 Apto 305,CAMILO ANDRES GUZMAN PACHON,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+7dea1f1d-6900-43e4-97d8-b2b61dfd4dc0,Cristales,Torre 1 Apto 1003,GLORIA PATRICIA ORREGO ZAPATA,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+4f9268f0-b68a-44dc-b46d-e52871577b79,Cristales,Torre 8 Apto 905,ENITH MARIA VALENCIA DIAS,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+9b1a7df5-953c-416e-9a86-e63ff5f945da,Cristales,Torre 8 Apto 603,MARIA BIBIANA MORANTE CAICEDO,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+6cc2aa51-dce7-43a9-aa1a-e8324bb6f248,Cristales,Torre 1 Apto 403,MARIA CAMILA RUIZ GONZALEZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+b8d84ca2-fc45-4029-b3ae-3d522574f2d9,Cristales,Torre 6 Apto 0303,KENDY YARID CONTRERAS RODRIGUEZ,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+95e241c3-0634-4244-9311-47df2558b21a,Cristales,Torre 7 Apto 0506,DEBORA KATHERINE OROZCO RAMOS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+e922508d-f0a7-4169-8a54-ae495f2fb1af,Cristales,Torre 7 Apto 0408,ANGIE TATIANA MALAVER ZAMUDIO,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+7dd13814-58ca-4178-9e49-0640bf7ac889,Verdeoliva,Torre 3 Apto 0901,Diana Carolina Castro Zarate,Listo,Listo,0.0,0,0.0,1,Unidad atada
+eabb8e2f-6252-42ab-b3d5-13226a0771f9,Verdeoliva,Torre 4 Apto 0105,ANGELA MARÍA MUÑOZ RIVAS,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+e198f649-ea07-480e-9d89-369fccc411f9,Verdeoliva,Torre 1 Apto 0502,MARCO TULIO LOPEZ LAVERDE,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+a858dd9c-9b38-4db7-a824-6fd75399e073,Verdeoliva,Torre 2 Apto 0203,DANIELA ALEJANDRA CASTAÑEDA LARA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+99de32bc-3ebc-45b5-9404-9356d002b051,Verdeoliva,Torre 1 Apto 0708,Darly Mayersi Pete Embus,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+a6fd42ee-9735-4c2b-a66f-96bc2ec21fb2,Verdeoliva,Torre 4 Apto 1107,MARIA CAMILA VILLAMARIN TINJACA,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+47230c8b-1a9b-4acf-ac0c-97ff0ac5aa14,Verdeoliva,Torre 1 Apto 0905,Manuel Fernando Alba Patiño,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+fd7816bc-87d2-42ad-a427-fab4268cc1e5,Verdeoliva,Torre 2 Apto 0204,Paula Andrea Lara Castañeda,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+faf2bea3-ee39-4788-aa85-5584c246f9a8,Verdeoliva,Torre 3 Apto 0902,MARIA ANGELICA GUARTOS CARVAJAL,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+7561d82b-d61b-4938-ba30-bdd98d20fe8a,Verdeoliva,Torre 4 Apto 0905,SANDRA MILENA GONZALES MEZA,,Listo,,0,,1,Nuevo (no estaba en el corte de comite)
+933345c1-a7bf-4037-b810-aa3d04010435,Verdeoliva,Torre 2 Apto 0506,JEIMY ACERO CASTRO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+d7bb4e10-1d04-4fb6-a2a7-f893799449be,Verdeoliva,Torre 1 Apto 0907,LUIS ALEJANDRO RODRIGUEZ MERCHAN,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+769f8802-9786-4dc0-9db7-027cb840b474,Verdeoliva,Torre 1 Apto 0805,LAURA KATERINE BARRIOS TINJACA,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+7dee7357-9653-40e7-a76a-342810a180d3,Verdeoliva,Torre 1 Apto 0102,LINA VANESSA PEDRAZA GOMEZ,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+ba90f985-4f45-45b0-ade7-6e0549ceb904,Verdeoliva,Torre 1 Apto 0404,ROBINSON ZAPATA SALINAS,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+9f3e3cee-b280-4033-af8e-df6111b2aa0b,Verdeoliva,Torre 2 Apto 0507,,Listo,Listo,0.0,0,0.0,1,Unidad atada
+17d06c08-dc22-4a06-8bc0-0ff5b2b05171,Verdeoliva,Torre 4 Apto 0907,Erika Yulieth Garzón González,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+96e035eb-5c1e-40d9-8dc0-23c84d5330c2,Verdeoliva,Torre 5 Apto 0601,Sandy Juliet Diaz Ruiz,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+13300203-c57c-48da-8051-28bf6979e78f,Verdeoliva,Torre 2 Apto 0502,Margie Aileen Vargas Iglesias,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+b09164af-84c0-450a-99b0-38e48cf10993,Verdeoliva,Torre 6 Apto 0107,WALTER STEVEN ACERO TORRES,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+536699a2-b58c-46e3-b4f7-464e57f35e99,Verdeoliva,Torre 4 Apto 1005,Javier Leandro Fonseca Orjuela,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+18eff630-2008-4a52-85ea-4895903c8073,Verdeoliva,Torre 3 Apto 1001,SANDRA CATALINA SUAREZ CASTILLO,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+d4d37f9b-a408-48dd-bff6-491cac725dd4,Verdeoliva,Torre 1 Apto 0703,ANGELA PATRICIA CUBILLOS CASTILLO,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+d0b93aad-1bd0-40c1-baab-533b1915cc1f,Verdeoliva,Torre 2 Apto 1001,STEFANY JULIETH ANGEL AGUIRRE,Pdt un Radicado,Listo,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Listo; Unidad atada
+aa705eae-6491-4d8c-9f36-5c400abe8a8e,Verdeoliva,Torre 1 Apto 0702,Nidia Marcela Espitia Jimenez,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+47834e2e-4751-482b-a72d-694aff66e072,Verdeoliva,Torre 3 Apto 0501,YEIMY CAROLINA RODRIGUEZ VEGA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+44cf84d6-409d-4417-97ae-80dc26d7119c,Verdeoliva,Torre 1 Apto 0103,Jose Miguel Gómez,Listo,Listo,0.0,0,0.0,1,Unidad atada
+2de4b772-37cb-4be3-b834-84b71de81bb4,Verdeoliva,Torre 2 Apto 0804,Angela Patricia Joven Obregoso,Listo,Listo,0.0,0,0.0,1,Unidad atada
+a0496cf3-e7e6-446e-bc91-853a11775128,Verdeoliva,Torre 2 Apto 1002,Michael Steven Sánchez Rodríguez,Radicados,Listo,0.0,0,0.0,1,Categoria: Radicados -> Listo; Unidad atada
+ebb1bfd8-e826-4bc4-a592-88cc07b51afc,Verdeoliva,Torre 1 Apto 1302,Frank Anderson Sarmiento Bermudez,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+6b372289-e516-4351-a929-9e9435adc3a7,Verdeoliva,Torre 4 Apto 1206,EDWARDS LEANDRO FONTECHO LOPEZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+1261a518-06e8-449e-89fd-a3342d2d3d03,Verdeoliva,Torre 2 Apto 0604,Johanna Julieth Suarez Poveda,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+675eb5f1-2a5a-4f51-805b-a81488b28b85,Verdeoliva,Torre 4 Apto 0402,Yury Maritza Rubio Garcia,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+1a6d3cb2-3d01-488f-9151-ad66f6260b16,Verdeoliva,Torre 4 Apto 0407,GERALDINE PAOLA GOMEZ CUELLAR,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+bbaf763c-7ee7-4571-bdb1-c47692252366,Verdeoliva,Torre 1 Apto 0901,FREDIS VILLALOBOS MIRANDA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+ca875464-4121-4a9e-88dc-c656be18985b,Verdeoliva,Torre 1 Apto 0807,DIANA PAOLA MARTINEZ SOTO,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+177ac5ac-8b2d-4460-85f2-c6c764c60701,Verdeoliva,Torre 4 Apto 0306,YEISON ALEXANDER SIERRA CELIS,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+91dfb474-8d52-4942-899c-d8d6af320236,Verdeoliva,Torre 3 Apto 0505,Maria Cecilia Upegui Torres,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+c53a92a2-25d9-4190-a60e-dd16b119b467,Verdeoliva,Torre 2 Apto 1007,LILIANA RAMIREZ CARMONA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+f38299a4-ed46-4217-8ddc-e415ba0dca89,Verdeoliva,Torre 1 Apto 1105,Luisa Maria Fernanda Villamil Rodriguez,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+9101c7bf-69fc-4ca3-b146-e9c28965a8b9,Verdeoliva,Torre 4 Apto 0803,Neider Jesus Bolivar Mendoza,Listo,Listo,0.0,0,0.0,1,Unidad atada
+938e3b1e-6fe9-4090-ac72-f7f2f7fc011b,Verdeoliva,Torre 3 Apto 1305,CESAR AUGUSTO CUBIDES FLOREZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+bce5b738-fa82-4815-84a9-feb0779ead5c,Verdeoliva,Torre 1 Apto 0104,jeison Santiago Parra rubio,Listo,Listo,0.0,0,0.0,1,Unidad atada
+147c1c42-5d0c-4f65-bfa3-42f1064d8461,Verdeoliva,Torre 2 Apto 0906,Luis  Alfonso Ardila Martinez,Listo,Listo,0.0,0,0.0,1,Unidad atada
+5fde039a-e236-4620-942c-4c1f589411e8,Verdeoliva,Torre 2 Apto 1106,Jose David Ladino Muñoz,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+01eb3401-f6d3-4b8b-b71c-55416c0e5120,Verdeoliva,Torre 6 Apto 1205,Julian Enrique Pacheco Torres,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+531b6aee-3318-4572-b5a9-5e12a14dc6a2,Verdeoliva,Torre 6 Apto 0104,JULIANA STEFANNY RUBIANO MOLANO,Listo,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Sin Radicados
+3aad4537-38f1-48a2-bbfd-81bfaf2073e5,Verdeoliva,Torre 4 Apto 0207,JOHNNY  ALBER PIRACOCA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+aef0643d-b0c2-4238-9da9-a735430b9a08,Verdeoliva,Torre 4 Apto 0602,KELLY JOHANNA FUQUEN PIRANEQUE,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+3d39d96f-44ae-41c4-86ba-aa08ede2418d,Verdeoliva,Torre 2 Apto 0808,PEDRO LUIS CASALLAS GONZALEZ,Listo,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Sin Radicados
+1a488d29-aa50-4a7e-9569-df48a88f2c03,Verdeoliva,Torre 3 Apto 0604,MARIO ANDRES CAÑARTE VELASQUEZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+0fd820a3-2e63-4812-8842-2d4cfcea7a9d,Verdeoliva,Torre 2 Apto 0401,ALEJANDRA TOLEDO GARCIA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+63e7f665-8708-4e9e-b117-39a2e967b4fb,Verdeoliva,Torre 5 Apto 0105,CRISTIAN MATEO BARACALDO JIMENEZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+95169aea-dac4-44fe-a758-6ecd525316c4,Verdeoliva,Torre 1 Apto 0407,MARIA FERNANDA MARTINEZ GAITAN,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d1924ff6-07ab-4e38-926e-84371a33ebaa,Verdeoliva,Torre 4 Apto 0707,YUDY MILENA RIVERA VARON,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+1cdaca5c-2ebe-41fb-b05d-8c437ba462e1,Verdeoliva,Torre 7 Apto 302,OSCAR LEONARDO MALLAMA SEPULVEDA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+3345d225-14ce-45e4-a57f-ac02073d94ef,Verdeoliva,Torre 1 Apto 0201,ANGUIE KATHERINE SANTIBAÑEZ BLANDON,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d6b16d51-9c37-491c-8d37-cbd3443075f8,Verdeoliva,Torre 3 Apto 0801,GINA MARCELA RAMIREZ QUIROZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+eea9ef04-277e-41f7-ae30-5642eff2b380,Verdepino,Torre 4 Apto 0508,Valentina Zapata Herrera,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+03f87a1b-a528-4e96-b1fd-8ea1d49b1695,Verdepino,Torre 6 Apto 0908,NATALIA OCHOA BELTRAN,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+7d3ca3cd-d412-4fb5-a257-a822e76d0982,Verdepino,Torre 7 Apto 1002,VALENTINA MELO OROZCO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+e16dec1a-5978-45fc-a73f-d79c9b67be9a,Verdepino,Torre 4 Apto 0507,Leidy Tatiana Boada Soto,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+29235bd2-15ec-4c94-a401-e80ddaf09968,Verdepino,Torre 6 Apto 0301,Lina Maria Aponte Cubillos,Listo,Listo,0.0,0,0.0,1,Unidad atada
+e755939d-4954-48cf-ba3c-ed3c6b821ba8,Verdepino,Torre 7 Apto 1201,Juan Esteban Zapata Dueñas,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+ac4b9f10-4ae2-49ed-b7fb-f41e807fc3f7,Verdepino,Torre 1 Apto 507,SANDRA VIVIANA MENDOZA BOHORQUEZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+fc43c89c-9187-4234-beb5-f8f38866b59b,Verdepino,Torre 7 Apto 101,JUAN PABLO TRUJILLO VALDES,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d330d6cc-d51e-4c67-a127-bf8a394f7d65,Verdepino,Torre 8 Apto 401,Ivan Rene Morelo diaz,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+ad8a5be0-2889-4e30-87c8-c907b91ab96d,Verdepino,Torre 1 Apto 1207,ELIZABETH DEL CARMEN MORA BALLESTEROS,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+5b2674ad-79f9-44f7-9881-e279c456ac17,Verdepino,Torre 8 Apto 306,JOHN ALEXANDER SANCHEZ SANCHEZ,,Listo,,0,,0,Nuevo (no estaba en el corte de comite)
+fe4867d1-1711-4398-b0db-998c8fd8815b,Verdepino,Torre 5 Apto 301,JHON JAIRO CALDERON ROCHA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+182f3477-88ed-49fd-9197-09e1e45c8fcf,Verdepino,Torre 5 Apto 605,ALDEMAR RUIZ FORERO,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+2c2759d4-9e51-425b-976d-158d3983ebda,Verdepino,Torre 5 Apto 907,SANDRA YOVANNA CUESTA CIFUENTES,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+61ad491a-4f9e-4581-af3f-4bda7eb886b0,Verdepino,Torre 8 Apto 1304,Karen Daniela Moreno Tellez,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+32e8d87e-b286-4e4e-9ef4-62c3462c1bee,Verdepino,Torre 8 Apto 408,SEBASTIAN GONZALEZ MORENO,Pdt un Radicado,Listo,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Listo
+22d65e7b-32b4-436c-917c-990d3da54839,Verdepino,Torre 4 Apto 0102,JUAN ANDRES PALACIOS SANTAMARIA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+bc0d81c2-4569-400c-9fc8-9dcfefebc505,Verdepino,Torre 7 Apto 703,LISBETH CECILIA SUAREZ PRIETO,Listo,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Sin Radicados
+102e9f9d-e609-4880-a381-bd3243a96e09,Verdepino,Torre 5 Apto 801,JOSE DANIEL SIMANCA MERCADO,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+70d03d2a-0d1c-4df2-96ef-c7505146094d,Verdepino,Torre 1 Apto 1203,Ana Maria Bustos Duero,Listo,Listo,0.0,0,0.0,1,Unidad atada
+d47ced16-0830-4122-83ad-16d5d47643a2,Verdepino,Torre 7 Apto 206,LINA FERNANDA CARRANZA BOHORQUEZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+69e4922b-4fac-4313-aa95-43c3d351c225,Verdepino,Torre 7 Apto 506,Udert  Licet Meneses Galindo,Listo,Listo,0.0,0,0.0,1,Unidad atada
+3e4644d1-559b-4e9f-8e5b-6637c654896d,Verdepino,Torre 1 Apto 504,NELSON LEONARDO MARIN LEON,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+b095bf40-099c-4488-ad55-98ea93fc4c4f,Verdepino,Torre 5 Apto 1306,ZOULEY XIMENA SOTELO GONZALEZ,Radicados,Listo,0.0,0,0.0,1,Categoria: Radicados -> Listo; Unidad atada
+552f94ca-6b76-419a-9350-99a872fa45b0,Verdepino,Torre 7 Apto 203,INGRID TATIANA MURILLO BEJARANO,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+ee255d45-1540-46c3-ad43-a3fb6ddfea67,Verdepino,Torre 4 Apto 0302,BELISARIO MANUEL RODRIGUEZ ARREGOSES,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+b5072c94-3897-483d-875f-a95ba8ed88db,Verdepino,Torre 8 Apto 1003,LIZETH JOHANNA HERRAN RODRIGUEZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+d10b67a7-deb6-4d58-b206-d98724f7aac4,Verdepino,Torre 3 Apto 0207,Brenda Maria Sánchez Peña,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+2625311a-db68-4b53-a06c-fed2078871d5,Verdepino,Torre 7 Apto 402,Yeimy  Yohana Ortega Herrera,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+ddae6e3a-bf16-4b4a-9831-02555d16a325,Verdepino,Torre 1 Apto 905,Rudby Nathaly Ariza Aguilar,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+ee99b10e-baf2-419b-a752-06c2658274bc,Verdepino,Torre 6 Apto 1204,JENNYFER LORENA DUARTE PULIDO,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+de96396a-fe5c-4c55-81a0-2beec437d7fc,Verdepino,Torre 1 Apto 405,ANA MILENA RODRIGUEZ RODRIGUEZ,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+5d910ec0-50ac-42fc-87ec-389a8cc50e11,Verdepino,Torre 2 Apto 1002,Danna Alejandra Cerere Roa,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+360ca77e-6312-4c4a-b7a1-44df6cd3a6e2,Verdepino,Torre 7 Apto 1006,ALBA LISETH ALVARADO BERMUDEZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+e9376f8e-c6df-4967-a309-4c2840bc1d63,Verdepino,Torre 4 Apto 0702,Andy  Garcia Yepez,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+14b212c8-ab42-4150-bdd3-5fed53980a2a,Verdepino,Torre 5 Apto 501,Johanna Katherine Porras Malambo,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+f0f8f93b-42f1-4421-8ab5-847d0710b4f4,Verdepino,Torre 2 Apto 1101,Gina Lizeth Gonzalez Carpeta,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+ce82aabe-bcde-4de4-bff9-91cae9fa2645,Verdepino,Torre 6 Apto 1003,Maria Del Rosario Ariza Norton,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+9a5abad3-a2bf-46a6-9ba9-b8dffa57a097,Verdepino,Torre 5 Apto 1305,GABRIELA CANTILLO CASTILLO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+cb4534bb-e368-4f4a-bfb5-c10825fdd44d,Verdepino,Torre 3 Apto 1306,GUIOVANNY ESTEBAN LIZARASO BUSTOS,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+98f92a23-68c3-48a8-8031-e7efa19fad39,Verdepino,Torre 8 Apto 204,JOHAN SEBASTIAN RODRIGUEZ CAÑON,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+2a312531-7431-4781-b72a-e84e77ebafc1,Verdepino,Torre 6 Apto 0902,AIDA LIZBETH GUTIERREZ AMAYA,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+663da893-1cc7-4755-b4c0-ff07981e2924,Verdepino,Torre 2 Apto 604,FABIAN RICARDO BETANCOURT VARGAS,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+602d8e04-bb15-40d7-94ce-20ba672cb4f2,Verdepino,Torre 5 Apto 906,JOSE DANIEL ORTIZ CASTIBLANCO,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+a78b651b-14ee-4fd3-9446-5e360b723344,Verdepino,Torre 3 Apto 0708,GEOVANNYS DE JESUS MARTINEZ CARDENAS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d09dc425-d689-4ff1-9862-b921d805f0d7,Verdepino,Torre 5 Apto 1007,FREDY ANDRES PACHON MUÑOZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+cb569da9-b138-45c8-87ec-e96909931822,Verdepino,Torre 3 Apto 0205,CHRISTIAN DAVID MELO GAITAN,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+2e4ff1fd-e85d-4330-8ebd-bb2c1e399544,Verdepino,Torre 6 Apto 0405,JOSIE ESTEBAN URREA RODRIGUEZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+7e4500b5-b738-4583-8256-ee4ab686eaca,Verdepino,Torre 6 Apto 1207,ANA ESPERANZA MONSALVE MEJIA,Sin Radicados,Listo,0.0,0,0.0,0,Categoria: Sin Radicados -> Listo
+e215547b-a09c-4698-8ff5-0b4d666e9d24,Verdevivo,Torre 3 Apto 1308,BRAYAN STEVEN VERA MORENO,Sin Radicados,Pdt un Radicado,0.0,0,0.0,1,Categoria: Sin Radicados -> Pdt un Radicado; Unidad atada
+f7747ea4-be6c-4d5c-a1c1-52b29b026389,Verdevivo,Torre 3 Apto 1003,Diana  Carolina Castillo Otalora,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+f5307a50-0910-486a-903d-942adb934b1b,Verdevivo,Torre 5 Apto 0102,Liliana Paola Diaz Gonzalez,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+70b4e20f-f8ee-4969-9de7-d67acc7b298e,Verdevivo,Torre 3 Apto 1207,Luis Albeiro Albarracin Ravelo,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+6c7fb991-8a2e-4687-97a7-e8e3befc213e,Verdevivo,Torre 5 Apto 1301,Angie Sofia Sabad Montenegro,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+a547dd4f-b1b0-459b-829a-f0ec51fc85cf,Verdevivo,Torre 4 Apto 0905,JHITSY MUÑOZ VILLAR,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+12acc5bf-9a78-4f7f-a919-3aeeab73a8f5,Verdevivo,Torre 6 Apto 0605,BLANCA HERMINDA RAMOS,Listo,Listo,0.0,0,0.0,1,Unidad atada
+7a6775ff-7d64-485d-93a1-6d40c85ccede,Verdevivo,Torre 4 Apto 0108,CLAUDIA MARISOL OSORIO PARADA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+6a545c05-7e82-4a14-b419-3ef8239266dc,Verdevivo,Torre 4 Apto 0303,JULIO CESAR PINEDO ORELLANO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+128d759f-df74-4cb4-90b5-6c7af3a1add3,Verdevivo,Torre 4 Apto 0305,NANCY LORENA NIÑO VARGAS,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+966058ce-f508-4f3f-88cf-7706711912ea,Verdevivo,Torre 4 Apto 0501,LUZ ELENA MADERO RICO,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+6e88b62d-6dc7-4fd2-960f-7f9b89d376eb,Verdevivo,Torre 4 Apto 1008,MANUEL ENRIQUE GUACANEME CORONADO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+4a4b543b-4a6c-43a2-b780-80ee6a48fcfa,Verdevivo,Torre 4 Apto 0504,FREDY ESTEBAN ORTIZ CRUZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+5ed65074-da7f-4056-8eec-897f390de2d5,Verdevivo,Torre 4 Apto 0706,MARTA ISABEL BEJARANO BARACALDO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+37b4cd5a-a9f2-43e8-99dd-a45bf3a8a723,Verdevivo,Torre 4 Apto 0405,Luz Aide Rodriguez Escobar,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+4d2d77cf-50f8-4f6e-83fc-c2580edafb48,Verdevivo,Torre 4 Apto 0205,ASCENETH ALVARADO VACA,Listo,Pdt un Radicado,0.0,1,0.0,0,Se escrituro; Categoria: Listo -> Pdt un Radicado
+a25c257a-cdf9-42ac-8a75-d845e9e39745,Verdevivo,Torre 4 Apto 0505,EDWIN CAMILO QUINTERO GUTIERREZ,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+b33f2f52-a1ce-48fc-ae79-eacda0be021c,Verdevivo,Torre 3 Apto 0104,MARIA ALEXANDRA RODRIGUEZ RUBIO,Pdt un Radicado,Sin Radicados,0.0,1,0.0,0,Se escrituro; Categoria: Pdt un Radicado -> Sin Radicados
+569f8295-0acb-4d17-a916-eede8e9436c4,Verdevivo,Torre 3 Apto 1307,JOHN FREDY RENDON LEIVA,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+1f97f155-9939-4d49-a15e-f38bca0d61d7,Verdevivo,Torre 5 Apto 0405,Yennifer Paola Cardenas Escobar,Listo,Listo,0.0,0,0.0,1,Unidad atada
+b0c03f8f-72fd-4de8-b4d1-0580d5966a49,Verdevivo,Torre 4 Apto 0403,DORIS ALCIRA GUTIERREZ DIAZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+45417373-537f-422b-941e-15bce8dd51ac,Verdevivo,Torre 3 Apto 0302,DIANA FERNANDA LAMUS MUÑOZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+0e233b0f-8fa0-4b72-9569-3f7d598ec066,Verdevivo,Torre 4 Apto 1103,Juan Pablo Ortiz Aleman,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+d940e740-5b99-4c41-8062-97cc79d6bda5,Verdevivo,Torre 3 Apto 0508,ANA LIBIA URBANO BAUTISTA,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+8f45cea1-6b5d-4112-b6d6-a7bb27e1ac12,Verdevivo,Torre 4 Apto 1204,PAUL BRYAN MORALES HERRERA,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+90593fc5-a335-4ce4-a80c-c647fd970487,Verdevivo,Torre 3 Apto 1206,Maria Fernanda Puentes Rios,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+2f645b66-69b4-4087-9276-d8ef404b07e3,Verdevivo,Torre 3 Apto 1105,MICHAEL FERNEY SANDOVAL SANDOVAL,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+04e739e2-5263-4165-8728-ddc94ba2e79d,Verdevivo,Torre 3 Apto 1101,MARIA DIANIRA CAMARGO MONROY,Listo,Listo,0.0,0,0.0,1,Unidad atada
+81dc74fe-3903-469a-854b-00ebb6a57871,Verdevivo,Torre 4 Apto 1202,ALVARO GOMEZ DOMINGUEZ,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+c2132962-d81f-4551-9afb-0200475a138d,Verdevivo,Torre 6 Apto 0508,CATHERIN MUÑOZ PORRAS,Listo,Listo,0.0,0,0.0,1,Unidad atada
+cbb7a672-55e5-4135-8a46-07cec41240a6,Verdevivo,Torre 4 Apto 0202,DAVID FELIPE CRUZ GAMBA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+38ee2cac-5796-402e-a692-0e15b3520208,Verdevivo,Torre 7 Apto 1208,MARIA ANGELICA FRANCIS RIVAS,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+b8c6d454-9fac-45df-88c1-0e16a7c3381b,Verdevivo,Torre 4 Apto 0606,Deisi Dayan Urrego Castro,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+0167c326-2708-40f3-b833-145c718c32c4,Verdevivo,Torre 4 Apto 0507,LUZ STELLA ABRIL,Listo,Listo,0.0,0,0.0,1,Unidad atada
+6195ebad-ce36-448e-b26a-1d1d7103c137,Verdevivo,Torre 3 Apto 0301,MARTHA ISABEL PATIÑO RAMIREZ,Listo,Listo,0.0,0,0.0,1,Unidad atada
+7bd9779d-4d53-4bc4-9810-258963a441ac,Verdevivo,Torre 6 Apto 0107,JHON HENRY VALENCIA NUÑEZ,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+ab9d85bf-7631-4e32-819e-2700f6f1d2af,Verdevivo,Torre 6 Apto 0907,PABLO ALFONSO CONTRERAS CADENA,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+5c55ccd8-f170-45a5-b870-2d3b6dc62b55,Verdevivo,Torre 3 Apto 1007,MELIDA ESPERANZA MENDOZA COTRERAS,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+26f7734c-b9cf-465e-9163-39914aaaeb5b,Verdevivo,Torre 5 Apto 0106,JUAN CAMILO CEDIEL FARFAN,Radicados,Listo,0.0,0,0.0,0,Categoria: Radicados -> Listo
+1c8e5e01-7a75-452f-8855-3db51d4edc84,Verdevivo,Torre 6 Apto 0101,JHONATAN MAURICIO FLOREZ FORERO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+2f839819-a31d-4a3c-8cd3-442bcb5e2f52,Verdevivo,Torre 5 Apto 0606,Rudolfhs Cristopher Reita Pulido,Listo,Listo,0.0,0,0.0,1,Unidad atada
+dd355153-a333-49c1-a5b0-52c283dd0e59,Verdevivo,Torre 5 Apto 0306,ELKIN DUVAN MARIN LUQUE,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+80f40277-09ef-48f0-b534-5303731db117,Verdevivo,Torre 3 Apto 0704,MARLON STIVEN AMAYA BUITRAGO,Radicados,Listo,0.0,0,0.0,1,Categoria: Radicados -> Listo; Unidad atada
+48f353aa-824f-485b-b69e-5a1cd9c3ad11,Verdevivo,Torre 5 Apto 1308,YUDITH NAYARLI YAMA BENAVIDES,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+743e380e-1196-4e44-9627-7768fcb979c7,Verdevivo,Torre 6 Apto 0306,LUZ MARINA RODRIGUEZ,Sin Radicados,Pdt un Radicado,0.0,0,0.0,1,Categoria: Sin Radicados -> Pdt un Radicado; Unidad atada
+365e0228-439a-46cc-ba34-791372ad4ef6,Verdevivo,Torre 3 Apto 0606,KELLY JOHANNA ROBLES DELGADILLO,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+27c8e6d1-8c71-4ca1-934e-816f0f48a058,Verdevivo,Torre 5 Apto 0808,MARIA JOSE GAMEZ DUARTE,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+2e0e1cfe-e70f-493f-8929-834204c880d2,Verdevivo,Torre 6 Apto 0804,CLAUDIA MILENA OSORIO CARDONA,Listo,Listo,0.0,0,0.0,1,Unidad atada
+75ad1ef7-dd20-4557-984f-949744c353a6,Verdevivo,Torre 5 Apto 0805,Alba Genith Carrillo Carrillo,Radicados,Radicados,0.0,0,0.0,1,Unidad atada
+ffc649b3-6e90-4939-b35c-9660059e1891,Verdevivo,Torre 6 Apto 1207,SANDRA PAOLA PULIDO CORCHUELO,Sin Radicados,Pdt un Radicado,0.0,0,0.0,0,Categoria: Sin Radicados -> Pdt un Radicado
+e9d51bb9-1eed-40bb-a2da-b64d96b4ef39,Verdevivo,Torre 3 Apto 0401,IVAN DANIEL VELOZA MICAN,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+fc167e63-cacc-4aab-bf96-cf555c2faeff,Verdevivo,Torre 5 Apto 1005,Yulissa Alvarez Hurtado,Listo,Listo,0.0,0,0.0,1,Unidad atada
+ead9a812-2cca-4e5f-8c97-d5a50d0c3e76,Verdevivo,Torre 5 Apto 0402,ALVARO DUVAN RUIZ SANCHEZ,Pdt un Radicado,Radicados,0.0,0,0.0,1,Categoria: Pdt un Radicado -> Radicados; Unidad atada
+449d6f63-9d4a-4ba3-80d0-dbab4ab26004,Verdevivo,Torre 3 Apto 0907,LAURA VALENTINA PINTO ROJAS,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+3fa2041f-2562-4a34-bbec-e17c444e4395,Verdevivo,Torre 6 Apto 1006,JUAN DIEGO PARRA PULIDO,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+bc0d1d48-4f56-4cb5-90dd-e86164442276,Verdevivo,Torre 4 Apto 1106,MILER ESTEBAN NAVAS CARREÑO,Listo,Listo,0.0,0,0.0,1,Unidad atada
+8c9a72b2-a44f-4d34-888a-ffa96b96ec3f,Verdevivo,Torre 4 Apto 0401,JOSE DAVID MARTINEZ GONZALEZ,Pdt un Radicado,Radicados,0.0,0,0.0,0,Categoria: Pdt un Radicado -> Radicados
+221f23fd-7a67-4acc-a853-77ff6ff40cca,Verdevivo,Torre 4 Apto 0705,NORBEY DE JESUS URIBE SANCHEZ,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+258cd76b-922f-4095-af8f-7c77a501c6f6,Verdevivo,Torre 4 Apto 1303,CRISTIAN CAMILO SINISTERRA SIFUENTES,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+c4efd008-6e32-4edd-ac87-b15b9b2fee0a,Verdevivo,Torre 4 Apto 1105,LUZ STEPHANIA MONTAÑEZ VALIENTE,Pdt un Radicado,Pdt un Radicado,0.0,0,0.0,1,Unidad atada
+3cfa52ad-0470-41d1-9ba0-9ae476afc72c,Verdevivo,Torre 3 Apto 1107,SEBASTIAN ALEJANDRO RUBIO MARTINEZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+58b38f7c-2355-45eb-a0c9-c2ff1158b054,Verdevivo,Torre 3 Apto 0106,MARLON JUNIOR MORENO ORTIZ,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada
+e1f7bb27-45e7-4cdf-ba7b-fa958b6ec5de,Verdevivo,Torre 3 Apto 0802,JOSE LUIS CAINA LATORRE,Sin Radicados,Sin Radicados,0.0,0,0.0,1,Unidad atada

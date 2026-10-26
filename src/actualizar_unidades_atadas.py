@@ -6,10 +6,12 @@ cuentas (data/raw/estado_cuentas, cargado desde Drive por cargue_estado_cuentas_
 se compara la identificacion registrada en cada lado para esa MISMA unidad.
 
     0 = la identificacion coincide, o no hay con que comparar todavia (el proyecto no esta
-        cubierto aun en estado_cuentas, o el cliente no tiene identificacion registrada) --
-        no se marca problema sin evidencia.
-    1 = SI hay dato de estado_cuentas para esa unidad, pero la identificacion no coincide --
-        se interpreta como que la unidad esta "atada" (para revisar).
+        cubierto aun en estado_cuentas, o el cliente no tiene identificacion registrada), o la
+        unidad ya esta escriturada -- no se marca problema sin evidencia, ni sobre una unidad
+        que ya se escrituro (ver comentario en run()).
+    1 = SI hay dato de estado_cuentas para esa unidad, la identificacion no coincide, Y la
+        unidad todavia NO esta escriturada -- se interpreta como que la unidad esta "atada"
+        (para revisar).
 
 Se cruza por proyecto+modulo (no por identificacion): primero se ubica la unidad, despues
 se valida si las identificaciones coinciden.
@@ -53,19 +55,26 @@ def run():
     hay_dato_estado_cuenta = df['_identificacion_ec'].notna()
     tiene_identificacion_propia = df['numero_identificacion'].notna()
     coincide = df['_identificacion_propia'] == df['_identificacion_ec']
+    # Solo se analiza esto para apartamentos NO escriturados -- una unidad ya escriturada no
+    # se marca como "atada" aunque la identificacion no coincida (ej. el cliente ya vendio o
+    # cedio la unidad despues de escriturar, o es un dato viejo/desactualizado en el estado de
+    # cuentas), porque a esas alturas ya no hay nada que gestionar sobre esa unidad.
+    no_escriturada = df['escriturado'] == 0
 
-    # 1 solo cuando de verdad hay algo con que comparar en ambos lados y no coincide.
+    # 1 solo cuando de verdad hay algo con que comparar en ambos lados, no coincide, y la
+    # unidad sigue sin escriturar.
     df['unidades_atadas'] = (
-        hay_dato_estado_cuenta & tiene_identificacion_propia & (~coincide)
+        hay_dato_estado_cuenta & tiene_identificacion_propia & (~coincide) & no_escriturada
     ).astype(int)
 
     df = df.drop(columns=['_clave', '_identificacion_ec', '_identificacion_propia'])
     df.to_csv(ruta_csv, index=False, encoding='utf-8-sig')
 
     n_atadas = int(df['unidades_atadas'].sum())
-    n_evaluadas = int((hay_dato_estado_cuenta & tiene_identificacion_propia).sum())
+    n_evaluadas = int((hay_dato_estado_cuenta & tiene_identificacion_propia & no_escriturada).sum())
     print(f"'unidades_atadas' actualizado en {ruta_csv}: {n_atadas} unidades atadas de "
-          f"{n_evaluadas} evaluadas (con dato en estado_cuentas), de {len(df)} clientes totales.")
+          f"{n_evaluadas} evaluadas (con dato en estado_cuentas, no escrituradas), "
+          f"de {len(df)} clientes totales.")
     return ruta_csv
 
 

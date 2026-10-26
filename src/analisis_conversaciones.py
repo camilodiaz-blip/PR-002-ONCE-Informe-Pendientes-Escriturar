@@ -88,9 +88,10 @@ REGLAS_CLASIFICACION = [
      r'habeas ?data|autoriza tratamiento'),
     ('CARGUE_INTEGRACION', 'SISTEMA', 'GESTION_SISTEMA', None,
      r'lahaus|automatizacion|lead processed|sala de venta qr'),
-    # --- Reglas adicionales a las del prompt original: en esta base (cartera "Sin Cartas",
-    # post-venta) estos 3 patrones concentran ~43% de lo que quedaba SIN_CLASIFICAR y son
-    # claramente sistematicos (no notas libres), asi que se agregan en vez de dejarlos fuera. ---
+    # --- Reglas adicionales a las del prompt original: en esta base (cartera "Sin Radicados"
+    # / "Pdt un Radicado", post-venta) estos 3 patrones concentran ~43% de lo que quedaba
+    # SIN_CLASIFICAR y son claramente sistematicos (no notas libres), asi que se agregan en
+    # vez de dejarlos fuera. ---
     ('DOCUMENTO_CARGADO', 'SISTEMA', 'GESTION_SISTEMA', None,
      r'se cargo el archivo'),
     ('PREAVISO_MORA', 'SISTEMA', 'GESTION_SISTEMA', None,

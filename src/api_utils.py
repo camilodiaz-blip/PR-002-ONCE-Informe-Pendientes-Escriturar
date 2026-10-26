@@ -42,6 +42,10 @@ RUTA_RAW_USUARIOS = os.path.join(BASE_DIR, 'data', 'raw', 'usuarios')
 RUTA_ANALYTICS = os.path.join(BASE_DIR, 'data', 'analytics')
 RUTA_HISTORICO = os.path.join(BASE_DIR, 'data', 'historico')
 RUTA_REPORTES = os.path.join(BASE_DIR, 'data', 'reportes')
+# Listas de negocio mantenidas a mano (no vienen de ninguna API), ej. clientes_desistidos.csv.
+RUTA_REFERENCIA = os.path.join(BASE_DIR, 'data', 'referencia')
+# CSV pensados para adjuntar directamente a una IA (Claude, Gemini, etc.), ver generar_detalle_ia.py.
+RUTA_DETALLE_IA = os.path.join(BASE_DIR, 'data', 'detalleIA')
 
 _thread_local = threading.local()
 

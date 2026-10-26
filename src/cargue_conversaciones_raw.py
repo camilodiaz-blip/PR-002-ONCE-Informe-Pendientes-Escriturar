@@ -9,10 +9,17 @@ from api_utils import (
     ANIO_OBJETIVO_ESCRITURA, RUTA_ANALYTICS, RUTA_RAW_CONVERSACIONES,
 )
 
-# Reutiliza la clasificacion de tramites del dashboard (Listos / En Gestión / Sin Cartas), para
-# no duplicar esa logica de negocio aca. 6_dashboard.py empieza con un digito, por eso se
-# importa con importlib (igual que en main.py).
+# Reutiliza la clasificacion de tramites del dashboard (matriz Credito x Subsidio: Sin
+# Radicados / Pdt un Radicado / Radicados / Listo, ver MATRIZ_CATEGORIA), para no duplicar
+# esa logica de negocio aca. 6_dashboard.py empieza con un digito, por eso se importa con
+# importlib (igual que en main.py).
 _dashboard = importlib.import_module("6_dashboard")
+
+# Clientes en "Sin Radicados" (no tienen ni una sola radicacion de lo que necesitan) o "Pdt
+# un Radicado" (les falta radicar uno de los dos tramites) -- ver _clasificar_tramites en
+# 6_dashboard.py. Se dejan afuera "Radicados" y "Listo": ya tienen todo lo que pueden radicar
+# radicado, asi que el seguimiento de conversaciones ya no aporta para destrabar su avance.
+CATEGORIAS_CON_SEGUIMIENTO = ['Sin Radicados', 'Pdt un Radicado']
 
 #Cargue de conversaciones de estos clientes
 
@@ -45,35 +52,35 @@ def prospects_events(proyecto_id, prospect_id):
         return pd.DataFrame()
 
 
-#Cargue de clientes con valores detallados
-df = pd.read_csv(os.path.join(RUTA_ANALYTICS, "clientes_detallado.csv"))
-no_escriturados = df[
-    (df['escriturado'] == 0) &
-    (df['escritura_programada_anio'] == ANIO_OBJETIVO_ESCRITURA)
-].copy()
+def run():
+    #Cargue de clientes con valores detallados
+    df = pd.read_csv(os.path.join(RUTA_ANALYTICS, "clientes_detallado.csv"))
+    no_escriturados = df[
+        (df['escriturado'] == 0) &
+        (df['escritura_programada_anio'] == ANIO_OBJETIVO_ESCRITURA)
+    ].copy()
 
-# Solo los clientes "Sin Cartas": los que no tienen ni una sola radicacion (ni de subsidio ni
-# de credito) de lo que realmente necesitan -- ver _clasificar_tramites en 6_dashboard.py.
-no_escriturados['categoria'] = no_escriturados.apply(
-    lambda r: _dashboard._clasificar_tramites(r)[0], axis=1
-)
-df_filtrado = no_escriturados[no_escriturados['categoria'] == 'Sin Cartas']
+    no_escriturados['categoria'] = no_escriturados.apply(
+        lambda r: _dashboard._clasificar_tramites(r)[0], axis=1
+    )
+    df_filtrado = no_escriturados[no_escriturados['categoria'].isin(CATEGORIAS_CON_SEGUIMIENTO)]
+
+    # Generacion de listado de eventos (en paralelo)
+    items = [(prospect['id_proyecto'], prospect['id_prospecto']) for _, prospect in df_filtrado.iterrows()]
+    df_events_list = fetch_in_parallel(items, prospects_events, max_workers=MAX_WORKERS, label="Cliente")
+    print("cargue de eventos ok")
+
+    if df_events_list:
+        df_events = pd.concat(df_events_list, ignore_index=True)
+    else:
+        df_events = pd.DataFrame()
+
+    ## Guardar Archivos tramites
+    df_events['raw_fecha_cargue'] = datetime.now().strftime('%Y%m%d')
+    ruta_archivo_eventos = guardar_parquet_versionado(df_events, RUTA_RAW_CONVERSACIONES, "eventos")
+    print(f"Eventos Guardados en {ruta_archivo_eventos}")
+    return ruta_archivo_eventos
 
 
-
-
-# Generacion de listado de eventos (en paralelo)
-items = [(prospect['id_proyecto'], prospect['id_prospecto']) for _, prospect in df_filtrado.iterrows()]
-df_events_list = fetch_in_parallel(items, prospects_events, max_workers=MAX_WORKERS, label="Cliente")
-print("cargue de eventos ok")
-
-if df_events_list:
-    df_events = pd.concat(df_events_list, ignore_index=True)
-else:
-    df_events = pd.DataFrame()
-
-## Guardar Archivos tramites
-
-df_events['raw_fecha_cargue'] = datetime.now().strftime('%Y%m%d')
-ruta_archivo_eventos = guardar_parquet_versionado(df_events, RUTA_RAW_CONVERSACIONES, "eventos")
-print(f"Eventos Guardados en {ruta_archivo_eventos}")
+if __name__ == "__main__":
+    run()

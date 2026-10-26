@@ -1,421 +1,1101 @@
-﻿fecha_corte,proyecto,anio,Vendidos,No escriturados,Requieren subsidio,Subsidio sin aprobar,Requieren crédito,Crédito sin aprobar
-2026-08-10,Azul Club Residencial Celeste,Todos,307,6,0,0,5,5
-2026-08-10,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72
-2026-08-10,Candil,Todos,232,232,216,203,226,200
-2026-08-10,Cristales,Todos,225,225,207,191,216,181
-2026-08-10,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-08-10,Las Mañanitas Casas,Todos,210,123,87,63,118,103
-2026-08-10,VERDELIMA,Todos,561,223,200,150,220,97
-2026-08-10,Verdeoliva,Todos,665,267,252,183,265,109
-2026-08-10,Verdepino,Todos,749,477,454,394,469,351
-2026-08-10,Verdevivo,Todos,615,188,176,121,179,95
-2026-08-10,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-08-10,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0
-2026-08-10,Candil,2020,232,0,0,0,0,0
-2026-08-10,Cristales,2020,225,0,0,0,0,0
-2026-08-10,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-08-10,VERDELIMA,2020,561,0,0,0,0,0
-2026-08-10,Verdeoliva,2020,665,0,0,0,0,0
-2026-08-10,Verdepino,2020,749,0,0,0,0,0
-2026-08-10,Verdevivo,2020,615,0,0,0,0,0
-2026-08-10,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-08-10,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0
-2026-08-10,Candil,2021,232,0,0,0,0,0
-2026-08-10,Cristales,2021,225,0,0,0,0,0
-2026-08-10,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-08-10,VERDELIMA,2021,561,0,0,0,0,0
-2026-08-10,Verdeoliva,2021,665,0,0,0,0,0
-2026-08-10,Verdepino,2021,749,0,0,0,0,0
-2026-08-10,Verdevivo,2021,615,0,0,0,0,0
-2026-08-10,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-08-10,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0
-2026-08-10,Candil,2025,232,0,0,0,0,0
-2026-08-10,Cristales,2025,225,0,0,0,0,0
-2026-08-10,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-08-10,VERDELIMA,2025,561,0,0,0,0,0
-2026-08-10,Verdeoliva,2025,665,0,0,0,0,0
-2026-08-10,Verdepino,2025,749,0,0,0,0,0
-2026-08-10,Verdevivo,2025,615,0,0,0,0,0
-2026-08-10,Azul Club Residencial Celeste,2026,307,5,0,0,4,4
-2026-08-10,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66
-2026-08-10,Candil,2026,232,110,106,93,109,84
-2026-08-10,Cristales,2026,225,153,147,131,151,117
-2026-08-10,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-08-10,VERDELIMA,2026,561,219,197,148,218,95
-2026-08-10,Verdeoliva,2026,665,261,246,177,259,105
-2026-08-10,Verdepino,2026,749,230,221,164,229,118
-2026-08-10,Verdevivo,2026,615,152,147,94,148,71
-2026-08-10,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-08-10,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5
-2026-08-10,Candil,2027,232,67,63,63,67,66
-2026-08-10,Cristales,2027,225,7,6,6,7,7
-2026-08-10,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-08-10,VERDELIMA,2027,561,1,1,1,1,1
-2026-08-10,Verdeoliva,2027,665,1,1,1,1,0
-2026-08-10,Verdepino,2027,749,6,6,6,6,6
-2026-08-10,Verdevivo,2027,615,7,6,5,7,6
-2026-08-10,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-08-10,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0
-2026-08-10,Candil,2028,232,39,37,37,39,39
-2026-08-10,Cristales,2028,225,36,33,33,36,35
-2026-08-10,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-08-10,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-08-10,VERDELIMA,2028,561,0,0,0,0,0
-2026-08-10,Verdeoliva,2028,665,0,0,0,0,0
-2026-08-10,Verdepino,2028,749,196,189,189,194,192
-2026-08-10,Verdevivo,2028,615,0,0,0,0,0
-2026-08-18,Azul Club Residencial Celeste,Todos,307,5,0,0,4,4
-2026-08-18,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72
-2026-08-18,Candil,Todos,233,233,215,201,225,192
-2026-08-18,Cristales,Todos,228,228,207,190,216,179
-2026-08-18,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-08-18,Las Mañanitas Casas,Todos,210,123,87,63,118,103
-2026-08-18,VERDELIMA,Todos,557,219,197,142,216,88
-2026-08-18,Verdeoliva,Todos,667,269,252,179,265,105
-2026-08-18,Verdepino,Todos,750,478,455,394,470,351
-2026-08-18,Verdevivo,Todos,616,189,178,123,181,95
-2026-08-18,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-08-18,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0
-2026-08-18,Candil,2020,233,0,0,0,0,0
-2026-08-18,Cristales,2020,228,0,0,0,0,0
-2026-08-18,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-08-18,VERDELIMA,2020,557,0,0,0,0,0
-2026-08-18,Verdeoliva,2020,667,0,0,0,0,0
-2026-08-18,Verdepino,2020,750,0,0,0,0,0
-2026-08-18,Verdevivo,2020,616,0,0,0,0,0
-2026-08-18,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-08-18,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0
-2026-08-18,Candil,2021,233,0,0,0,0,0
-2026-08-18,Cristales,2021,228,0,0,0,0,0
-2026-08-18,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-08-18,VERDELIMA,2021,557,0,0,0,0,0
-2026-08-18,Verdeoliva,2021,667,0,0,0,0,0
-2026-08-18,Verdepino,2021,750,0,0,0,0,0
-2026-08-18,Verdevivo,2021,616,0,0,0,0,0
-2026-08-18,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-08-18,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0
-2026-08-18,Candil,2025,233,0,0,0,0,0
-2026-08-18,Cristales,2025,228,0,0,0,0,0
-2026-08-18,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-08-18,VERDELIMA,2025,557,0,0,0,0,0
-2026-08-18,Verdeoliva,2025,667,0,0,0,0,0
-2026-08-18,Verdepino,2025,750,0,0,0,0,0
-2026-08-18,Verdevivo,2025,616,0,0,0,0,0
-2026-08-18,Azul Club Residencial Celeste,2026,307,4,0,0,3,3
-2026-08-18,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66
-2026-08-18,Candil,2026,233,109,105,91,108,76
-2026-08-18,Cristales,2026,228,153,147,130,151,115
-2026-08-18,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-08-18,VERDELIMA,2026,557,215,194,140,214,86
-2026-08-18,Verdeoliva,2026,667,261,246,173,259,101
-2026-08-18,Verdepino,2026,750,230,221,163,229,117
-2026-08-18,Verdevivo,2026,616,153,148,94,149,69
-2026-08-18,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-08-18,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5
-2026-08-18,Candil,2027,233,67,63,63,67,66
-2026-08-18,Cristales,2027,228,7,6,6,7,7
-2026-08-18,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-08-18,VERDELIMA,2027,557,1,1,1,1,1
-2026-08-18,Verdeoliva,2027,667,1,1,1,1,0
-2026-08-18,Verdepino,2027,750,6,6,6,6,6
-2026-08-18,Verdevivo,2027,616,6,5,5,6,6
-2026-08-18,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-08-18,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0
-2026-08-18,Candil,2028,233,39,37,37,39,39
-2026-08-18,Cristales,2028,228,36,33,33,36,35
-2026-08-18,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-08-18,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-08-18,VERDELIMA,2028,557,0,0,0,0,0
-2026-08-18,Verdeoliva,2028,667,0,0,0,0,0
-2026-08-18,Verdepino,2028,750,196,189,189,194,192
-2026-08-18,Verdevivo,2028,616,0,0,0,0,0
-2026-08-24,Azul Club Residencial Celeste,Todos,307,5,0,0,4,4
-2026-08-24,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72
-2026-08-24,Candil,Todos,234,234,215,199,225,189
-2026-08-24,Cristales,Todos,232,232,208,189,217,173
-2026-08-24,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-08-24,Las Mañanitas Casas,Todos,210,123,86,62,117,102
-2026-08-24,VERDELIMA,Todos,558,220,198,142,217,85
-2026-08-24,Verdeoliva,Todos,669,271,253,169,266,103
-2026-08-24,Verdepino,Todos,753,481,456,387,471,338
-2026-08-24,Verdevivo,Todos,616,189,178,116,181,89
-2026-08-24,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-08-24,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0
-2026-08-24,Candil,2020,234,0,0,0,0,0
-2026-08-24,Cristales,2020,232,0,0,0,0,0
-2026-08-24,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-08-24,VERDELIMA,2020,558,0,0,0,0,0
-2026-08-24,Verdeoliva,2020,669,0,0,0,0,0
-2026-08-24,Verdepino,2020,753,0,0,0,0,0
-2026-08-24,Verdevivo,2020,616,0,0,0,0,0
-2026-08-24,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-08-24,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0
-2026-08-24,Candil,2021,234,0,0,0,0,0
-2026-08-24,Cristales,2021,232,0,0,0,0,0
-2026-08-24,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-08-24,VERDELIMA,2021,558,0,0,0,0,0
-2026-08-24,Verdeoliva,2021,669,0,0,0,0,0
-2026-08-24,Verdepino,2021,753,0,0,0,0,0
-2026-08-24,Verdevivo,2021,616,0,0,0,0,0
-2026-08-24,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-08-24,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0
-2026-08-24,Candil,2025,234,0,0,0,0,0
-2026-08-24,Cristales,2025,232,0,0,0,0,0
-2026-08-24,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-08-24,VERDELIMA,2025,558,0,0,0,0,0
-2026-08-24,Verdeoliva,2025,669,0,0,0,0,0
-2026-08-24,Verdepino,2025,753,0,0,0,0,0
-2026-08-24,Verdevivo,2025,616,0,0,0,0,0
-2026-08-24,Azul Club Residencial Celeste,2026,307,4,0,0,3,3
-2026-08-24,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66
-2026-08-24,Candil,2026,234,109,105,89,108,73
-2026-08-24,Cristales,2026,232,153,147,128,151,108
-2026-08-24,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-08-24,VERDELIMA,2026,558,215,194,139,214,82
-2026-08-24,Verdeoliva,2026,669,261,246,162,259,98
-2026-08-24,Verdepino,2026,753,230,221,155,229,106
-2026-08-24,Verdevivo,2026,616,153,148,87,149,65
-2026-08-24,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-08-24,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5
-2026-08-24,Candil,2027,234,67,63,63,67,66
-2026-08-24,Cristales,2027,232,7,6,6,7,7
-2026-08-24,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-08-24,VERDELIMA,2027,558,1,1,1,1,1
-2026-08-24,Verdeoliva,2027,669,1,1,1,1,0
-2026-08-24,Verdepino,2027,753,6,6,6,6,5
-2026-08-24,Verdevivo,2027,616,6,5,5,6,6
-2026-08-24,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-08-24,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0
-2026-08-24,Candil,2028,234,39,37,37,39,39
-2026-08-24,Cristales,2028,232,36,33,33,36,35
-2026-08-24,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-08-24,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-08-24,VERDELIMA,2028,558,0,0,0,0,0
-2026-08-24,Verdeoliva,2028,669,0,0,0,0,0
-2026-08-24,Verdepino,2028,753,196,189,189,194,192
-2026-08-24,Verdevivo,2028,616,0,0,0,0,0
-2026-08-31,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3
-2026-08-31,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72
-2026-08-31,Candil,Todos,237,237,215,197,225,186
-2026-08-31,Cristales,Todos,236,236,208,186,217,169
-2026-08-31,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-08-31,Las Mañanitas Casas,Todos,210,123,86,62,117,102
-2026-08-31,VERDELIMA,Todos,559,217,195,143,214,85
-2026-08-31,Verdeoliva,Todos,670,268,249,163,262,99
-2026-08-31,Verdepino,Todos,756,482,454,385,469,335
-2026-08-31,Verdevivo,Todos,621,188,172,114,177,87
-2026-08-31,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-08-31,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0
-2026-08-31,Candil,2020,237,0,0,0,0,0
-2026-08-31,Cristales,2020,236,0,0,0,0,0
-2026-08-31,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-08-31,VERDELIMA,2020,559,0,0,0,0,0
-2026-08-31,Verdeoliva,2020,670,0,0,0,0,0
-2026-08-31,Verdepino,2020,756,0,0,0,0,0
-2026-08-31,Verdevivo,2020,621,0,0,0,0,0
-2026-08-31,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-08-31,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0
-2026-08-31,Candil,2021,237,0,0,0,0,0
-2026-08-31,Cristales,2021,236,0,0,0,0,0
-2026-08-31,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-08-31,VERDELIMA,2021,559,0,0,0,0,0
-2026-08-31,Verdeoliva,2021,670,0,0,0,0,0
-2026-08-31,Verdepino,2021,756,0,0,0,0,0
-2026-08-31,Verdevivo,2021,621,0,0,0,0,0
-2026-08-31,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-08-31,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0
-2026-08-31,Candil,2025,237,0,0,0,0,0
-2026-08-31,Cristales,2025,236,0,0,0,0,0
-2026-08-31,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-08-31,VERDELIMA,2025,559,0,0,0,0,0
-2026-08-31,Verdeoliva,2025,670,0,0,0,0,0
-2026-08-31,Verdepino,2025,756,0,0,0,0,0
-2026-08-31,Verdevivo,2025,621,0,0,0,0,0
-2026-08-31,Azul Club Residencial Celeste,2026,307,3,0,0,2,2
-2026-08-31,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66
-2026-08-31,Candil,2026,237,109,105,87,108,70
-2026-08-31,Cristales,2026,236,153,147,125,151,104
-2026-08-31,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-08-31,VERDELIMA,2026,559,211,190,139,210,82
-2026-08-31,Verdeoliva,2026,670,257,242,156,255,94
-2026-08-31,Verdepino,2026,756,229,220,155,228,103
-2026-08-31,Verdevivo,2026,621,145,140,83,143,62
-2026-08-31,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-08-31,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5
-2026-08-31,Candil,2027,237,67,63,63,67,66
-2026-08-31,Cristales,2027,236,7,6,6,7,7
-2026-08-31,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-08-31,VERDELIMA,2027,559,1,1,1,1,1
-2026-08-31,Verdeoliva,2027,670,1,1,1,1,0
-2026-08-31,Verdepino,2027,756,5,5,5,5,5
-2026-08-31,Verdevivo,2027,621,8,7,7,8,7
-2026-08-31,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-08-31,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0
-2026-08-31,Candil,2028,237,39,37,37,39,39
-2026-08-31,Cristales,2028,236,36,33,33,36,35
-2026-08-31,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-08-31,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-08-31,VERDELIMA,2028,559,0,0,0,0,0
-2026-08-31,Verdeoliva,2028,670,0,0,0,0,0
-2026-08-31,Verdepino,2028,756,196,189,189,194,192
-2026-08-31,Verdevivo,2028,621,0,0,0,0,0
-2026-09-01,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3
-2026-09-01,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,71
-2026-09-01,Candil,Todos,237,237,215,197,225,184
-2026-09-01,Cristales,Todos,239,239,207,184,216,167
-2026-09-01,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-09-01,Las Mañanitas Casas,Todos,210,123,86,62,117,102
-2026-09-01,VERDELIMA,Todos,560,216,194,142,214,85
-2026-09-01,Verdeoliva,Todos,671,264,245,160,257,98
-2026-09-01,Verdepino,Todos,755,480,452,382,467,335
-2026-09-01,Verdevivo,Todos,620,181,166,113,171,86
-2026-09-01,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-09-01,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0
-2026-09-01,Candil,2020,237,0,0,0,0,0
-2026-09-01,Cristales,2020,239,0,0,0,0,0
-2026-09-01,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-09-01,VERDELIMA,2020,560,0,0,0,0,0
-2026-09-01,Verdeoliva,2020,671,0,0,0,0,0
-2026-09-01,Verdepino,2020,755,0,0,0,0,0
-2026-09-01,Verdevivo,2020,620,0,0,0,0,0
-2026-09-01,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-09-01,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0
-2026-09-01,Candil,2021,237,0,0,0,0,0
-2026-09-01,Cristales,2021,239,0,0,0,0,0
-2026-09-01,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-09-01,VERDELIMA,2021,560,0,0,0,0,0
-2026-09-01,Verdeoliva,2021,671,0,0,0,0,0
-2026-09-01,Verdepino,2021,755,0,0,0,0,0
-2026-09-01,Verdevivo,2021,620,0,0,0,0,0
-2026-09-01,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-09-01,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0
-2026-09-01,Candil,2025,237,0,0,0,0,0
-2026-09-01,Cristales,2025,239,0,0,0,0,0
-2026-09-01,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-09-01,VERDELIMA,2025,560,0,0,0,0,0
-2026-09-01,Verdeoliva,2025,671,0,0,0,0,0
-2026-09-01,Verdepino,2025,755,0,0,0,0,0
-2026-09-01,Verdevivo,2025,620,0,0,0,0,0
-2026-09-01,Azul Club Residencial Celeste,2026,307,3,0,0,2,2
-2026-09-01,Azul Club Residencial Turquesa,2026,270,85,1,1,74,65
-2026-09-01,Candil,2026,237,109,105,87,108,68
-2026-09-01,Cristales,2026,239,152,146,123,150,102
-2026-09-01,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-09-01,VERDELIMA,2026,560,210,189,137,209,81
-2026-09-01,Verdeoliva,2026,671,252,238,153,250,93
-2026-09-01,Verdepino,2026,755,227,218,152,226,103
-2026-09-01,Verdevivo,2026,620,139,134,82,137,61
-2026-09-01,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-09-01,Azul Club Residencial Turquesa,2027,270,5,0,0,5,5
-2026-09-01,Candil,2027,237,67,63,63,67,66
-2026-09-01,Cristales,2027,239,7,6,6,7,7
-2026-09-01,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-09-01,VERDELIMA,2027,560,1,1,1,1,1
-2026-09-01,Verdeoliva,2027,671,1,1,1,1,0
-2026-09-01,Verdepino,2027,755,5,5,5,5,5
-2026-09-01,Verdevivo,2027,620,8,7,7,8,7
-2026-09-01,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-09-01,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0
-2026-09-01,Candil,2028,237,39,37,37,39,39
-2026-09-01,Cristales,2028,239,36,33,33,36,35
-2026-09-01,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-09-01,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-09-01,VERDELIMA,2028,560,0,0,0,0,0
-2026-09-01,Verdeoliva,2028,671,0,0,0,0,0
-2026-09-01,Verdepino,2028,755,196,189,189,194,192
-2026-09-01,Verdevivo,2028,620,0,0,0,0,0
-2026-09-03,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3
-2026-09-03,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,71
-2026-09-03,Candil,Todos,237,237,215,197,225,184
-2026-09-03,Cristales,Todos,239,239,207,184,216,167
-2026-09-03,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112
-2026-09-03,Las Mañanitas Casas,Todos,210,123,86,62,117,102
-2026-09-03,VERDELIMA,Todos,560,216,194,142,214,85
-2026-09-03,Verdeoliva,Todos,671,264,245,160,257,98
-2026-09-03,Verdepino,Todos,755,480,452,382,467,335
-2026-09-03,Verdevivo,Todos,620,181,166,113,171,86
-2026-09-03,Azul Club Residencial Celeste,2020,307,0,0,0,0,0
-2026-09-03,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0
-2026-09-03,Candil,2020,237,0,0,0,0,0
-2026-09-03,Cristales,2020,239,0,0,0,0,0
-2026-09-03,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2020,210,0,0,0,0,0
-2026-09-03,VERDELIMA,2020,560,0,0,0,0,0
-2026-09-03,Verdeoliva,2020,671,0,0,0,0,0
-2026-09-03,Verdepino,2020,755,0,0,0,0,0
-2026-09-03,Verdevivo,2020,620,0,0,0,0,0
-2026-09-03,Azul Club Residencial Celeste,2021,307,0,0,0,0,0
-2026-09-03,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0
-2026-09-03,Candil,2021,237,0,0,0,0,0
-2026-09-03,Cristales,2021,239,0,0,0,0,0
-2026-09-03,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2021,210,0,0,0,0,0
-2026-09-03,VERDELIMA,2021,560,0,0,0,0,0
-2026-09-03,Verdeoliva,2021,671,0,0,0,0,0
-2026-09-03,Verdepino,2021,755,0,0,0,0,0
-2026-09-03,Verdevivo,2021,620,0,0,0,0,0
-2026-09-03,Azul Club Residencial Celeste,2025,307,0,0,0,0,0
-2026-09-03,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0
-2026-09-03,Candil,2025,237,0,0,0,0,0
-2026-09-03,Cristales,2025,239,0,0,0,0,0
-2026-09-03,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2025,210,0,0,0,0,0
-2026-09-03,VERDELIMA,2025,560,0,0,0,0,0
-2026-09-03,Verdeoliva,2025,671,0,0,0,0,0
-2026-09-03,Verdepino,2025,755,0,0,0,0,0
-2026-09-03,Verdevivo,2025,620,0,0,0,0,0
-2026-09-03,Azul Club Residencial Celeste,2026,307,3,0,0,2,2
-2026-09-03,Azul Club Residencial Turquesa,2026,270,85,1,1,74,65
-2026-09-03,Candil,2026,237,109,105,87,108,68
-2026-09-03,Cristales,2026,239,152,146,123,150,102
-2026-09-03,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2026,210,1,1,1,1,0
-2026-09-03,VERDELIMA,2026,560,210,189,137,209,81
-2026-09-03,Verdeoliva,2026,671,252,238,153,250,93
-2026-09-03,Verdepino,2026,755,227,218,152,226,103
-2026-09-03,Verdevivo,2026,620,139,134,82,137,61
-2026-09-03,Azul Club Residencial Celeste,2027,307,0,0,0,0,0
-2026-09-03,Azul Club Residencial Turquesa,2027,270,5,0,0,5,5
-2026-09-03,Candil,2027,237,67,63,63,67,66
-2026-09-03,Cristales,2027,239,7,6,6,7,7
-2026-09-03,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2027,210,0,0,0,0,0
-2026-09-03,VERDELIMA,2027,560,1,1,1,1,1
-2026-09-03,Verdeoliva,2027,671,1,1,1,1,0
-2026-09-03,Verdepino,2027,755,5,5,5,5,5
-2026-09-03,Verdevivo,2027,620,8,7,7,8,7
-2026-09-03,Azul Club Residencial Celeste,2028,307,0,0,0,0,0
-2026-09-03,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0
-2026-09-03,Candil,2028,237,39,37,37,39,39
-2026-09-03,Cristales,2028,239,36,33,33,36,35
-2026-09-03,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0
-2026-09-03,Las Mañanitas Casas,2028,210,0,0,0,0,0
-2026-09-03,VERDELIMA,2028,560,0,0,0,0,0
-2026-09-03,Verdeoliva,2028,671,0,0,0,0,0
-2026-09-03,Verdepino,2028,755,196,189,189,194,192
-2026-09-03,Verdevivo,2028,620,0,0,0,0,0
+﻿fecha_corte,proyecto,anio,Vendidos,No escriturados,Requieren subsidio,Subsidio sin aprobar,Requieren crédito,Crédito sin aprobar,Total Escrituradas
+2026-08-10,Azul Club Residencial Celeste,Todos,307,6,0,0,5,5,301.0
+2026-08-10,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72,178.0
+2026-08-10,Candil,Todos,232,232,216,203,226,200,0.0
+2026-08-10,Cristales,Todos,225,225,207,191,216,181,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-08-10,Las Mañanitas Casas,Todos,210,123,87,63,118,103,87.0
+2026-08-10,VERDELIMA,Todos,561,223,200,150,220,97,338.0
+2026-08-10,Verdeoliva,Todos,665,267,252,183,265,109,398.0
+2026-08-10,Verdepino,Todos,749,477,454,394,469,351,272.0
+2026-08-10,Verdevivo,Todos,615,188,176,121,179,95,427.0
+2026-08-10,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-08-10,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0,0.0
+2026-08-10,Candil,2020,232,0,0,0,0,0,0.0
+2026-08-10,Cristales,2020,225,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-08-10,VERDELIMA,2020,561,0,0,0,0,0,0.0
+2026-08-10,Verdeoliva,2020,665,0,0,0,0,0,0.0
+2026-08-10,Verdepino,2020,749,0,0,0,0,0,0.0
+2026-08-10,Verdevivo,2020,615,0,0,0,0,0,0.0
+2026-08-10,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-08-10,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0,102.0
+2026-08-10,Candil,2021,232,0,0,0,0,0,0.0
+2026-08-10,Cristales,2021,225,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-08-10,VERDELIMA,2021,561,0,0,0,0,0,0.0
+2026-08-10,Verdeoliva,2021,665,0,0,0,0,0,0.0
+2026-08-10,Verdepino,2021,749,0,0,0,0,0,0.0
+2026-08-10,Verdevivo,2021,615,0,0,0,0,0,0.0
+2026-08-10,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-08-10,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0,1.0
+2026-08-10,Candil,2025,232,0,0,0,0,0,0.0
+2026-08-10,Cristales,2025,225,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-08-10,VERDELIMA,2025,561,0,0,0,0,0,284.0
+2026-08-10,Verdeoliva,2025,665,0,0,0,0,0,180.0
+2026-08-10,Verdepino,2025,749,0,0,0,0,0,193.0
+2026-08-10,Verdevivo,2025,615,0,0,0,0,0,87.0
+2026-08-10,Azul Club Residencial Celeste,2026,307,5,0,0,4,4,3.0
+2026-08-10,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66,20.0
+2026-08-10,Candil,2026,232,110,106,93,109,84,0.0
+2026-08-10,Cristales,2026,225,153,147,131,151,117,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-08-10,VERDELIMA,2026,561,219,197,148,218,95,38.0
+2026-08-10,Verdeoliva,2026,665,261,246,177,259,105,92.0
+2026-08-10,Verdepino,2026,749,230,221,164,229,118,79.0
+2026-08-10,Verdevivo,2026,615,152,147,94,148,71,69.0
+2026-08-10,Azul Club Residencial Celeste,2027,307,0,0,0,0,0,0.0
+2026-08-10,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5,0.0
+2026-08-10,Candil,2027,232,67,63,63,67,66,0.0
+2026-08-10,Cristales,2027,225,7,6,6,7,7,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-08-10,VERDELIMA,2027,561,1,1,1,1,1,0.0
+2026-08-10,Verdeoliva,2027,665,1,1,1,1,0,0.0
+2026-08-10,Verdepino,2027,749,6,6,6,6,6,0.0
+2026-08-10,Verdevivo,2027,615,7,6,5,7,6,0.0
+2026-08-10,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-08-10,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0,0.0
+2026-08-10,Candil,2028,232,39,37,37,39,39,0.0
+2026-08-10,Cristales,2028,225,36,33,33,36,35,0.0
+2026-08-10,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-08-10,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-08-10,VERDELIMA,2028,561,0,0,0,0,0,0.0
+2026-08-10,Verdeoliva,2028,665,0,0,0,0,0,0.0
+2026-08-10,Verdepino,2028,749,196,189,189,194,192,0.0
+2026-08-10,Verdevivo,2028,615,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Celeste,Todos,307,5,0,0,4,4,302.0
+2026-08-18,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72,178.0
+2026-08-18,Candil,Todos,233,233,215,201,225,192,0.0
+2026-08-18,Cristales,Todos,228,228,207,190,216,179,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-08-18,Las Mañanitas Casas,Todos,210,123,87,63,118,103,87.0
+2026-08-18,VERDELIMA,Todos,557,219,197,142,216,88,338.0
+2026-08-18,Verdeoliva,Todos,667,269,252,179,265,105,398.0
+2026-08-18,Verdepino,Todos,750,478,455,394,470,351,272.0
+2026-08-18,Verdevivo,Todos,616,189,178,123,181,95,427.0
+2026-08-18,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0,0.0
+2026-08-18,Candil,2020,233,0,0,0,0,0,0.0
+2026-08-18,Cristales,2020,228,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-08-18,VERDELIMA,2020,557,0,0,0,0,0,0.0
+2026-08-18,Verdeoliva,2020,667,0,0,0,0,0,0.0
+2026-08-18,Verdepino,2020,750,0,0,0,0,0,0.0
+2026-08-18,Verdevivo,2020,616,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-08-18,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0,102.0
+2026-08-18,Candil,2021,233,0,0,0,0,0,0.0
+2026-08-18,Cristales,2021,228,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-08-18,VERDELIMA,2021,557,0,0,0,0,0,0.0
+2026-08-18,Verdeoliva,2021,667,0,0,0,0,0,0.0
+2026-08-18,Verdepino,2021,750,0,0,0,0,0,0.0
+2026-08-18,Verdevivo,2021,616,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-08-18,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0,1.0
+2026-08-18,Candil,2025,233,0,0,0,0,0,0.0
+2026-08-18,Cristales,2025,228,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-08-18,VERDELIMA,2025,557,0,0,0,0,0,284.0
+2026-08-18,Verdeoliva,2025,667,0,0,0,0,0,180.0
+2026-08-18,Verdepino,2025,750,0,0,0,0,0,193.0
+2026-08-18,Verdevivo,2025,616,0,0,0,0,0,87.0
+2026-08-18,Azul Club Residencial Celeste,2026,307,4,0,0,3,3,4.0
+2026-08-18,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66,20.0
+2026-08-18,Candil,2026,233,109,105,91,108,76,0.0
+2026-08-18,Cristales,2026,228,153,147,130,151,115,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-08-18,VERDELIMA,2026,557,215,194,140,214,86,38.0
+2026-08-18,Verdeoliva,2026,667,261,246,173,259,101,92.0
+2026-08-18,Verdepino,2026,750,230,221,163,229,117,79.0
+2026-08-18,Verdevivo,2026,616,153,148,94,149,69,69.0
+2026-08-18,Azul Club Residencial Celeste,2027,307,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5,0.0
+2026-08-18,Candil,2027,233,67,63,63,67,66,0.0
+2026-08-18,Cristales,2027,228,7,6,6,7,7,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-08-18,VERDELIMA,2027,557,1,1,1,1,1,0.0
+2026-08-18,Verdeoliva,2027,667,1,1,1,1,0,0.0
+2026-08-18,Verdepino,2027,750,6,6,6,6,6,0.0
+2026-08-18,Verdevivo,2027,616,6,5,5,6,6,0.0
+2026-08-18,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-08-18,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0,0.0
+2026-08-18,Candil,2028,233,39,37,37,39,39,0.0
+2026-08-18,Cristales,2028,228,36,33,33,36,35,0.0
+2026-08-18,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-08-18,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-08-18,VERDELIMA,2028,557,0,0,0,0,0,0.0
+2026-08-18,Verdeoliva,2028,667,0,0,0,0,0,0.0
+2026-08-18,Verdepino,2028,750,196,189,189,194,192,0.0
+2026-08-18,Verdevivo,2028,616,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Celeste,Todos,307,5,0,0,4,4,302.0
+2026-08-24,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72,178.0
+2026-08-24,Candil,Todos,234,234,215,199,225,189,0.0
+2026-08-24,Cristales,Todos,232,232,208,189,217,173,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-08-24,Las Mañanitas Casas,Todos,210,123,86,62,117,102,87.0
+2026-08-24,VERDELIMA,Todos,558,220,198,142,217,85,338.0
+2026-08-24,Verdeoliva,Todos,669,271,253,169,266,103,398.0
+2026-08-24,Verdepino,Todos,753,481,456,387,471,338,272.0
+2026-08-24,Verdevivo,Todos,616,189,178,116,181,89,427.0
+2026-08-24,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0,0.0
+2026-08-24,Candil,2020,234,0,0,0,0,0,0.0
+2026-08-24,Cristales,2020,232,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-08-24,VERDELIMA,2020,558,0,0,0,0,0,0.0
+2026-08-24,Verdeoliva,2020,669,0,0,0,0,0,0.0
+2026-08-24,Verdepino,2020,753,0,0,0,0,0,0.0
+2026-08-24,Verdevivo,2020,616,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-08-24,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0,102.0
+2026-08-24,Candil,2021,234,0,0,0,0,0,0.0
+2026-08-24,Cristales,2021,232,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-08-24,VERDELIMA,2021,558,0,0,0,0,0,0.0
+2026-08-24,Verdeoliva,2021,669,0,0,0,0,0,0.0
+2026-08-24,Verdepino,2021,753,0,0,0,0,0,0.0
+2026-08-24,Verdevivo,2021,616,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-08-24,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0,1.0
+2026-08-24,Candil,2025,234,0,0,0,0,0,0.0
+2026-08-24,Cristales,2025,232,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-08-24,VERDELIMA,2025,558,0,0,0,0,0,284.0
+2026-08-24,Verdeoliva,2025,669,0,0,0,0,0,180.0
+2026-08-24,Verdepino,2025,753,0,0,0,0,0,193.0
+2026-08-24,Verdevivo,2025,616,0,0,0,0,0,87.0
+2026-08-24,Azul Club Residencial Celeste,2026,307,4,0,0,3,3,4.0
+2026-08-24,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66,20.0
+2026-08-24,Candil,2026,234,109,105,89,108,73,0.0
+2026-08-24,Cristales,2026,232,153,147,128,151,108,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-08-24,VERDELIMA,2026,558,215,194,139,214,82,38.0
+2026-08-24,Verdeoliva,2026,669,261,246,162,259,98,92.0
+2026-08-24,Verdepino,2026,753,230,221,155,229,106,79.0
+2026-08-24,Verdevivo,2026,616,153,148,87,149,65,69.0
+2026-08-24,Azul Club Residencial Celeste,2027,307,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5,0.0
+2026-08-24,Candil,2027,234,67,63,63,67,66,0.0
+2026-08-24,Cristales,2027,232,7,6,6,7,7,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-08-24,VERDELIMA,2027,558,1,1,1,1,1,0.0
+2026-08-24,Verdeoliva,2027,669,1,1,1,1,0,0.0
+2026-08-24,Verdepino,2027,753,6,6,6,6,5,0.0
+2026-08-24,Verdevivo,2027,616,6,5,5,6,6,0.0
+2026-08-24,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-08-24,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0,0.0
+2026-08-24,Candil,2028,234,39,37,37,39,39,0.0
+2026-08-24,Cristales,2028,232,36,33,33,36,35,0.0
+2026-08-24,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-08-24,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-08-24,VERDELIMA,2028,558,0,0,0,0,0,0.0
+2026-08-24,Verdeoliva,2028,669,0,0,0,0,0,0.0
+2026-08-24,Verdepino,2028,753,196,189,189,194,192,0.0
+2026-08-24,Verdevivo,2028,616,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-08-31,Azul Club Residencial Turquesa,Todos,271,93,1,1,81,72,178.0
+2026-08-31,Candil,Todos,237,237,215,197,225,186,0.0
+2026-08-31,Cristales,Todos,236,236,208,186,217,169,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-08-31,Las Mañanitas Casas,Todos,210,123,86,62,117,102,87.0
+2026-08-31,VERDELIMA,Todos,559,217,195,143,214,85,342.0
+2026-08-31,Verdeoliva,Todos,670,268,249,163,262,99,402.0
+2026-08-31,Verdepino,Todos,756,482,454,385,469,335,274.0
+2026-08-31,Verdevivo,Todos,621,188,172,114,177,87,433.0
+2026-08-31,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Turquesa,2020,271,0,0,0,0,0,0.0
+2026-08-31,Candil,2020,237,0,0,0,0,0,0.0
+2026-08-31,Cristales,2020,236,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-08-31,VERDELIMA,2020,559,0,0,0,0,0,0.0
+2026-08-31,Verdeoliva,2020,670,0,0,0,0,0,0.0
+2026-08-31,Verdepino,2020,756,0,0,0,0,0,0.0
+2026-08-31,Verdevivo,2020,621,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-08-31,Azul Club Residencial Turquesa,2021,271,0,0,0,0,0,102.0
+2026-08-31,Candil,2021,237,0,0,0,0,0,0.0
+2026-08-31,Cristales,2021,236,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-08-31,VERDELIMA,2021,559,0,0,0,0,0,0.0
+2026-08-31,Verdeoliva,2021,670,0,0,0,0,0,0.0
+2026-08-31,Verdepino,2021,756,0,0,0,0,0,0.0
+2026-08-31,Verdevivo,2021,621,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-08-31,Azul Club Residencial Turquesa,2025,271,0,0,0,0,0,1.0
+2026-08-31,Candil,2025,237,0,0,0,0,0,0.0
+2026-08-31,Cristales,2025,236,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-08-31,VERDELIMA,2025,559,0,0,0,0,0,284.0
+2026-08-31,Verdeoliva,2025,670,0,0,0,0,0,180.0
+2026-08-31,Verdepino,2025,756,0,0,0,0,0,193.0
+2026-08-31,Verdevivo,2025,621,0,0,0,0,0,87.0
+2026-08-31,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-08-31,Azul Club Residencial Turquesa,2026,271,86,1,1,75,66,20.0
+2026-08-31,Candil,2026,237,109,105,87,108,70,0.0
+2026-08-31,Cristales,2026,236,153,147,125,151,104,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-08-31,VERDELIMA,2026,559,211,190,139,210,82,42.0
+2026-08-31,Verdeoliva,2026,670,257,242,156,255,94,96.0
+2026-08-31,Verdepino,2026,756,229,220,155,228,103,81.0
+2026-08-31,Verdevivo,2026,621,145,140,83,143,62,75.0
+2026-08-31,Azul Club Residencial Celeste,2027,307,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Turquesa,2027,271,5,0,0,5,5,0.0
+2026-08-31,Candil,2027,237,67,63,63,67,66,0.0
+2026-08-31,Cristales,2027,236,7,6,6,7,7,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-08-31,VERDELIMA,2027,559,1,1,1,1,1,0.0
+2026-08-31,Verdeoliva,2027,670,1,1,1,1,0,0.0
+2026-08-31,Verdepino,2027,756,5,5,5,5,5,0.0
+2026-08-31,Verdevivo,2027,621,8,7,7,8,7,0.0
+2026-08-31,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-08-31,Azul Club Residencial Turquesa,2028,271,1,0,0,0,0,0.0
+2026-08-31,Candil,2028,237,39,37,37,39,39,0.0
+2026-08-31,Cristales,2028,236,36,33,33,36,35,0.0
+2026-08-31,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-08-31,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-08-31,VERDELIMA,2028,559,0,0,0,0,0,0.0
+2026-08-31,Verdeoliva,2028,670,0,0,0,0,0,0.0
+2026-08-31,Verdepino,2028,756,196,189,189,194,192,0.0
+2026-08-31,Verdevivo,2028,621,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-01,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,71,178.0
+2026-09-01,Candil,Todos,237,237,215,197,225,184,0.0
+2026-09-01,Cristales,Todos,239,239,207,184,216,167,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-01,Las Mañanitas Casas,Todos,210,123,86,62,117,102,87.0
+2026-09-01,VERDELIMA,Todos,560,216,194,142,214,85,344.0
+2026-09-01,Verdeoliva,Todos,671,264,245,160,257,98,407.0
+2026-09-01,Verdepino,Todos,755,480,452,382,467,335,275.0
+2026-09-01,Verdevivo,Todos,620,181,166,113,171,86,439.0
+2026-09-01,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-01,Candil,2020,237,0,0,0,0,0,0.0
+2026-09-01,Cristales,2020,239,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-01,VERDELIMA,2020,560,0,0,0,0,0,0.0
+2026-09-01,Verdeoliva,2020,671,0,0,0,0,0,0.0
+2026-09-01,Verdepino,2020,755,0,0,0,0,0,0.0
+2026-09-01,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-01,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-01,Candil,2021,237,0,0,0,0,0,0.0
+2026-09-01,Cristales,2021,239,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-01,VERDELIMA,2021,560,0,0,0,0,0,0.0
+2026-09-01,Verdeoliva,2021,671,0,0,0,0,0,0.0
+2026-09-01,Verdepino,2021,755,0,0,0,0,0,0.0
+2026-09-01,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-01,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-01,Candil,2025,237,0,0,0,0,0,0.0
+2026-09-01,Cristales,2025,239,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-01,VERDELIMA,2025,560,0,0,0,0,0,284.0
+2026-09-01,Verdeoliva,2025,671,0,0,0,0,0,180.0
+2026-09-01,Verdepino,2025,755,0,0,0,0,0,193.0
+2026-09-01,Verdevivo,2025,620,0,0,0,0,0,87.0
+2026-09-01,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-01,Azul Club Residencial Turquesa,2026,270,85,1,1,74,65,20.0
+2026-09-01,Candil,2026,237,109,105,87,108,68,0.0
+2026-09-01,Cristales,2026,239,152,146,123,150,102,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-09-01,VERDELIMA,2026,560,210,189,137,209,81,44.0
+2026-09-01,Verdeoliva,2026,671,252,238,153,250,93,101.0
+2026-09-01,Verdepino,2026,755,227,218,152,226,103,82.0
+2026-09-01,Verdevivo,2026,620,139,134,82,137,61,81.0
+2026-09-01,Azul Club Residencial Celeste,2027,307,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Turquesa,2027,270,5,0,0,5,5,0.0
+2026-09-01,Candil,2027,237,67,63,63,67,66,0.0
+2026-09-01,Cristales,2027,239,7,6,6,7,7,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-01,VERDELIMA,2027,560,1,1,1,1,1,0.0
+2026-09-01,Verdeoliva,2027,671,1,1,1,1,0,0.0
+2026-09-01,Verdepino,2027,755,5,5,5,5,5,0.0
+2026-09-01,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-01,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-01,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-01,Candil,2028,237,39,37,37,39,39,0.0
+2026-09-01,Cristales,2028,239,36,33,33,36,35,0.0
+2026-09-01,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-01,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-01,VERDELIMA,2028,560,0,0,0,0,0,0.0
+2026-09-01,Verdeoliva,2028,671,0,0,0,0,0,0.0
+2026-09-01,Verdepino,2028,755,196,189,189,194,192,0.0
+2026-09-01,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-09-07,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-07,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,71,178.0
+2026-09-07,Candil,Todos,236,236,214,196,224,183,0.0
+2026-09-07,Cristales,Todos,240,240,207,184,216,163,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-07,Las Mañanitas Casas,Todos,210,123,86,62,117,102,87.0
+2026-09-07,VERDELIMA,Todos,561,217,194,139,214,82,344.0
+2026-09-07,Verdeoliva,Todos,666,259,241,154,252,93,407.0
+2026-09-07,Verdepino,Todos,752,474,447,377,461,329,278.0
+2026-09-07,Verdevivo,Todos,620,181,166,111,171,82,439.0
+2026-09-07,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-07,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-07,Candil,2020,236,0,0,0,0,0,0.0
+2026-09-07,Cristales,2020,240,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-07,VERDELIMA,2020,561,0,0,0,0,0,0.0
+2026-09-07,Verdeoliva,2020,666,0,0,0,0,0,0.0
+2026-09-07,Verdepino,2020,752,0,0,0,0,0,0.0
+2026-09-07,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-07,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-07,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-07,Candil,2021,236,0,0,0,0,0,0.0
+2026-09-07,Cristales,2021,240,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-07,VERDELIMA,2021,561,0,0,0,0,0,0.0
+2026-09-07,Verdeoliva,2021,666,0,0,0,0,0,0.0
+2026-09-07,Verdepino,2021,752,0,0,0,0,0,0.0
+2026-09-07,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-07,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-07,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-07,Candil,2025,236,0,0,0,0,0,0.0
+2026-09-07,Cristales,2025,240,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-07,VERDELIMA,2025,561,0,0,0,0,0,284.0
+2026-09-07,Verdeoliva,2025,666,0,0,0,0,0,180.0
+2026-09-07,Verdepino,2025,752,0,0,0,0,0,193.0
+2026-09-07,Verdevivo,2025,620,0,0,0,0,0,87.0
+2026-09-07,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-07,Azul Club Residencial Turquesa,2026,270,86,1,1,75,66,20.0
+2026-09-07,Candil,2026,236,109,105,87,108,68,0.0
+2026-09-07,Cristales,2026,240,152,146,123,150,98,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-09-07,VERDELIMA,2026,561,209,188,133,208,77,44.0
+2026-09-07,Verdeoliva,2026,666,246,233,146,244,87,101.0
+2026-09-07,Verdepino,2026,752,221,213,148,220,97,85.0
+2026-09-07,Verdevivo,2026,620,139,134,80,137,57,81.0
+2026-09-07,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-09-07,Azul Club Residencial Turquesa,2027,270,4,0,0,4,4,0.0
+2026-09-07,Candil,2027,236,67,63,63,67,66,0.0
+2026-09-07,Cristales,2027,240,7,6,6,7,7,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-07,VERDELIMA,2027,561,1,1,1,1,1,0.0
+2026-09-07,Verdeoliva,2027,666,1,1,1,1,0,0.0
+2026-09-07,Verdepino,2027,752,7,7,6,7,7,0.0
+2026-09-07,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-07,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-07,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-07,Candil,2028,236,38,36,36,38,38,0.0
+2026-09-07,Cristales,2028,240,36,33,33,36,35,0.0
+2026-09-07,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-07,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-07,VERDELIMA,2028,561,0,0,0,0,0,0.0
+2026-09-07,Verdeoliva,2028,666,0,0,0,0,0,0.0
+2026-09-07,Verdepino,2028,752,195,188,188,193,191,0.0
+2026-09-07,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-09-08,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-08,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,63,178.0
+2026-09-08,Candil,Todos,236,236,214,195,224,182,0.0
+2026-09-08,Cristales,Todos,242,242,207,183,216,162,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-08,Las Mañanitas Casas,Todos,210,123,86,62,117,102,87.0
+2026-09-08,VERDELIMA,Todos,562,218,195,140,215,79,344.0
+2026-09-08,Verdeoliva,Todos,670,262,241,155,253,94,408.0
+2026-09-08,Verdepino,Todos,752,474,447,377,461,327,278.0
+2026-09-08,Verdevivo,Todos,620,181,166,111,171,82,439.0
+2026-09-08,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-08,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-08,Candil,2020,236,0,0,0,0,0,0.0
+2026-09-08,Cristales,2020,242,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-08,VERDELIMA,2020,562,0,0,0,0,0,0.0
+2026-09-08,Verdeoliva,2020,670,0,0,0,0,0,0.0
+2026-09-08,Verdepino,2020,752,0,0,0,0,0,0.0
+2026-09-08,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-08,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-08,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-08,Candil,2021,236,0,0,0,0,0,0.0
+2026-09-08,Cristales,2021,242,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-08,VERDELIMA,2021,562,0,0,0,0,0,0.0
+2026-09-08,Verdeoliva,2021,670,0,0,0,0,0,0.0
+2026-09-08,Verdepino,2021,752,0,0,0,0,0,0.0
+2026-09-08,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-08,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-08,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-08,Candil,2025,236,0,0,0,0,0,0.0
+2026-09-08,Cristales,2025,242,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-08,VERDELIMA,2025,562,0,0,0,0,0,284.0
+2026-09-08,Verdeoliva,2025,670,0,0,0,0,0,180.0
+2026-09-08,Verdepino,2025,752,0,0,0,0,0,193.0
+2026-09-08,Verdevivo,2025,620,0,0,0,0,0,87.0
+2026-09-08,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-08,Azul Club Residencial Turquesa,2026,270,86,1,1,75,58,20.0
+2026-09-08,Candil,2026,236,90,88,72,89,54,0.0
+2026-09-08,Cristales,2026,242,152,146,122,150,97,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-09-08,VERDELIMA,2026,562,209,188,133,208,73,44.0
+2026-09-08,Verdeoliva,2026,670,245,232,146,243,86,102.0
+2026-09-08,Verdepino,2026,752,219,211,145,218,93,85.0
+2026-09-08,Verdevivo,2026,620,139,134,80,137,57,81.0
+2026-09-08,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-09-08,Azul Club Residencial Turquesa,2027,270,4,0,0,4,4,0.0
+2026-09-08,Candil,2027,236,86,80,77,86,79,0.0
+2026-09-08,Cristales,2027,242,7,6,6,7,7,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-08,VERDELIMA,2027,562,1,1,1,1,1,0.0
+2026-09-08,Verdeoliva,2027,670,1,1,1,1,0,0.0
+2026-09-08,Verdepino,2027,752,11,11,10,11,10,0.0
+2026-09-08,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-08,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-08,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-08,Candil,2028,236,38,36,36,38,38,0.0
+2026-09-08,Cristales,2028,242,36,33,33,36,35,0.0
+2026-09-08,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-08,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-08,VERDELIMA,2028,562,0,0,0,0,0,0.0
+2026-09-08,Verdeoliva,2028,670,0,0,0,0,0,0.0
+2026-09-08,Verdepino,2028,752,195,188,188,193,191,0.0
+2026-09-08,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-09-14,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-14,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,63,178.0
+2026-09-14,Candil,Todos,237,237,214,192,224,179,0.0
+2026-09-14,Cristales,Todos,243,243,207,182,216,153,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-14,Las Mañanitas Casas,Todos,210,123,85,61,116,101,87.0
+2026-09-14,VERDELIMA,Todos,563,219,196,133,216,70,344.0
+2026-09-14,Verdeoliva,Todos,670,262,241,146,253,88,408.0
+2026-09-14,Verdepino,Todos,752,474,447,371,461,327,278.0
+2026-09-14,Verdevivo,Todos,620,181,166,108,171,80,439.0
+2026-09-14,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-14,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-14,Candil,2020,237,0,0,0,0,0,0.0
+2026-09-14,Cristales,2020,243,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-14,VERDELIMA,2020,563,0,0,0,0,0,0.0
+2026-09-14,Verdeoliva,2020,670,0,0,0,0,0,0.0
+2026-09-14,Verdepino,2020,752,0,0,0,0,0,0.0
+2026-09-14,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-14,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-14,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-14,Candil,2021,237,0,0,0,0,0,0.0
+2026-09-14,Cristales,2021,243,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-14,VERDELIMA,2021,563,0,0,0,0,0,0.0
+2026-09-14,Verdeoliva,2021,670,0,0,0,0,0,0.0
+2026-09-14,Verdepino,2021,752,0,0,0,0,0,0.0
+2026-09-14,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-14,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-14,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-14,Candil,2025,237,0,0,0,0,0,0.0
+2026-09-14,Cristales,2025,243,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-14,VERDELIMA,2025,563,0,0,0,0,0,284.0
+2026-09-14,Verdeoliva,2025,670,0,0,0,0,0,180.0
+2026-09-14,Verdepino,2025,752,0,0,0,0,0,193.0
+2026-09-14,Verdevivo,2025,620,0,0,0,0,0,87.0
+2026-09-14,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-14,Azul Club Residencial Turquesa,2026,270,86,1,1,75,58,20.0
+2026-09-14,Candil,2026,237,90,88,69,89,52,0.0
+2026-09-14,Cristales,2026,243,152,146,121,150,88,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-09-14,VERDELIMA,2026,563,209,188,125,208,63,44.0
+2026-09-14,Verdeoliva,2026,670,244,232,137,242,79,102.0
+2026-09-14,Verdepino,2026,752,219,211,139,218,93,85.0
+2026-09-14,Verdevivo,2026,620,139,134,77,137,55,81.0
+2026-09-14,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-09-14,Azul Club Residencial Turquesa,2027,270,4,0,0,4,4,0.0
+2026-09-14,Candil,2027,237,86,80,77,86,78,0.0
+2026-09-14,Cristales,2027,243,7,6,6,7,7,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-14,VERDELIMA,2027,563,1,1,1,1,1,0.0
+2026-09-14,Verdeoliva,2027,670,2,1,1,2,1,0.0
+2026-09-14,Verdepino,2027,752,11,11,10,11,10,0.0
+2026-09-14,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-14,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-14,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-14,Candil,2028,237,38,36,36,38,38,0.0
+2026-09-14,Cristales,2028,243,36,33,33,36,35,0.0
+2026-09-14,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-14,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-14,VERDELIMA,2028,563,0,0,0,0,0,0.0
+2026-09-14,Verdeoliva,2028,670,0,0,0,0,0,0.0
+2026-09-14,Verdepino,2028,752,195,188,188,193,191,0.0
+2026-09-14,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-09-21,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-21,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,62,178.0
+2026-09-21,Candil,Todos,238,238,214,189,224,176,0.0
+2026-09-21,Cristales,Todos,246,246,207,179,216,150,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-21,Las Mañanitas Casas,Todos,210,123,84,59,115,99,87.0
+2026-09-21,VERDELIMA,Todos,565,221,198,128,218,72,344.0
+2026-09-21,Verdeoliva,Todos,672,262,241,145,253,88,410.0
+2026-09-21,Verdepino,Todos,756,474,447,370,461,324,282.0
+2026-09-21,Verdevivo,Todos,620,181,166,104,171,74,439.0
+2026-09-21,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-21,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-21,Candil,2020,238,0,0,0,0,0,0.0
+2026-09-21,Cristales,2020,246,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-21,VERDELIMA,2020,565,0,0,0,0,0,0.0
+2026-09-21,Verdeoliva,2020,672,0,0,0,0,0,0.0
+2026-09-21,Verdepino,2020,756,0,0,0,0,0,0.0
+2026-09-21,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-21,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-21,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-21,Candil,2021,238,0,0,0,0,0,0.0
+2026-09-21,Cristales,2021,246,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-21,VERDELIMA,2021,565,0,0,0,0,0,0.0
+2026-09-21,Verdeoliva,2021,672,0,0,0,0,0,0.0
+2026-09-21,Verdepino,2021,756,0,0,0,0,0,0.0
+2026-09-21,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-21,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-21,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-21,Candil,2025,238,0,0,0,0,0,0.0
+2026-09-21,Cristales,2025,246,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-21,VERDELIMA,2025,565,0,0,0,0,0,284.0
+2026-09-21,Verdeoliva,2025,672,0,0,0,0,0,180.0
+2026-09-21,Verdepino,2025,756,0,0,0,0,0,193.0
+2026-09-21,Verdevivo,2025,620,0,0,0,0,0,86.0
+2026-09-21,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-21,Azul Club Residencial Turquesa,2026,270,86,1,1,75,57,20.0
+2026-09-21,Candil,2026,238,66,65,51,66,39,0.0
+2026-09-21,Cristales,2026,246,150,145,117,149,84,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2026,210,1,1,1,1,0,3.0
+2026-09-21,VERDELIMA,2026,565,208,187,118,207,62,44.0
+2026-09-21,Verdeoliva,2026,672,242,230,134,240,77,104.0
+2026-09-21,Verdepino,2026,756,214,206,133,213,85,89.0
+2026-09-21,Verdevivo,2026,620,139,134,73,137,49,82.0
+2026-09-21,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-09-21,Azul Club Residencial Turquesa,2027,270,4,0,0,4,4,0.0
+2026-09-21,Candil,2027,238,110,103,92,109,88,0.0
+2026-09-21,Cristales,2027,246,8,7,7,8,8,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-21,VERDELIMA,2027,565,2,2,1,2,2,0.0
+2026-09-21,Verdeoliva,2027,672,2,1,1,2,1,0.0
+2026-09-21,Verdepino,2027,756,12,12,11,12,11,0.0
+2026-09-21,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-21,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-21,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-21,Candil,2028,238,38,36,36,38,38,0.0
+2026-09-21,Cristales,2028,246,37,33,33,36,35,0.0
+2026-09-21,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-21,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-21,VERDELIMA,2028,565,0,0,0,0,0,0.0
+2026-09-21,Verdeoliva,2028,672,0,0,0,0,0,0.0
+2026-09-21,Verdepino,2028,756,195,188,188,193,191,0.0
+2026-09-21,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-09-28,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-09-28,Azul Club Residencial Turquesa,Todos,270,92,1,1,80,61,178.0
+2026-09-28,Candil,Todos,238,238,213,183,223,174,0.0
+2026-09-28,Cristales,Todos,250,250,207,178,216,149,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-09-28,Las Mañanitas Casas,Todos,210,123,84,59,115,100,87.0
+2026-09-28,VERDELIMA,Todos,565,219,197,125,216,68,346.0
+2026-09-28,Verdeoliva,Todos,673,263,242,142,254,84,410.0
+2026-09-28,Verdepino,Todos,758,470,443,372,457,317,288.0
+2026-09-28,Verdevivo,Todos,620,175,160,102,165,72,445.0
+2026-09-28,Azul Club Residencial Celeste,2020,307,0,0,0,0,0,0.0
+2026-09-28,Azul Club Residencial Turquesa,2020,270,0,0,0,0,0,0.0
+2026-09-28,Candil,2020,238,0,0,0,0,0,0.0
+2026-09-28,Cristales,2020,250,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2020,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2020,210,0,0,0,0,0,0.0
+2026-09-28,VERDELIMA,2020,565,0,0,0,0,0,0.0
+2026-09-28,Verdeoliva,2020,673,0,0,0,0,0,0.0
+2026-09-28,Verdepino,2020,758,0,0,0,0,0,0.0
+2026-09-28,Verdevivo,2020,620,0,0,0,0,0,0.0
+2026-09-28,Azul Club Residencial Celeste,2021,307,0,0,0,0,0,52.0
+2026-09-28,Azul Club Residencial Turquesa,2021,270,0,0,0,0,0,102.0
+2026-09-28,Candil,2021,238,0,0,0,0,0,0.0
+2026-09-28,Cristales,2021,250,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2021,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2021,210,0,0,0,0,0,0.0
+2026-09-28,VERDELIMA,2021,565,0,0,0,0,0,0.0
+2026-09-28,Verdeoliva,2021,673,0,0,0,0,0,0.0
+2026-09-28,Verdepino,2021,758,0,0,0,0,0,0.0
+2026-09-28,Verdevivo,2021,620,0,0,0,0,0,0.0
+2026-09-28,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-09-28,Azul Club Residencial Turquesa,2025,270,0,0,0,0,0,1.0
+2026-09-28,Candil,2025,238,0,0,0,0,0,0.0
+2026-09-28,Cristales,2025,250,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2025,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2025,210,0,0,0,0,0,6.0
+2026-09-28,VERDELIMA,2025,565,0,0,0,0,0,284.0
+2026-09-28,Verdeoliva,2025,673,0,0,0,0,0,180.0
+2026-09-28,Verdepino,2025,758,0,0,0,0,0,193.0
+2026-09-28,Verdevivo,2025,620,0,0,0,0,0,86.0
+2026-09-28,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-09-28,Azul Club Residencial Turquesa,2026,270,85,1,1,74,55,20.0
+2026-09-28,Candil,2026,238,65,64,45,65,37,0.0
+2026-09-28,Cristales,2026,250,150,145,116,149,83,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2026,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2026,210,1,0,0,0,0,3.0
+2026-09-28,VERDELIMA,2026,565,206,186,115,205,58,46.0
+2026-09-28,Verdeoliva,2026,673,242,230,130,240,72,104.0
+2026-09-28,Verdepino,2026,758,208,200,133,207,78,95.0
+2026-09-28,Verdevivo,2026,620,133,128,72,131,47,88.0
+2026-09-28,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-09-28,Azul Club Residencial Turquesa,2027,270,5,0,0,5,5,0.0
+2026-09-28,Candil,2027,238,110,103,92,109,88,0.0
+2026-09-28,Cristales,2027,250,8,7,7,8,8,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-09-28,VERDELIMA,2027,565,2,2,1,2,2,0.0
+2026-09-28,Verdeoliva,2027,673,2,1,1,2,1,0.0
+2026-09-28,Verdepino,2027,758,12,12,11,12,11,0.0
+2026-09-28,Verdevivo,2027,620,8,7,7,8,7,0.0
+2026-09-28,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-09-28,Azul Club Residencial Turquesa,2028,270,1,0,0,0,0,0.0
+2026-09-28,Candil,2028,238,38,36,36,38,38,0.0
+2026-09-28,Cristales,2028,250,37,33,33,36,35,0.0
+2026-09-28,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-09-28,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-09-28,VERDELIMA,2028,565,0,0,0,0,0,0.0
+2026-09-28,Verdeoliva,2028,673,0,0,0,0,0,0.0
+2026-09-28,Verdepino,2028,758,195,188,188,193,191,0.0
+2026-09-28,Verdevivo,2028,620,0,0,0,0,0,0.0
+2026-10-05,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-10-05,Azul Club Residencial Turquesa,Todos,267,89,1,1,78,59,178.0
+2026-10-05,Candil,Todos,238,238,211,181,221,170,0.0
+2026-10-05,Cristales,Todos,252,252,202,169,211,134,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-10-05,Las Mañanitas Casas,Todos,210,123,84,59,115,100,87.0
+2026-10-05,VERDELIMA,Todos,551,201,183,109,199,58,350.0
+2026-10-05,Verdeoliva,Todos,667,252,232,136,243,73,415.0
+2026-10-05,Verdepino,Todos,746,456,430,352,444,299,290.0
+2026-10-05,Verdevivo,Todos,614,160,145,96,151,65,454.0
+2026-10-05,Azul Club Residencial Celeste,2022,307,0,0,0,0,0,153.0
+2026-10-05,Azul Club Residencial Turquesa,2022,267,0,0,0,0,0,50.0
+2026-10-05,Candil,2022,238,0,0,0,0,0,0.0
+2026-10-05,Cristales,2022,252,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2022,117,2,2,2,2,2,0.0
+2026-10-05,Las Mañanitas Casas,2022,210,3,1,1,3,1,0.0
+2026-10-05,VERDELIMA,2022,551,0,0,0,0,0,0.0
+2026-10-05,Verdeoliva,2022,667,0,0,0,0,0,0.0
+2026-10-05,Verdepino,2022,746,0,0,0,0,0,0.0
+2026-10-05,Verdevivo,2022,614,0,0,0,0,0,0.0
+2026-10-05,Azul Club Residencial Celeste,2023,307,0,0,0,0,0,8.0
+2026-10-05,Azul Club Residencial Turquesa,2023,267,0,0,0,0,0,5.0
+2026-10-05,Candil,2023,238,0,0,0,0,0,0.0
+2026-10-05,Cristales,2023,252,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2023,117,36,26,12,34,33,0.0
+2026-10-05,Las Mañanitas Casas,2023,210,16,13,5,16,14,0.0
+2026-10-05,VERDELIMA,2023,551,0,0,0,0,0,0.0
+2026-10-05,Verdeoliva,2023,667,1,1,1,1,1,0.0
+2026-10-05,Verdepino,2023,746,0,0,0,0,0,0.0
+2026-10-05,Verdevivo,2023,614,0,0,0,0,0,165.0
+2026-10-05,Azul Club Residencial Celeste,2024,307,0,0,0,0,0,65.0
+2026-10-05,Azul Club Residencial Turquesa,2024,267,0,0,0,0,0,0.0
+2026-10-05,Candil,2024,238,0,0,0,0,0,0.0
+2026-10-05,Cristales,2024,252,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2024,117,29,27,18,29,27,0.0
+2026-10-05,Las Mañanitas Casas,2024,210,27,14,5,25,20,78.0
+2026-10-05,VERDELIMA,2024,551,0,0,0,0,0,16.0
+2026-10-05,Verdeoliva,2024,667,2,2,2,2,1,126.0
+2026-10-05,Verdepino,2024,746,1,1,1,1,0,0.0
+2026-10-05,Verdevivo,2024,614,1,1,0,1,0,106.0
+2026-10-05,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-10-05,Azul Club Residencial Turquesa,2025,267,0,0,0,0,0,1.0
+2026-10-05,Candil,2025,238,0,0,0,0,0,0.0
+2026-10-05,Cristales,2025,252,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2025,117,43,41,34,43,43,0.0
+2026-10-05,Las Mañanitas Casas,2025,210,45,33,27,43,40,6.0
+2026-10-05,VERDELIMA,2025,551,1,1,1,1,0,284.0
+2026-10-05,Verdeoliva,2025,667,0,0,0,0,0,180.0
+2026-10-05,Verdepino,2025,746,0,0,0,0,0,193.0
+2026-10-05,Verdevivo,2025,614,1,1,1,1,1,86.0
+2026-10-05,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-10-05,Azul Club Residencial Turquesa,2026,267,83,1,1,72,53,20.0
+2026-10-05,Candil,2026,238,45,44,32,45,23,0.0
+2026-10-05,Cristales,2026,252,150,143,110,148,72,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2026,117,7,7,6,7,7,0.0
+2026-10-05,Las Mañanitas Casas,2026,210,30,23,21,28,25,3.0
+2026-10-05,VERDELIMA,2026,551,194,178,105,194,54,50.0
+2026-10-05,Verdeoliva,2026,667,239,226,130,237,69,109.0
+2026-10-05,Verdepino,2026,746,214,203,127,212,73,97.0
+2026-10-05,Verdevivo,2026,614,124,119,72,123,43,97.0
+2026-10-05,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-10-05,Azul Club Residencial Turquesa,2027,267,5,0,0,5,5,0.0
+2026-10-05,Candil,2027,238,140,132,114,139,110,0.0
+2026-10-05,Cristales,2027,252,9,8,8,9,9,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-10-05,VERDELIMA,2027,551,4,4,3,4,4,0.0
+2026-10-05,Verdeoliva,2027,667,3,3,3,3,2,0.0
+2026-10-05,Verdepino,2027,746,30,30,28,30,27,0.0
+2026-10-05,Verdevivo,2027,614,26,24,23,26,21,0.0
+2026-10-05,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-10-05,Azul Club Residencial Turquesa,2028,267,0,0,0,0,0,0.0
+2026-10-05,Candil,2028,238,37,35,35,37,37,0.0
+2026-10-05,Cristales,2028,252,55,51,51,54,53,0.0
+2026-10-05,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-10-05,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-10-05,VERDELIMA,2028,551,0,0,0,0,0,0.0
+2026-10-05,Verdeoliva,2028,667,0,0,0,0,0,0.0
+2026-10-05,Verdepino,2028,746,202,195,195,200,198,0.0
+2026-10-05,Verdevivo,2028,614,0,0,0,0,0,0.0
+2026-10-13,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-10-13,Azul Club Residencial Turquesa,Todos,267,89,1,1,78,59,178.0
+2026-10-13,Candil,Todos,241,241,213,181,223,168,0.0
+2026-10-13,Cristales,Todos,258,258,202,165,211,130,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-10-13,Las Mañanitas Casas,Todos,210,123,83,58,114,99,87.0
+2026-10-13,VERDELIMA,Todos,553,202,183,103,199,55,351.0
+2026-10-13,Verdeoliva,Todos,670,251,231,130,242,74,419.0
+2026-10-13,Verdepino,Todos,750,455,429,345,443,299,295.0
+2026-10-13,Verdevivo,Todos,615,161,146,95,152,65,454.0
+2026-10-13,Azul Club Residencial Celeste,2022,307,0,0,0,0,0,153.0
+2026-10-13,Azul Club Residencial Turquesa,2022,267,0,0,0,0,0,50.0
+2026-10-13,Candil,2022,241,0,0,0,0,0,0.0
+2026-10-13,Cristales,2022,258,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2022,117,2,2,2,2,2,0.0
+2026-10-13,Las Mañanitas Casas,2022,210,2,0,0,2,0,0.0
+2026-10-13,VERDELIMA,2022,553,0,0,0,0,0,0.0
+2026-10-13,Verdeoliva,2022,670,0,0,0,0,0,0.0
+2026-10-13,Verdepino,2022,750,0,0,0,0,0,0.0
+2026-10-13,Verdevivo,2022,615,0,0,0,0,0,0.0
+2026-10-13,Azul Club Residencial Celeste,2023,307,0,0,0,0,0,8.0
+2026-10-13,Azul Club Residencial Turquesa,2023,267,0,0,0,0,0,5.0
+2026-10-13,Candil,2023,241,0,0,0,0,0,0.0
+2026-10-13,Cristales,2023,258,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2023,117,36,26,12,34,33,0.0
+2026-10-13,Las Mañanitas Casas,2023,210,16,13,5,16,14,0.0
+2026-10-13,VERDELIMA,2023,553,0,0,0,0,0,0.0
+2026-10-13,Verdeoliva,2023,670,1,1,1,1,1,0.0
+2026-10-13,Verdepino,2023,750,0,0,0,0,0,0.0
+2026-10-13,Verdevivo,2023,615,0,0,0,0,0,165.0
+2026-10-13,Azul Club Residencial Celeste,2024,307,0,0,0,0,0,65.0
+2026-10-13,Azul Club Residencial Turquesa,2024,267,0,0,0,0,0,0.0
+2026-10-13,Candil,2024,241,0,0,0,0,0,0.0
+2026-10-13,Cristales,2024,258,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2024,117,29,27,18,29,27,0.0
+2026-10-13,Las Mañanitas Casas,2024,210,27,14,5,25,20,78.0
+2026-10-13,VERDELIMA,2024,553,0,0,0,0,0,16.0
+2026-10-13,Verdeoliva,2024,670,3,3,3,3,2,126.0
+2026-10-13,Verdepino,2024,750,1,1,1,1,0,0.0
+2026-10-13,Verdevivo,2024,615,2,2,1,2,1,106.0
+2026-10-13,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-10-13,Azul Club Residencial Turquesa,2025,267,0,0,0,0,0,1.0
+2026-10-13,Candil,2025,241,0,0,0,0,0,0.0
+2026-10-13,Cristales,2025,258,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2025,117,43,41,34,43,43,0.0
+2026-10-13,Las Mañanitas Casas,2025,210,45,33,27,43,40,6.0
+2026-10-13,VERDELIMA,2025,553,1,1,1,1,0,284.0
+2026-10-13,Verdeoliva,2025,670,0,0,0,0,0,180.0
+2026-10-13,Verdepino,2025,750,0,0,0,0,0,193.0
+2026-10-13,Verdevivo,2025,615,1,1,1,1,1,86.0
+2026-10-13,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-10-13,Azul Club Residencial Turquesa,2026,267,83,1,1,72,53,20.0
+2026-10-13,Candil,2026,241,43,42,30,43,20,0.0
+2026-10-13,Cristales,2026,258,152,143,106,148,69,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2026,117,7,7,6,7,7,0.0
+2026-10-13,Las Mañanitas Casas,2026,210,30,23,21,28,25,3.0
+2026-10-13,VERDELIMA,2026,553,194,177,98,193,51,51.0
+2026-10-13,Verdeoliva,2026,670,237,224,123,235,69,113.0
+2026-10-13,Verdepino,2026,750,213,202,120,211,73,102.0
+2026-10-13,Verdevivo,2026,615,124,119,70,123,42,97.0
+2026-10-13,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-10-13,Azul Club Residencial Turquesa,2027,267,5,0,0,5,5,0.0
+2026-10-13,Candil,2027,241,144,136,116,143,111,0.0
+2026-10-13,Cristales,2027,258,9,8,8,9,8,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Casas,2027,210,0,0,0,0,0,0.0
+2026-10-13,VERDELIMA,2027,553,5,5,4,5,4,0.0
+2026-10-13,Verdeoliva,2027,670,3,3,3,3,2,0.0
+2026-10-13,Verdepino,2027,750,29,29,27,29,26,0.0
+2026-10-13,Verdevivo,2027,615,26,24,23,26,21,0.0
+2026-10-13,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-10-13,Azul Club Residencial Turquesa,2028,267,0,0,0,0,0,0.0
+2026-10-13,Candil,2028,241,37,35,35,37,37,0.0
+2026-10-13,Cristales,2028,258,58,51,51,54,53,0.0
+2026-10-13,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-10-13,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-10-13,VERDELIMA,2028,553,0,0,0,0,0,0.0
+2026-10-13,Verdeoliva,2028,670,0,0,0,0,0,0.0
+2026-10-13,Verdepino,2028,750,203,196,196,201,199,0.0
+2026-10-13,Verdevivo,2028,615,0,0,0,0,0,0.0
+2026-10-14,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-10-14,Azul Club Residencial Turquesa,Todos,267,89,1,1,76,57,178.0
+2026-10-14,Candil,Todos,242,242,226,193,237,181,0.0
+2026-10-14,Cristales,Todos,231,231,206,168,221,138,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-10-14,Las Mañanitas Casas,Todos,210,123,86,61,117,101,87.0
+2026-10-14,VERDELIMA,Todos,548,197,176,95,193,49,351.0
+2026-10-14,Verdeoliva,Todos,659,240,223,121,234,64,419.0
+2026-10-14,Verdepino,Todos,728,432,410,326,425,278,296.0
+2026-10-14,Verdevivo,Todos,608,153,144,94,149,61,455.0
+2026-10-14,Azul Club Residencial Celeste,2022,307,0,0,0,0,0,153.0
+2026-10-14,Azul Club Residencial Turquesa,2022,267,0,0,0,0,0,50.0
+2026-10-14,Candil,2022,242,0,0,0,0,0,0.0
+2026-10-14,Cristales,2022,231,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2022,117,2,2,2,2,2,0.0
+2026-10-14,Las Mañanitas Casas,2022,210,2,0,0,2,0,0.0
+2026-10-14,VERDELIMA,2022,548,0,0,0,0,0,0.0
+2026-10-14,Verdeoliva,2022,659,0,0,0,0,0,0.0
+2026-10-14,Verdepino,2022,728,0,0,0,0,0,0.0
+2026-10-14,Verdevivo,2022,608,0,0,0,0,0,0.0
+2026-10-14,Azul Club Residencial Celeste,2023,307,0,0,0,0,0,8.0
+2026-10-14,Azul Club Residencial Turquesa,2023,267,0,0,0,0,0,5.0
+2026-10-14,Candil,2023,242,0,0,0,0,0,0.0
+2026-10-14,Cristales,2023,231,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023,117,36,26,12,34,33,0.0
+2026-10-14,Las Mañanitas Casas,2023,210,16,13,5,16,14,0.0
+2026-10-14,VERDELIMA,2023,548,0,0,0,0,0,0.0
+2026-10-14,Verdeoliva,2023,659,0,0,0,0,0,0.0
+2026-10-14,Verdepino,2023,728,0,0,0,0,0,0.0
+2026-10-14,Verdevivo,2023,608,0,0,0,0,0,165.0
+2026-10-14,Azul Club Residencial Celeste,2024,307,0,0,0,0,0,65.0
+2026-10-14,Azul Club Residencial Turquesa,2024,267,0,0,0,0,0,0.0
+2026-10-14,Candil,2024,242,0,0,0,0,0,0.0
+2026-10-14,Cristales,2024,231,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024,117,29,27,18,29,27,0.0
+2026-10-14,Las Mañanitas Casas,2024,210,27,14,5,25,20,78.0
+2026-10-14,VERDELIMA,2024,548,0,0,0,0,0,16.0
+2026-10-14,Verdeoliva,2024,659,0,0,0,0,0,126.0
+2026-10-14,Verdepino,2024,728,0,0,0,0,0,0.0
+2026-10-14,Verdevivo,2024,608,0,0,0,0,0,106.0
+2026-10-14,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-10-14,Azul Club Residencial Turquesa,2025,267,0,0,0,0,0,1.0
+2026-10-14,Candil,2025,242,0,0,0,0,0,0.0
+2026-10-14,Cristales,2025,231,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025,117,43,41,34,43,43,0.0
+2026-10-14,Las Mañanitas Casas,2025,210,45,33,27,43,40,6.0
+2026-10-14,VERDELIMA,2025,548,0,0,0,0,0,284.0
+2026-10-14,Verdeoliva,2025,659,0,0,0,0,0,180.0
+2026-10-14,Verdepino,2025,728,0,0,0,0,0,193.0
+2026-10-14,Verdevivo,2025,608,0,0,0,0,0,86.0
+2026-10-14,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-10-14,Azul Club Residencial Turquesa,2026,267,83,1,1,70,51,20.0
+2026-10-14,Candil,2026,242,42,41,29,42,19,0.0
+2026-10-14,Cristales,2026,231,125,119,81,124,43,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2026,117,7,7,6,7,7,0.0
+2026-10-14,Las Mañanitas Casas,2026,210,30,24,22,29,25,3.0
+2026-10-14,VERDELIMA,2026,548,176,159,79,175,33,51.0
+2026-10-14,Verdeoliva,2026,659,219,206,104,217,50,113.0
+2026-10-14,Verdepino,2026,728,182,172,90,181,43,103.0
+2026-10-14,Verdevivo,2026,608,114,108,59,111,30,98.0
+2026-10-14,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-10-14,Azul Club Residencial Turquesa,2027,267,5,0,0,5,5,0.0
+2026-10-14,Candil,2027,242,159,150,129,158,125,0.0
+2026-10-14,Cristales,2027,231,9,8,8,9,8,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Casas,2027,210,2,2,2,2,2,0.0
+2026-10-14,VERDELIMA,2027,548,18,17,16,18,16,0.0
+2026-10-14,Verdeoliva,2027,659,17,17,17,17,14,0.0
+2026-10-14,Verdepino,2027,728,42,42,40,42,35,0.0
+2026-10-14,Verdevivo,2027,608,38,36,35,38,31,0.0
+2026-10-14,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-10-14,Azul Club Residencial Turquesa,2028,267,0,0,0,0,0,0.0
+2026-10-14,Candil,2028,242,37,35,35,37,37,0.0
+2026-10-14,Cristales,2028,231,88,79,79,88,87,0.0
+2026-10-14,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-10-14,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-10-14,VERDELIMA,2028,548,0,0,0,0,0,0.0
+2026-10-14,Verdeoliva,2028,659,0,0,0,0,0,0.0
+2026-10-14,Verdepino,2028,728,202,196,196,202,200,0.0
+2026-10-14,Verdevivo,2028,608,0,0,0,0,0,0.0
+2026-10-19,Azul Club Residencial Celeste,Todos,307,4,0,0,3,3,303.0
+2026-10-19,Azul Club Residencial Turquesa,Todos,267,89,1,1,76,56,178.0
+2026-10-19,Candil,Todos,243,243,226,192,237,180,0.0
+2026-10-19,Cristales,Todos,233,233,206,167,221,138,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-10-19,Las Mañanitas Casas,Todos,210,123,86,61,117,101,87.0
+2026-10-19,VERDELIMA,Todos,550,198,175,95,192,47,352.0
+2026-10-19,Verdeoliva,Todos,661,240,220,120,231,62,421.0
+2026-10-19,Verdepino,Todos,730,433,409,325,424,277,297.0
+2026-10-19,Verdevivo,Todos,608,153,144,93,149,59,455.0
+2026-10-19,Azul Club Residencial Celeste,2022,307,0,0,0,0,0,153.0
+2026-10-19,Azul Club Residencial Turquesa,2022,267,0,0,0,0,0,50.0
+2026-10-19,Candil,2022,243,0,0,0,0,0,0.0
+2026-10-19,Cristales,2022,233,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2022,117,2,2,2,2,2,0.0
+2026-10-19,Las Mañanitas Casas,2022,210,2,0,0,2,0,0.0
+2026-10-19,VERDELIMA,2022,550,0,0,0,0,0,0.0
+2026-10-19,Verdeoliva,2022,661,0,0,0,0,0,0.0
+2026-10-19,Verdepino,2022,730,0,0,0,0,0,0.0
+2026-10-19,Verdevivo,2022,608,0,0,0,0,0,0.0
+2026-10-19,Azul Club Residencial Celeste,2023,307,0,0,0,0,0,8.0
+2026-10-19,Azul Club Residencial Turquesa,2023,267,0,0,0,0,0,5.0
+2026-10-19,Candil,2023,243,0,0,0,0,0,0.0
+2026-10-19,Cristales,2023,233,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2023,117,36,26,12,34,33,0.0
+2026-10-19,Las Mañanitas Casas,2023,210,16,13,5,16,14,0.0
+2026-10-19,VERDELIMA,2023,550,0,0,0,0,0,0.0
+2026-10-19,Verdeoliva,2023,661,0,0,0,0,0,0.0
+2026-10-19,Verdepino,2023,730,0,0,0,0,0,0.0
+2026-10-19,Verdevivo,2023,608,0,0,0,0,0,165.0
+2026-10-19,Azul Club Residencial Celeste,2024,307,0,0,0,0,0,65.0
+2026-10-19,Azul Club Residencial Turquesa,2024,267,0,0,0,0,0,0.0
+2026-10-19,Candil,2024,243,0,0,0,0,0,0.0
+2026-10-19,Cristales,2024,233,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2024,117,29,27,18,29,27,0.0
+2026-10-19,Las Mañanitas Casas,2024,210,27,14,5,25,20,78.0
+2026-10-19,VERDELIMA,2024,550,0,0,0,0,0,16.0
+2026-10-19,Verdeoliva,2024,661,0,0,0,0,0,126.0
+2026-10-19,Verdepino,2024,730,0,0,0,0,0,0.0
+2026-10-19,Verdevivo,2024,608,0,0,0,0,0,106.0
+2026-10-19,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-10-19,Azul Club Residencial Turquesa,2025,267,0,0,0,0,0,1.0
+2026-10-19,Candil,2025,243,0,0,0,0,0,0.0
+2026-10-19,Cristales,2025,233,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2025,117,43,41,34,43,43,0.0
+2026-10-19,Las Mañanitas Casas,2025,210,45,33,27,43,40,6.0
+2026-10-19,VERDELIMA,2025,550,0,0,0,0,0,284.0
+2026-10-19,Verdeoliva,2025,661,0,0,0,0,0,180.0
+2026-10-19,Verdepino,2025,730,0,0,0,0,0,193.0
+2026-10-19,Verdevivo,2025,608,0,0,0,0,0,86.0
+2026-10-19,Azul Club Residencial Celeste,2026,307,3,0,0,2,2,5.0
+2026-10-19,Azul Club Residencial Turquesa,2026,267,83,1,1,70,50,20.0
+2026-10-19,Candil,2026,243,42,41,28,42,19,0.0
+2026-10-19,Cristales,2026,233,125,119,80,124,43,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2026,117,7,7,6,7,7,0.0
+2026-10-19,Las Mañanitas Casas,2026,210,30,24,22,29,25,3.0
+2026-10-19,VERDELIMA,2026,550,175,158,79,174,31,52.0
+2026-10-19,Verdeoliva,2026,661,217,204,104,215,49,115.0
+2026-10-19,Verdepino,2026,730,181,171,90,180,42,104.0
+2026-10-19,Verdevivo,2026,608,114,108,58,111,29,98.0
+2026-10-19,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-10-19,Azul Club Residencial Turquesa,2027,267,5,0,0,5,5,0.0
+2026-10-19,Candil,2027,243,162,150,129,158,124,0.0
+2026-10-19,Cristales,2027,233,9,8,8,9,8,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Casas,2027,210,2,2,2,2,2,0.0
+2026-10-19,VERDELIMA,2027,550,18,17,16,18,16,0.0
+2026-10-19,Verdeoliva,2027,661,16,16,16,16,13,0.0
+2026-10-19,Verdepino,2027,730,42,42,40,42,35,0.0
+2026-10-19,Verdevivo,2027,608,38,36,35,38,30,0.0
+2026-10-19,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-10-19,Azul Club Residencial Turquesa,2028,267,0,0,0,0,0,0.0
+2026-10-19,Candil,2028,243,37,35,35,37,37,0.0
+2026-10-19,Cristales,2028,233,93,79,79,88,87,0.0
+2026-10-19,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-10-19,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-10-19,VERDELIMA,2028,550,0,0,0,0,0,0.0
+2026-10-19,Verdeoliva,2028,661,0,0,0,0,0,0.0
+2026-10-19,Verdepino,2028,730,202,196,195,202,200,0.0
+2026-10-19,Verdevivo,2028,608,0,0,0,0,0,0.0
+2026-10-26,Azul Club Residencial Celeste,Todos,307,3,0,0,2,2,304.0
+2026-10-26,Azul Club Residencial Turquesa,Todos,267,89,1,1,76,56,178.0
+2026-10-26,Candil,Todos,244,244,226,190,237,176,0.0
+2026-10-26,Cristales,Todos,234,234,206,160,221,137,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,Todos,117,117,103,72,115,112,0.0
+2026-10-26,Las Mañanitas Casas,Todos,210,123,86,61,117,101,87.0
+2026-10-26,VERDELIMA,Todos,551,198,174,90,191,48,353.0
+2026-10-26,Verdeoliva,Todos,662,241,220,114,231,60,421.0
+2026-10-26,Verdepino,Todos,731,434,409,314,424,275,297.0
+2026-10-26,Verdevivo,Todos,608,151,143,91,147,55,457.0
+2026-10-26,Azul Club Residencial Celeste,2022,307,0,0,0,0,0,153.0
+2026-10-26,Azul Club Residencial Turquesa,2022,267,0,0,0,0,0,50.0
+2026-10-26,Candil,2022,244,0,0,0,0,0,0.0
+2026-10-26,Cristales,2022,234,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2022,117,2,2,2,2,2,0.0
+2026-10-26,Las Mañanitas Casas,2022,210,2,0,0,2,0,0.0
+2026-10-26,VERDELIMA,2022,551,0,0,0,0,0,0.0
+2026-10-26,Verdeoliva,2022,662,0,0,0,0,0,0.0
+2026-10-26,Verdepino,2022,731,0,0,0,0,0,0.0
+2026-10-26,Verdevivo,2022,608,0,0,0,0,0,0.0
+2026-10-26,Azul Club Residencial Celeste,2023,307,0,0,0,0,0,8.0
+2026-10-26,Azul Club Residencial Turquesa,2023,267,0,0,0,0,0,5.0
+2026-10-26,Candil,2023,244,0,0,0,0,0,0.0
+2026-10-26,Cristales,2023,234,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,117,36,26,12,34,33,0.0
+2026-10-26,Las Mañanitas Casas,2023,210,16,13,5,16,14,0.0
+2026-10-26,VERDELIMA,2023,551,0,0,0,0,0,0.0
+2026-10-26,Verdeoliva,2023,662,0,0,0,0,0,0.0
+2026-10-26,Verdepino,2023,731,0,0,0,0,0,0.0
+2026-10-26,Verdevivo,2023,608,0,0,0,0,0,165.0
+2026-10-26,Azul Club Residencial Celeste,2024,307,0,0,0,0,0,65.0
+2026-10-26,Azul Club Residencial Turquesa,2024,267,0,0,0,0,0,0.0
+2026-10-26,Candil,2024,244,0,0,0,0,0,0.0
+2026-10-26,Cristales,2024,234,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,117,29,27,18,29,27,0.0
+2026-10-26,Las Mañanitas Casas,2024,210,27,14,5,25,20,78.0
+2026-10-26,VERDELIMA,2024,551,0,0,0,0,0,16.0
+2026-10-26,Verdeoliva,2024,662,0,0,0,0,0,126.0
+2026-10-26,Verdepino,2024,731,0,0,0,0,0,0.0
+2026-10-26,Verdevivo,2024,608,0,0,0,0,0,106.0
+2026-10-26,Azul Club Residencial Celeste,2025,307,0,0,0,0,0,20.0
+2026-10-26,Azul Club Residencial Turquesa,2025,267,0,0,0,0,0,1.0
+2026-10-26,Candil,2025,244,0,0,0,0,0,0.0
+2026-10-26,Cristales,2025,234,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,117,43,41,34,43,43,0.0
+2026-10-26,Las Mañanitas Casas,2025,210,45,33,27,43,40,6.0
+2026-10-26,VERDELIMA,2025,551,0,0,0,0,0,284.0
+2026-10-26,Verdeoliva,2025,662,0,0,0,0,0,180.0
+2026-10-26,Verdepino,2025,731,0,0,0,0,0,193.0
+2026-10-26,Verdevivo,2025,608,0,0,0,0,0,86.0
+2026-10-26,Azul Club Residencial Celeste,2026,307,2,0,0,1,1,6.0
+2026-10-26,Azul Club Residencial Turquesa,2026,267,83,1,1,70,50,20.0
+2026-10-26,Candil,2026,244,42,41,26,42,17,0.0
+2026-10-26,Cristales,2026,234,124,118,72,123,41,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,117,7,7,6,7,7,0.0
+2026-10-26,Las Mañanitas Casas,2026,210,30,24,22,29,25,3.0
+2026-10-26,VERDELIMA,2026,551,174,157,74,173,31,53.0
+2026-10-26,Verdeoliva,2026,662,217,204,98,215,47,115.0
+2026-10-26,Verdepino,2026,731,181,171,80,180,40,104.0
+2026-10-26,Verdevivo,2026,608,112,107,56,109,25,100.0
+2026-10-26,Azul Club Residencial Celeste,2027,307,1,0,0,1,1,0.0
+2026-10-26,Azul Club Residencial Turquesa,2027,267,5,0,0,5,5,0.0
+2026-10-26,Candil,2027,244,162,150,129,158,122,0.0
+2026-10-26,Cristales,2027,234,10,9,9,10,9,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2027,117,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Casas,2027,210,2,2,2,2,2,0.0
+2026-10-26,VERDELIMA,2027,551,18,17,16,18,17,0.0
+2026-10-26,Verdeoliva,2027,662,16,16,16,16,13,0.0
+2026-10-26,Verdepino,2027,731,42,42,40,42,35,0.0
+2026-10-26,Verdevivo,2027,608,38,36,35,38,30,0.0
+2026-10-26,Azul Club Residencial Celeste,2028,307,0,0,0,0,0,0.0
+2026-10-26,Azul Club Residencial Turquesa,2028,267,0,0,0,0,0,0.0
+2026-10-26,Candil,2028,244,37,35,35,37,37,0.0
+2026-10-26,Cristales,2028,234,93,79,79,88,87,0.0
+2026-10-26,Las Mañanitas Apartamentos VIS,2028,117,0,0,0,0,0,0.0
+2026-10-26,Las Mañanitas Casas,2028,210,0,0,0,0,0,0.0
+2026-10-26,VERDELIMA,2028,551,0,0,0,0,0,0.0
+2026-10-26,Verdeoliva,2028,662,0,0,0,0,0,0.0
+2026-10-26,Verdepino,2028,731,202,196,194,202,200,0.0
+2026-10-26,Verdevivo,2028,608,0,0,0,0,0,0.0

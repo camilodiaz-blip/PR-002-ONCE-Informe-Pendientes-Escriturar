@@ -103,3 +103,10 @@ env.bak/
 .venv
 # Optional: comment out if you want to track data
 data/raw/
+
+# Accesos directos de Google Drive a documentos nativos de Google (Docs/Sheets/Slides) -- no
+# son el contenido real (vive en la nube), y Git falla al leerlos a traves del sistema de
+# archivos virtual de Drive ("Invalid argument" al indexar).
+*.gdoc
+*.gsheet
+*.gslides

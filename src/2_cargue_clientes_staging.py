@@ -3,7 +3,7 @@ import re
 import pandas as pd
 from glob import glob
 
-from api_utils import RUTA_RAW_CLIENTES, RUTA_STAGING
+from api_utils import RUTA_RAW_CLIENTES, RUTA_STAGING, RUTA_REFERENCIA
 
 # La API de Smarthome no trae la torre como campo separado (moduleCode/moduleAddress vienen
 # vacios) -- viene embebida como texto libre en 'modulo' (ej. "Torre 5 Apto 1107",
@@ -16,6 +16,41 @@ _RE_TORRE = re.compile(r'torre\s*0*(\d+)', re.IGNORECASE)
 def _extraer_torre(modulo):
     m = _RE_TORRE.search(str(modulo))
     return f"Torre {int(m.group(1))}" if m else None
+
+
+def _excluir_desistidos(df):
+    """
+    Quita del staging a los clientes que ya desistieron de su compra (lista mantenida a mano
+    en data/referencia/clientes_desistidos.csv, cruzada por id_prospecto -- unico identificador
+    confiable, el nombre/modulo puede tener variaciones de formato).
+
+    Smarthome no borra ni marca estos registros de ninguna forma identificable automaticamente
+    (siguen con una 'etapa_venta' de venta normal), asi que esos apartamentos en realidad NO
+    estan vendidos y no deberian aparecer en ningun calculo del informe -- se filtran aca, en
+    el staging, para que ya no lleguen a ningun paso de adelante (pagos, tareas, dashboard).
+    """
+    ruta = os.path.join(RUTA_REFERENCIA, "clientes_desistidos.csv")
+    if not os.path.exists(ruta):
+        return df
+
+    desistidos = pd.read_csv(ruta, encoding='utf-8-sig')
+    ids_desistidos = set(desistidos['id_prospecto'].astype(str).str.strip().str.lower())
+
+    id_prospecto_limpio = df['id_prospecto'].astype(str).str.strip().str.lower()
+    es_desistido = id_prospecto_limpio.isin(ids_desistidos)
+
+    encontrados = id_prospecto_limpio[es_desistido].unique()
+    no_encontrados = ids_desistidos - set(encontrados)
+    print(f"Clientes desistidos excluidos del staging: {es_desistido.sum()} de {len(desistidos)} "
+          f"en la lista de referencia.")
+    if no_encontrados:
+        print(f"ADVERTENCIA: {len(no_encontrados)} id_prospecto de clientes_desistidos.csv "
+              "no se encontraron en el cargue actual (revisar si el id es correcto o si el "
+              "cliente ya no aparece en ningun proyecto):")
+        for id_prospecto in sorted(no_encontrados):
+            print(f"  - {id_prospecto}")
+
+    return df[~es_desistido].copy()
 
 
 def run():
@@ -56,6 +91,8 @@ def run():
     df['proyecto'] = df['proyecto'].astype(str).str.strip()
     df['modulo'] = df['modulo'].astype(str).str.strip()
     df['torre'] = df['modulo'].apply(_extraer_torre)
+
+    df = _excluir_desistidos(df)
 
     os.makedirs(RUTA_STAGING, exist_ok=True)
     ruta_archivo = os.path.join(RUTA_STAGING, "clientes.parquet")

@@ -1,490 +1,643 @@
-﻿fecha_corte,proyecto,anio,periodo,orden,Listos,En Gestión,Sin Cartas
-2026-08-10,Verdepino,2026.0,Abril 2026,202604,2,0,0
-2026-08-10,Azul Club Residencial Celeste,2026.0,Junio 2026,202606,0,0,1
-2026-08-10,Verdepino,2026.0,Junio 2026,202606,6,4,2
-2026-08-10,Verdevivo,2026.0,Junio 2026,202606,8,0,0
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,0,0,2
-2026-08-10,VERDELIMA,2026.0,Julio 2026,202607,4,3,0
-2026-08-10,Verdepino,2026.0,Julio 2026,202607,7,3,3
-2026-08-10,Verdevivo,2026.0,Julio 2026,202607,7,9,1
-2026-08-10,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,0,0,1
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Agosto 2026,202608,8,0,23
-2026-08-10,VERDELIMA,2026.0,Agosto 2026,202608,3,5,3
-2026-08-10,Verdeoliva,2026.0,Agosto 2026,202608,10,2,0
-2026-08-10,Verdepino,2026.0,Agosto 2026,202608,5,6,0
-2026-08-10,Verdevivo,2026.0,Agosto 2026,202608,12,8,1
-2026-08-10,Azul Club Residencial Celeste,2026.0,Septiembre 2026,202609,1,0,2
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Septiembre 2026,202609,9,0,21
-2026-08-10,Cristales,2026.0,Septiembre 2026,202609,2,2,7
-2026-08-10,VERDELIMA,2026.0,Septiembre 2026,202609,1,2,2
-2026-08-10,Verdeoliva,2026.0,Septiembre 2026,202609,5,8,4
-2026-08-10,Verdepino,2026.0,Septiembre 2026,202609,4,6,5
-2026-08-10,Verdevivo,2026.0,Septiembre 2026,202609,7,9,4
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,1,0,8
-2026-08-10,Cristales,2026.0,Octubre 2026,202610,1,3,11
-2026-08-10,VERDELIMA,2026.0,Octubre 2026,202610,4,13,9
-2026-08-10,Verdeoliva,2026.0,Octubre 2026,202610,6,4,3
-2026-08-10,Verdepino,2026.0,Octubre 2026,202610,2,6,3
-2026-08-10,Verdevivo,2026.0,Octubre 2026,202610,3,10,3
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,1,0,12
-2026-08-10,Cristales,2026.0,Noviembre 2026,202611,4,8,28
-2026-08-10,VERDELIMA,2026.0,Noviembre 2026,202611,28,36,32
-2026-08-10,Verdeoliva,2026.0,Noviembre 2026,202611,10,20,11
-2026-08-10,Verdepino,2026.0,Noviembre 2026,202611,8,26,31
-2026-08-10,Verdevivo,2026.0,Noviembre 2026,202611,2,5,3
-2026-08-10,Azul Club Residencial Turquesa,2026.0,Diciembre 2026,202612,0,0,1
-2026-08-10,Candil,2026.0,Diciembre 2026,202612,7,28,75
-2026-08-10,Cristales,2026.0,Diciembre 2026,202612,5,21,61
-2026-08-10,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,1,0
-2026-08-10,VERDELIMA,2026.0,Diciembre 2026,202612,15,35,24
-2026-08-10,Verdeoliva,2026.0,Diciembre 2026,202612,37,89,52
-2026-08-10,Verdepino,2026.0,Diciembre 2026,202612,11,44,46
-2026-08-10,Verdevivo,2026.0,Diciembre 2026,202612,6,23,31
-2026-08-10,Cristales,2027.0,Enero 2027,202701,0,0,2
-2026-08-10,VERDELIMA,2027.0,Enero 2027,202701,0,0,1
-2026-08-10,Cristales,2027.0,Febrero 2027,202702,0,0,1
-2026-08-10,Verdeoliva,2027.0,Febrero 2027,202702,0,1,0
-2026-08-10,Verdepino,2027.0,Febrero 2027,202702,0,0,2
-2026-08-10,Candil,2027.0,Marzo 2027,202703,0,1,4
-2026-08-10,Cristales,2027.0,Marzo 2027,202703,0,0,1
-2026-08-10,Candil,2027.0,Abril 2027,202704,0,0,1
-2026-08-10,Cristales,2027.0,Mayo 2027,202705,0,0,2
-2026-08-10,Candil,2027.0,Junio 2027,202706,0,0,1
-2026-08-10,Verdepino,2027.0,Junio 2027,202706,0,0,2
-2026-08-10,Verdevivo,2027.0,Julio 2027,202707,0,0,4
-2026-08-10,Candil,2027.0,Agosto 2027,202708,0,0,1
-2026-08-10,Verdevivo,2027.0,Agosto 2027,202708,1,0,2
-2026-08-10,Cristales,2027.0,Septiembre 2027,202709,0,0,1
-2026-08-10,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,2
-2026-08-10,Candil,2027.0,Octubre 2027,202710,0,0,41
-2026-08-10,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,3
-2026-08-10,Candil,2027.0,Noviembre 2027,202711,0,0,6
-2026-08-10,Verdepino,2027.0,Noviembre 2027,202711,0,0,1
-2026-08-10,Candil,2027.0,Diciembre 2027,202712,0,1,11
-2026-08-10,Verdepino,2027.0,Diciembre 2027,202712,0,0,1
-2026-08-10,Cristales,2028.0,Enero 2028,202801,0,0,2
-2026-08-10,Azul Club Residencial Turquesa,2028.0,Febrero 2028,202802,1,0,0
-2026-08-10,Cristales,2028.0,Febrero 2028,202802,0,0,2
-2026-08-10,Candil,2028.0,Marzo 2028,202803,0,0,39
-2026-08-10,Cristales,2028.0,Marzo 2028,202803,1,0,27
-2026-08-10,Verdepino,2028.0,Marzo 2028,202803,0,0,32
-2026-08-10,Cristales,2028.0,Abril 2028,202804,0,0,3
-2026-08-10,Verdepino,2028.0,Abril 2028,202804,0,2,144
-2026-08-10,Verdepino,2028.0,Mayo 2028,202805,0,0,13
-2026-08-10,Cristales,2028.0,Junio 2028,202806,0,0,1
-2026-08-10,Verdepino,2028.0,Junio 2028,202806,1,0,4
-2026-08-10,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-08-10,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-08-10,Candil,,Sin fecha proyectada,999999,5,0,11
-2026-08-10,Cristales,,Sin fecha proyectada,999999,7,0,22
-2026-08-10,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-08-10,Las Mañanitas Casas,,Sin fecha proyectada,999999,17,19,86
-2026-08-10,VERDELIMA,,Sin fecha proyectada,999999,2,0,1
-2026-08-10,Verdeoliva,,Sin fecha proyectada,999999,0,1,4
-2026-08-10,Verdepino,,Sin fecha proyectada,999999,7,5,33
-2026-08-10,Verdevivo,,Sin fecha proyectada,999999,6,5,18
-2026-08-18,Verdepino,2026.0,Abril 2026,202604,2,0,0
-2026-08-18,Verdepino,2026.0,Junio 2026,202606,7,2,2
-2026-08-18,Verdevivo,2026.0,Junio 2026,202606,8,0,0
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,0,0,2
-2026-08-18,VERDELIMA,2026.0,Julio 2026,202607,5,2,0
-2026-08-18,Verdepino,2026.0,Julio 2026,202607,6,3,3
-2026-08-18,Verdevivo,2026.0,Julio 2026,202607,7,9,1
-2026-08-18,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,0,0,1
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Agosto 2026,202608,8,0,23
-2026-08-18,VERDELIMA,2026.0,Agosto 2026,202608,2,6,3
-2026-08-18,Verdeoliva,2026.0,Agosto 2026,202608,10,2,0
-2026-08-18,Verdepino,2026.0,Agosto 2026,202608,5,6,0
-2026-08-18,Verdevivo,2026.0,Agosto 2026,202608,12,8,1
-2026-08-18,Azul Club Residencial Celeste,2026.0,Septiembre 2026,202609,1,0,2
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Septiembre 2026,202609,9,1,20
-2026-08-18,Cristales,2026.0,Septiembre 2026,202609,2,2,7
-2026-08-18,VERDELIMA,2026.0,Septiembre 2026,202609,1,2,2
-2026-08-18,Verdeoliva,2026.0,Septiembre 2026,202609,5,8,4
-2026-08-18,Verdepino,2026.0,Septiembre 2026,202609,5,7,5
-2026-08-18,Verdevivo,2026.0,Septiembre 2026,202609,7,9,4
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,1,0,8
-2026-08-18,Cristales,2026.0,Octubre 2026,202610,1,3,11
-2026-08-18,VERDELIMA,2026.0,Octubre 2026,202610,5,15,5
-2026-08-18,Verdeoliva,2026.0,Octubre 2026,202610,6,5,2
-2026-08-18,Verdepino,2026.0,Octubre 2026,202610,2,6,3
-2026-08-18,Verdevivo,2026.0,Octubre 2026,202610,3,10,3
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,1,0,12
-2026-08-18,Cristales,2026.0,Noviembre 2026,202611,5,7,28
-2026-08-18,VERDELIMA,2026.0,Noviembre 2026,202611,29,42,22
-2026-08-18,Verdeoliva,2026.0,Noviembre 2026,202611,9,21,11
-2026-08-18,Verdepino,2026.0,Noviembre 2026,202611,8,27,30
-2026-08-18,Verdevivo,2026.0,Noviembre 2026,202611,2,5,3
-2026-08-18,Azul Club Residencial Turquesa,2026.0,Diciembre 2026,202612,0,0,1
-2026-08-18,Candil,2026.0,Diciembre 2026,202612,10,32,67
-2026-08-18,Cristales,2026.0,Diciembre 2026,202612,6,23,58
-2026-08-18,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,1,0
-2026-08-18,VERDELIMA,2026.0,Diciembre 2026,202612,14,46,14
-2026-08-18,Verdeoliva,2026.0,Diciembre 2026,202612,41,89,48
-2026-08-18,Verdepino,2026.0,Diciembre 2026,202612,11,44,46
-2026-08-18,Verdevivo,2026.0,Diciembre 2026,202612,7,25,29
-2026-08-18,Cristales,2027.0,Enero 2027,202701,0,1,1
-2026-08-18,VERDELIMA,2027.0,Enero 2027,202701,0,1,0
-2026-08-18,Cristales,2027.0,Febrero 2027,202702,0,0,1
-2026-08-18,Verdeoliva,2027.0,Febrero 2027,202702,0,1,0
-2026-08-18,Verdepino,2027.0,Febrero 2027,202702,0,0,2
-2026-08-18,Candil,2027.0,Marzo 2027,202703,0,1,4
-2026-08-18,Cristales,2027.0,Marzo 2027,202703,0,0,1
-2026-08-18,Candil,2027.0,Abril 2027,202704,0,0,1
-2026-08-18,Cristales,2027.0,Mayo 2027,202705,0,0,2
-2026-08-18,Candil,2027.0,Junio 2027,202706,0,0,1
-2026-08-18,Verdepino,2027.0,Junio 2027,202706,0,0,2
-2026-08-18,Verdevivo,2027.0,Julio 2027,202707,0,0,4
-2026-08-18,Candil,2027.0,Agosto 2027,202708,0,0,1
-2026-08-18,Verdevivo,2027.0,Agosto 2027,202708,0,0,2
-2026-08-18,Cristales,2027.0,Septiembre 2027,202709,0,0,1
-2026-08-18,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,2
-2026-08-18,Candil,2027.0,Octubre 2027,202710,0,0,41
-2026-08-18,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,3
-2026-08-18,Candil,2027.0,Noviembre 2027,202711,0,0,6
-2026-08-18,Verdepino,2027.0,Noviembre 2027,202711,0,0,1
-2026-08-18,Candil,2027.0,Diciembre 2027,202712,0,2,10
-2026-08-18,Verdepino,2027.0,Diciembre 2027,202712,0,0,1
-2026-08-18,Cristales,2028.0,Enero 2028,202801,0,0,2
-2026-08-18,Azul Club Residencial Turquesa,2028.0,Febrero 2028,202802,1,0,0
-2026-08-18,Cristales,2028.0,Febrero 2028,202802,0,1,1
-2026-08-18,Candil,2028.0,Marzo 2028,202803,0,0,39
-2026-08-18,Cristales,2028.0,Marzo 2028,202803,1,0,27
-2026-08-18,Verdepino,2028.0,Marzo 2028,202803,0,0,32
-2026-08-18,Cristales,2028.0,Abril 2028,202804,0,0,3
-2026-08-18,Verdepino,2028.0,Abril 2028,202804,0,2,144
-2026-08-18,Verdepino,2028.0,Mayo 2028,202805,0,0,13
-2026-08-18,Cristales,2028.0,Junio 2028,202806,0,0,1
-2026-08-18,Verdepino,2028.0,Junio 2028,202806,1,0,4
-2026-08-18,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-08-18,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-08-18,Candil,,Sin fecha proyectada,999999,6,2,10
-2026-08-18,Cristales,,Sin fecha proyectada,999999,9,2,21
-2026-08-18,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-08-18,Las Mañanitas Casas,,Sin fecha proyectada,999999,17,19,86
-2026-08-18,VERDELIMA,,Sin fecha proyectada,999999,2,0,1
-2026-08-18,Verdeoliva,,Sin fecha proyectada,999999,1,5,1
-2026-08-18,Verdepino,,Sin fecha proyectada,999999,7,5,34
-2026-08-18,Verdevivo,,Sin fecha proyectada,999999,5,5,20
-2026-08-24,Verdepino,2026.0,Junio 2026,202606,1,0,0
-2026-08-24,Verdevivo,2026.0,Junio 2026,202606,1,0,0
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,0,0,2
-2026-08-24,Verdepino,2026.0,Julio 2026,202607,3,0,2
-2026-08-24,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,0,0,1
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Agosto 2026,202608,8,0,23
-2026-08-24,VERDELIMA,2026.0,Agosto 2026,202608,4,6,3
-2026-08-24,Verdeoliva,2026.0,Agosto 2026,202608,12,1,0
-2026-08-24,Verdepino,2026.0,Agosto 2026,202608,6,5,0
-2026-08-24,Verdevivo,2026.0,Agosto 2026,202608,16,7,1
-2026-08-24,Azul Club Residencial Celeste,2026.0,Septiembre 2026,202609,1,0,2
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Septiembre 2026,202609,9,1,20
-2026-08-24,Cristales,2026.0,Septiembre 2026,202609,2,2,7
-2026-08-24,VERDELIMA,2026.0,Septiembre 2026,202609,3,3,2
-2026-08-24,Verdeoliva,2026.0,Septiembre 2026,202609,8,9,3
-2026-08-24,Verdepino,2026.0,Septiembre 2026,202609,8,7,5
-2026-08-24,Verdevivo,2026.0,Septiembre 2026,202609,16,12,4
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,1,0,8
-2026-08-24,Cristales,2026.0,Octubre 2026,202610,1,3,11
-2026-08-24,VERDELIMA,2026.0,Octubre 2026,202610,5,16,4
-2026-08-24,Verdeoliva,2026.0,Octubre 2026,202610,6,5,2
-2026-08-24,Verdepino,2026.0,Octubre 2026,202610,5,7,5
-2026-08-24,Verdevivo,2026.0,Octubre 2026,202610,6,14,4
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,1,0,12
-2026-08-24,Cristales,2026.0,Noviembre 2026,202611,5,9,26
-2026-08-24,VERDELIMA,2026.0,Noviembre 2026,202611,30,43,22
-2026-08-24,Verdeoliva,2026.0,Noviembre 2026,202611,9,20,10
-2026-08-24,Verdepino,2026.0,Noviembre 2026,202611,16,33,28
-2026-08-24,Verdevivo,2026.0,Noviembre 2026,202611,3,5,3
-2026-08-24,Azul Club Residencial Turquesa,2026.0,Diciembre 2026,202612,0,0,1
-2026-08-24,Candil,2026.0,Diciembre 2026,202612,13,31,65
-2026-08-24,Cristales,2026.0,Diciembre 2026,202612,7,27,53
-2026-08-24,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,1,0
-2026-08-24,VERDELIMA,2026.0,Diciembre 2026,202612,15,46,13
-2026-08-24,Verdeoliva,2026.0,Diciembre 2026,202612,46,84,46
-2026-08-24,Verdepino,2026.0,Diciembre 2026,202612,16,44,39
-2026-08-24,Verdevivo,2026.0,Diciembre 2026,202612,10,25,26
-2026-08-24,Cristales,2027.0,Enero 2027,202701,0,1,1
-2026-08-24,VERDELIMA,2027.0,Enero 2027,202701,0,1,0
-2026-08-24,Cristales,2027.0,Febrero 2027,202702,0,0,1
-2026-08-24,Verdeoliva,2027.0,Febrero 2027,202702,0,1,0
-2026-08-24,Verdepino,2027.0,Febrero 2027,202702,0,1,1
-2026-08-24,Candil,2027.0,Marzo 2027,202703,0,1,4
-2026-08-24,Cristales,2027.0,Marzo 2027,202703,0,0,1
-2026-08-24,Candil,2027.0,Abril 2027,202704,0,0,1
-2026-08-24,Cristales,2027.0,Mayo 2027,202705,0,0,2
-2026-08-24,Candil,2027.0,Junio 2027,202706,0,0,1
-2026-08-24,Verdepino,2027.0,Junio 2027,202706,0,0,2
-2026-08-24,Verdevivo,2027.0,Julio 2027,202707,0,0,4
-2026-08-24,Candil,2027.0,Agosto 2027,202708,0,0,1
-2026-08-24,Verdevivo,2027.0,Agosto 2027,202708,0,0,2
-2026-08-24,Cristales,2027.0,Septiembre 2027,202709,0,0,1
-2026-08-24,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,2
-2026-08-24,Candil,2027.0,Octubre 2027,202710,0,0,41
-2026-08-24,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,3
-2026-08-24,Candil,2027.0,Noviembre 2027,202711,0,0,6
-2026-08-24,Verdepino,2027.0,Noviembre 2027,202711,0,0,1
-2026-08-24,Candil,2027.0,Diciembre 2027,202712,0,2,10
-2026-08-24,Verdepino,2027.0,Diciembre 2027,202712,0,0,1
-2026-08-24,Cristales,2028.0,Enero 2028,202801,0,0,2
-2026-08-24,Azul Club Residencial Turquesa,2028.0,Febrero 2028,202802,1,0,0
-2026-08-24,Cristales,2028.0,Febrero 2028,202802,0,1,1
-2026-08-24,Candil,2028.0,Marzo 2028,202803,0,0,39
-2026-08-24,Cristales,2028.0,Marzo 2028,202803,1,0,27
-2026-08-24,Verdepino,2028.0,Marzo 2028,202803,0,0,32
-2026-08-24,Cristales,2028.0,Abril 2028,202804,0,0,3
-2026-08-24,Verdepino,2028.0,Abril 2028,202804,0,2,144
-2026-08-24,Verdepino,2028.0,Mayo 2028,202805,0,0,13
-2026-08-24,Cristales,2028.0,Junio 2028,202806,0,0,1
-2026-08-24,Verdepino,2028.0,Junio 2028,202806,1,0,4
-2026-08-24,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-08-24,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-08-24,Candil,,Sin fecha proyectada,999999,7,2,10
-2026-08-24,Cristales,,Sin fecha proyectada,999999,12,2,22
-2026-08-24,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-08-24,Las Mañanitas Casas,,Sin fecha proyectada,999999,18,19,85
-2026-08-24,VERDELIMA,,Sin fecha proyectada,999999,2,1,1
-2026-08-24,Verdeoliva,,Sin fecha proyectada,999999,1,7,1
-2026-08-24,Verdepino,,Sin fecha proyectada,999999,10,6,33
-2026-08-24,Verdevivo,,Sin fecha proyectada,999999,5,7,18
-2026-08-31,Verdepino,2026.0,Junio 2026,202606,1,0,0
-2026-08-31,Verdevivo,2026.0,Junio 2026,202606,1,0,0
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,0,0,2
-2026-08-31,Verdepino,2026.0,Julio 2026,202607,3,0,2
-2026-08-31,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,0,0,1
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Agosto 2026,202608,8,0,23
-2026-08-31,VERDELIMA,2026.0,Agosto 2026,202608,3,6,3
-2026-08-31,Verdeoliva,2026.0,Agosto 2026,202608,7,1,0
-2026-08-31,Verdepino,2026.0,Agosto 2026,202608,6,5,0
-2026-08-31,Verdevivo,2026.0,Agosto 2026,202608,7,1,1
-2026-08-31,Azul Club Residencial Celeste,2026.0,Septiembre 2026,202609,1,0,1
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Septiembre 2026,202609,9,1,20
-2026-08-31,Cristales,2026.0,Septiembre 2026,202609,2,4,5
-2026-08-31,VERDELIMA,2026.0,Septiembre 2026,202609,3,3,2
-2026-08-31,Verdeoliva,2026.0,Septiembre 2026,202609,11,7,2
-2026-08-31,Verdepino,2026.0,Septiembre 2026,202609,7,7,5
-2026-08-31,Verdevivo,2026.0,Septiembre 2026,202609,21,8,3
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,1,0,8
-2026-08-31,Cristales,2026.0,Octubre 2026,202610,1,4,10
-2026-08-31,VERDELIMA,2026.0,Octubre 2026,202610,5,17,4
-2026-08-31,Verdeoliva,2026.0,Octubre 2026,202610,6,5,3
-2026-08-31,Verdepino,2026.0,Octubre 2026,202610,5,7,5
-2026-08-31,Verdevivo,2026.0,Octubre 2026,202610,5,21,5
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,1,0,12
-2026-08-31,Cristales,2026.0,Noviembre 2026,202611,5,10,25
-2026-08-31,VERDELIMA,2026.0,Noviembre 2026,202611,27,42,22
-2026-08-31,Verdeoliva,2026.0,Noviembre 2026,202611,9,19,10
-2026-08-31,Verdepino,2026.0,Noviembre 2026,202611,17,32,27
-2026-08-31,Verdevivo,2026.0,Noviembre 2026,202611,3,7,1
-2026-08-31,Azul Club Residencial Turquesa,2026.0,Diciembre 2026,202612,0,0,1
-2026-08-31,Candil,2026.0,Diciembre 2026,202612,15,33,61
-2026-08-31,Cristales,2026.0,Diciembre 2026,202612,10,28,49
-2026-08-31,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,1,0
-2026-08-31,VERDELIMA,2026.0,Diciembre 2026,202612,15,46,13
-2026-08-31,Verdeoliva,2026.0,Diciembre 2026,202612,49,84,44
-2026-08-31,Verdepino,2026.0,Diciembre 2026,202612,17,47,36
-2026-08-31,Verdevivo,2026.0,Diciembre 2026,202612,11,25,25
-2026-08-31,Cristales,2027.0,Enero 2027,202701,0,1,1
-2026-08-31,VERDELIMA,2027.0,Enero 2027,202701,0,1,0
-2026-08-31,Cristales,2027.0,Febrero 2027,202702,0,0,1
-2026-08-31,Verdeoliva,2027.0,Febrero 2027,202702,0,1,0
-2026-08-31,Verdepino,2027.0,Febrero 2027,202702,0,0,1
-2026-08-31,Candil,2027.0,Marzo 2027,202703,0,1,4
-2026-08-31,Cristales,2027.0,Marzo 2027,202703,0,0,1
-2026-08-31,Verdevivo,2027.0,Marzo 2027,202703,0,0,1
-2026-08-31,Candil,2027.0,Abril 2027,202704,0,0,1
-2026-08-31,Verdevivo,2027.0,Abril 2027,202704,0,1,0
-2026-08-31,Cristales,2027.0,Mayo 2027,202705,0,0,2
-2026-08-31,Candil,2027.0,Junio 2027,202706,0,0,1
-2026-08-31,Verdepino,2027.0,Junio 2027,202706,0,0,2
-2026-08-31,Verdevivo,2027.0,Julio 2027,202707,0,0,4
-2026-08-31,Candil,2027.0,Agosto 2027,202708,0,0,1
-2026-08-31,Verdevivo,2027.0,Agosto 2027,202708,0,0,2
-2026-08-31,Cristales,2027.0,Septiembre 2027,202709,0,0,1
-2026-08-31,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,2
-2026-08-31,Candil,2027.0,Octubre 2027,202710,0,0,41
-2026-08-31,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,3
-2026-08-31,Candil,2027.0,Noviembre 2027,202711,0,0,6
-2026-08-31,Verdepino,2027.0,Noviembre 2027,202711,0,0,1
-2026-08-31,Candil,2027.0,Diciembre 2027,202712,0,2,10
-2026-08-31,Verdepino,2027.0,Diciembre 2027,202712,0,0,1
-2026-08-31,Cristales,2028.0,Enero 2028,202801,0,0,2
-2026-08-31,Azul Club Residencial Turquesa,2028.0,Febrero 2028,202802,1,0,0
-2026-08-31,Cristales,2028.0,Febrero 2028,202802,0,1,1
-2026-08-31,Candil,2028.0,Marzo 2028,202803,0,0,39
-2026-08-31,Cristales,2028.0,Marzo 2028,202803,1,0,27
-2026-08-31,Verdepino,2028.0,Marzo 2028,202803,0,0,32
-2026-08-31,Cristales,2028.0,Abril 2028,202804,0,0,3
-2026-08-31,Verdepino,2028.0,Abril 2028,202804,0,2,144
-2026-08-31,Verdepino,2028.0,Mayo 2028,202805,0,0,13
-2026-08-31,Cristales,2028.0,Junio 2028,202806,0,0,1
-2026-08-31,Verdepino,2028.0,Junio 2028,202806,1,0,4
-2026-08-31,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-08-31,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-08-31,Candil,,Sin fecha proyectada,999999,10,2,10
-2026-08-31,Cristales,,Sin fecha proyectada,999999,16,2,22
-2026-08-31,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-08-31,Las Mañanitas Casas,,Sin fecha proyectada,999999,18,19,85
-2026-08-31,VERDELIMA,,Sin fecha proyectada,999999,2,3,0
-2026-08-31,Verdeoliva,,Sin fecha proyectada,999999,1,8,1
-2026-08-31,Verdepino,,Sin fecha proyectada,999999,14,5,33
-2026-08-31,Verdevivo,,Sin fecha proyectada,999999,10,7,18
-2026-09-01,Verdepino,2026.0,Junio 2026,202606,1,0,0
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,0,0,2
-2026-09-01,Verdepino,2026.0,Julio 2026,202607,2,0,2
-2026-09-01,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,0,0,1
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Agosto 2026,202608,8,0,23
-2026-09-01,VERDELIMA,2026.0,Agosto 2026,202608,2,6,2
-2026-09-01,Verdeoliva,2026.0,Agosto 2026,202608,4,1,0
-2026-09-01,Verdepino,2026.0,Agosto 2026,202608,6,1,0
-2026-09-01,Azul Club Residencial Celeste,2026.0,Septiembre 2026,202609,1,0,1
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Septiembre 2026,202609,9,1,19
-2026-09-01,Cristales,2026.0,Septiembre 2026,202609,3,3,5
-2026-09-01,VERDELIMA,2026.0,Septiembre 2026,202609,3,3,3
-2026-09-01,Verdeoliva,2026.0,Septiembre 2026,202609,12,6,2
-2026-09-01,Verdepino,2026.0,Septiembre 2026,202609,8,8,5
-2026-09-01,Verdevivo,2026.0,Septiembre 2026,202609,24,8,3
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,1,0,8
-2026-09-01,Cristales,2026.0,Octubre 2026,202610,1,4,10
-2026-09-01,VERDELIMA,2026.0,Octubre 2026,202610,5,17,4
-2026-09-01,Verdeoliva,2026.0,Octubre 2026,202610,6,5,3
-2026-09-01,Verdepino,2026.0,Octubre 2026,202610,5,10,4
-2026-09-01,Verdevivo,2026.0,Octubre 2026,202610,5,21,6
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,1,0,12
-2026-09-01,Cristales,2026.0,Noviembre 2026,202611,5,10,25
-2026-09-01,VERDELIMA,2026.0,Noviembre 2026,202611,27,42,22
-2026-09-01,Verdeoliva,2026.0,Noviembre 2026,202611,8,19,10
-2026-09-01,Verdepino,2026.0,Noviembre 2026,202611,17,32,27
-2026-09-01,Verdevivo,2026.0,Noviembre 2026,202611,3,7,1
-2026-09-01,Azul Club Residencial Turquesa,2026.0,Diciembre 2026,202612,0,0,1
-2026-09-01,Candil,2026.0,Diciembre 2026,202612,15,34,60
-2026-09-01,Cristales,2026.0,Diciembre 2026,202612,10,29,47
-2026-09-01,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,1,0
-2026-09-01,VERDELIMA,2026.0,Diciembre 2026,202612,16,45,13
-2026-09-01,Verdeoliva,2026.0,Diciembre 2026,202612,50,82,44
-2026-09-01,Verdepino,2026.0,Diciembre 2026,202612,17,46,36
-2026-09-01,Verdevivo,2026.0,Diciembre 2026,202612,11,26,24
-2026-09-01,Cristales,2027.0,Enero 2027,202701,0,1,1
-2026-09-01,VERDELIMA,2027.0,Enero 2027,202701,0,1,0
-2026-09-01,Cristales,2027.0,Febrero 2027,202702,0,0,1
-2026-09-01,Verdeoliva,2027.0,Febrero 2027,202702,0,1,0
-2026-09-01,Verdepino,2027.0,Febrero 2027,202702,0,0,1
-2026-09-01,Candil,2027.0,Marzo 2027,202703,0,1,4
-2026-09-01,Cristales,2027.0,Marzo 2027,202703,0,0,1
-2026-09-01,Verdevivo,2027.0,Marzo 2027,202703,0,0,1
-2026-09-01,Candil,2027.0,Abril 2027,202704,0,0,1
-2026-09-01,Verdevivo,2027.0,Abril 2027,202704,0,1,0
-2026-09-01,Cristales,2027.0,Mayo 2027,202705,0,0,2
-2026-09-01,Candil,2027.0,Junio 2027,202706,0,0,1
-2026-09-01,Verdepino,2027.0,Junio 2027,202706,0,0,2
-2026-09-01,Verdevivo,2027.0,Julio 2027,202707,0,0,4
-2026-09-01,Candil,2027.0,Agosto 2027,202708,0,0,1
-2026-09-01,Verdevivo,2027.0,Agosto 2027,202708,0,0,2
-2026-09-01,Cristales,2027.0,Septiembre 2027,202709,0,0,1
-2026-09-01,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,2
-2026-09-01,Candil,2027.0,Octubre 2027,202710,0,0,41
-2026-09-01,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,3
-2026-09-01,Candil,2027.0,Noviembre 2027,202711,0,0,6
-2026-09-01,Verdepino,2027.0,Noviembre 2027,202711,0,0,1
-2026-09-01,Candil,2027.0,Diciembre 2027,202712,0,2,10
-2026-09-01,Verdepino,2027.0,Diciembre 2027,202712,0,0,1
-2026-09-01,Cristales,2028.0,Enero 2028,202801,0,0,2
-2026-09-01,Azul Club Residencial Turquesa,2028.0,Febrero 2028,202802,1,0,0
-2026-09-01,Cristales,2028.0,Febrero 2028,202802,0,1,1
-2026-09-01,Candil,2028.0,Marzo 2028,202803,0,0,39
-2026-09-01,Cristales,2028.0,Marzo 2028,202803,1,0,27
-2026-09-01,Verdepino,2028.0,Marzo 2028,202803,0,0,32
-2026-09-01,Cristales,2028.0,Abril 2028,202804,0,0,3
-2026-09-01,Verdepino,2028.0,Abril 2028,202804,0,2,144
-2026-09-01,Verdepino,2028.0,Mayo 2028,202805,0,0,13
-2026-09-01,Cristales,2028.0,Junio 2028,202806,0,0,1
-2026-09-01,Verdepino,2028.0,Junio 2028,202806,1,0,4
-2026-09-01,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-09-01,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-09-01,Candil,,Sin fecha proyectada,999999,10,2,10
-2026-09-01,Cristales,,Sin fecha proyectada,999999,20,2,22
-2026-09-01,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-09-01,Las Mañanitas Casas,,Sin fecha proyectada,999999,18,19,85
-2026-09-01,VERDELIMA,,Sin fecha proyectada,999999,1,4,0
-2026-09-01,Verdeoliva,,Sin fecha proyectada,999999,2,8,1
-2026-09-01,Verdepino,,Sin fecha proyectada,999999,14,5,33
-2026-09-01,Verdevivo,,Sin fecha proyectada,999999,9,7,18
-2026-09-03,Verdepino,2026,Junio 2026,202606,1,0,0
-2026-09-03,Azul Club Residencial Turquesa,2026,Julio 2026,202607,0,0,2
-2026-09-03,Verdepino,2026,Julio 2026,202607,2,0,2
-2026-09-03,Azul Club Residencial Celeste,2026,Agosto 2026,202608,0,0,1
-2026-09-03,Azul Club Residencial Turquesa,2026,Agosto 2026,202608,8,0,23
-2026-09-03,VERDELIMA,2026,Agosto 2026,202608,2,6,2
-2026-09-03,Verdeoliva,2026,Agosto 2026,202608,4,1,0
-2026-09-03,Verdepino,2026,Agosto 2026,202608,6,1,0
-2026-09-03,Azul Club Residencial Celeste,2026,Septiembre 2026,202609,1,0,1
-2026-09-03,Azul Club Residencial Turquesa,2026,Septiembre 2026,202609,9,1,19
-2026-09-03,Cristales,2026,Septiembre 2026,202609,3,3,5
-2026-09-03,VERDELIMA,2026,Septiembre 2026,202609,3,3,3
-2026-09-03,Verdeoliva,2026,Septiembre 2026,202609,12,6,2
-2026-09-03,Verdepino,2026,Septiembre 2026,202609,8,8,5
-2026-09-03,Verdevivo,2026,Septiembre 2026,202609,24,8,3
-2026-09-03,Azul Club Residencial Turquesa,2026,Octubre 2026,202610,1,0,8
-2026-09-03,Cristales,2026,Octubre 2026,202610,1,4,10
-2026-09-03,VERDELIMA,2026,Octubre 2026,202610,5,17,4
-2026-09-03,Verdeoliva,2026,Octubre 2026,202610,6,5,3
-2026-09-03,Verdepino,2026,Octubre 2026,202610,5,10,4
-2026-09-03,Verdevivo,2026,Octubre 2026,202610,5,21,6
-2026-09-03,Azul Club Residencial Turquesa,2026,Noviembre 2026,202611,1,0,12
-2026-09-03,Cristales,2026,Noviembre 2026,202611,5,10,25
-2026-09-03,VERDELIMA,2026,Noviembre 2026,202611,27,42,22
-2026-09-03,Verdeoliva,2026,Noviembre 2026,202611,8,19,10
-2026-09-03,Verdepino,2026,Noviembre 2026,202611,17,32,27
-2026-09-03,Verdevivo,2026,Noviembre 2026,202611,3,7,1
-2026-09-03,Azul Club Residencial Turquesa,2026,Diciembre 2026,202612,0,0,1
-2026-09-03,Candil,2026,Diciembre 2026,202612,15,34,60
-2026-09-03,Cristales,2026,Diciembre 2026,202612,10,29,47
-2026-09-03,Las Mañanitas Casas,2026,Diciembre 2026,202612,0,1,0
-2026-09-03,VERDELIMA,2026,Diciembre 2026,202612,16,45,13
-2026-09-03,Verdeoliva,2026,Diciembre 2026,202612,50,82,44
-2026-09-03,Verdepino,2026,Diciembre 2026,202612,17,46,36
-2026-09-03,Verdevivo,2026,Diciembre 2026,202612,11,26,24
-2026-09-03,Cristales,2027,Enero 2027,202701,0,1,1
-2026-09-03,VERDELIMA,2027,Enero 2027,202701,0,1,0
-2026-09-03,Cristales,2027,Febrero 2027,202702,0,0,1
-2026-09-03,Verdeoliva,2027,Febrero 2027,202702,0,1,0
-2026-09-03,Verdepino,2027,Febrero 2027,202702,0,0,1
-2026-09-03,Candil,2027,Marzo 2027,202703,0,1,4
-2026-09-03,Cristales,2027,Marzo 2027,202703,0,0,1
-2026-09-03,Verdevivo,2027,Marzo 2027,202703,0,0,1
-2026-09-03,Candil,2027,Abril 2027,202704,0,0,1
-2026-09-03,Verdevivo,2027,Abril 2027,202704,0,1,0
-2026-09-03,Cristales,2027,Mayo 2027,202705,0,0,2
-2026-09-03,Candil,2027,Junio 2027,202706,0,0,1
-2026-09-03,Verdepino,2027,Junio 2027,202706,0,0,2
-2026-09-03,Verdevivo,2027,Julio 2027,202707,0,0,4
-2026-09-03,Candil,2027,Agosto 2027,202708,0,0,1
-2026-09-03,Verdevivo,2027,Agosto 2027,202708,0,0,2
-2026-09-03,Cristales,2027,Septiembre 2027,202709,0,0,1
-2026-09-03,Azul Club Residencial Turquesa,2027,Octubre 2027,202710,0,0,2
-2026-09-03,Candil,2027,Octubre 2027,202710,0,0,41
-2026-09-03,Azul Club Residencial Turquesa,2027,Noviembre 2027,202711,0,0,3
-2026-09-03,Candil,2027,Noviembre 2027,202711,0,0,6
-2026-09-03,Verdepino,2027,Noviembre 2027,202711,0,0,1
-2026-09-03,Candil,2027,Diciembre 2027,202712,0,2,10
-2026-09-03,Verdepino,2027,Diciembre 2027,202712,0,0,1
-2026-09-03,Cristales,2028,Enero 2028,202801,0,0,2
-2026-09-03,Azul Club Residencial Turquesa,2028,Febrero 2028,202802,1,0,0
-2026-09-03,Cristales,2028,Febrero 2028,202802,0,1,1
-2026-09-03,Candil,2028,Marzo 2028,202803,0,0,39
-2026-09-03,Cristales,2028,Marzo 2028,202803,1,0,27
-2026-09-03,Verdepino,2028,Marzo 2028,202803,0,0,32
-2026-09-03,Cristales,2028,Abril 2028,202804,0,0,3
-2026-09-03,Verdepino,2028,Abril 2028,202804,0,2,144
-2026-09-03,Verdepino,2028,Mayo 2028,202805,0,0,13
-2026-09-03,Cristales,2028,Junio 2028,202806,0,0,1
-2026-09-03,Verdepino,2028,Junio 2028,202806,1,0,4
-2026-09-03,Azul Club Residencial Celeste,,Sin fecha proyectada,999999,0,0,1
-2026-09-03,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,1
-2026-09-03,Candil,,Sin fecha proyectada,999999,10,2,10
-2026-09-03,Cristales,,Sin fecha proyectada,999999,20,2,22
-2026-09-03,Las Mañanitas Apartamentos VIS,,Sin fecha proyectada,999999,4,30,83
-2026-09-03,Las Mañanitas Casas,,Sin fecha proyectada,999999,18,19,85
-2026-09-03,VERDELIMA,,Sin fecha proyectada,999999,1,4,0
-2026-09-03,Verdeoliva,,Sin fecha proyectada,999999,2,8,1
-2026-09-03,Verdepino,,Sin fecha proyectada,999999,14,5,33
-2026-09-03,Verdevivo,,Sin fecha proyectada,999999,9,7,18
+﻿fecha_corte,proyecto,anio,periodo,orden,Escrituradas,Listo,Radicados,Pdt un Radicado,Sin Radicados
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Mayo 2021,202105,30,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Junio 2021,202106,18,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Julio 2021,202107,7,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Agosto 2021,202108,14,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Septiembre 2021,202109,8,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Octubre 2021,202110,9,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Noviembre 2021,202111,4,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2021.0,Diciembre 2021,202112,52,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2021.0,Diciembre 2021,202112,12,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Febrero 2022,202202,32,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Febrero 2022,202202,10,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Marzo 2022,202203,14,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Marzo 2022,202203,14,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Abril 2022,202204,18,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Abril 2022,202204,5,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Mayo 2022,202205,19,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Mayo 2022,202205,5,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Junio 2022,202206,8,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Junio 2022,202206,3,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2022.0,Junio 2022,202206,0,1,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Julio 2022,202207,17,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Julio 2022,202207,5,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Agosto 2022,202208,13,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Agosto 2022,202208,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2022.0,Agosto 2022,202208,0,0,0,0,2
+2026-10-14,Azul Club Residencial Celeste,2022.0,Septiembre 2022,202209,16,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2022.0,Septiembre 2022,202209,0,1,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Octubre 2022,202210,6,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Octubre 2022,202210,2,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Noviembre 2022,202211,6,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Noviembre 2022,202211,1,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2022.0,Diciembre 2022,202212,4,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2022.0,Diciembre 2022,202212,3,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2023.0,Febrero 2023,202302,1,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2023.0,Febrero 2023,202302,1,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2023.0,Marzo 2023,202303,3,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2023.0,Marzo 2023,202303,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Marzo 2023,202303,0,0,0,1,0
+2026-10-14,Azul Club Residencial Celeste,2023.0,Abril 2023,202304,3,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2023.0,Abril 2023,202304,1,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2023.0,Abril 2023,202304,0,2,0,2,1
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Mayo 2023,202305,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2023.0,Mayo 2023,202305,0,0,0,3,0
+2026-10-14,Azul Club Residencial Celeste,2023.0,Junio 2023,202306,1,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Junio 2023,202306,0,0,0,3,0
+2026-10-14,Las Mañanitas Casas,2023.0,Junio 2023,202306,0,0,0,2,0
+2026-10-14,Verdevivo,2023.0,Junio 2023,202306,9,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Julio 2023,202307,0,1,0,1,1
+2026-10-14,Verdevivo,2023.0,Julio 2023,202307,41,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Agosto 2023,202308,0,0,0,1,0
+2026-10-14,Verdevivo,2023.0,Agosto 2023,202308,31,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2023.0,Septiembre 2023,202309,0,0,0,0,1
+2026-10-14,Verdevivo,2023.0,Septiembre 2023,202309,26,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Octubre 2023,202310,0,1,0,4,2
+2026-10-14,Las Mañanitas Casas,2023.0,Octubre 2023,202310,0,0,0,1,1
+2026-10-14,Verdevivo,2023.0,Octubre 2023,202310,11,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Noviembre 2023,202311,0,1,0,6,4
+2026-10-14,Verdevivo,2023.0,Noviembre 2023,202311,26,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2023.0,Diciembre 2023,202312,1,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2023.0,Diciembre 2023,202312,0,0,0,5,4
+2026-10-14,Las Mañanitas Casas,2023.0,Diciembre 2023,202312,0,0,0,1,2
+2026-10-14,Verdevivo,2023.0,Diciembre 2023,202312,21,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Enero 2024,202401,0,0,0,2,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Febrero 2024,202402,0,0,0,1,0
+2026-10-14,Verdevivo,2024.0,Febrero 2024,202402,10,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Marzo 2024,202403,1,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Marzo 2024,202403,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2024.0,Marzo 2024,202403,0,0,0,2,1
+2026-10-14,Verdevivo,2024.0,Marzo 2024,202403,4,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Abril 2024,202404,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Abril 2024,202404,0,0,0,1,0
+2026-10-14,Las Mañanitas Casas,2024.0,Abril 2024,202404,0,1,0,1,0
+2026-10-14,Verdevivo,2024.0,Abril 2024,202404,4,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Mayo 2024,202405,0,0,0,2,1
+2026-10-14,Las Mañanitas Casas,2024.0,Mayo 2024,202405,0,1,0,3,0
+2026-10-14,Verdevivo,2024.0,Mayo 2024,202405,1,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Junio 2024,202406,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2024.0,Junio 2024,202406,11,1,0,2,2
+2026-10-14,Verdeoliva,2024.0,Junio 2024,202406,21,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Junio 2024,202406,1,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Julio 2024,202407,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Julio 2024,202407,0,1,0,2,3
+2026-10-14,Las Mañanitas Casas,2024.0,Julio 2024,202407,18,1,0,3,1
+2026-10-14,Verdeoliva,2024.0,Julio 2024,202407,10,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Julio 2024,202407,5,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Agosto 2024,202408,28,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Agosto 2024,202408,0,0,0,1,3
+2026-10-14,Las Mañanitas Casas,2024.0,Agosto 2024,202408,16,0,0,1,1
+2026-10-14,Verdeoliva,2024.0,Agosto 2024,202408,14,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Agosto 2024,202408,7,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Septiembre 2024,202409,6,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Septiembre 2024,202409,0,0,0,2,3
+2026-10-14,Las Mañanitas Casas,2024.0,Septiembre 2024,202409,12,1,0,1,0
+2026-10-14,Verdeoliva,2024.0,Septiembre 2024,202409,11,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Septiembre 2024,202409,2,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Octubre 2024,202410,12,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Octubre 2024,202410,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2024.0,Octubre 2024,202410,5,1,0,0,0
+2026-10-14,Verdeoliva,2024.0,Octubre 2024,202410,7,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Octubre 2024,202410,3,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Noviembre 2024,202411,6,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Noviembre 2024,202411,0,0,0,0,2
+2026-10-14,Las Mañanitas Casas,2024.0,Noviembre 2024,202411,4,1,0,1,0
+2026-10-14,Verdeoliva,2024.0,Noviembre 2024,202411,12,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Noviembre 2024,202411,12,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2024.0,Diciembre 2024,202412,8,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2024.0,Diciembre 2024,202412,0,0,0,0,2
+2026-10-14,Las Mañanitas Casas,2024.0,Diciembre 2024,202412,12,0,0,1,0
+2026-10-14,VERDELIMA,2024.0,Diciembre 2024,202412,16,0,0,0,0
+2026-10-14,Verdeoliva,2024.0,Diciembre 2024,202412,51,0,0,0,0
+2026-10-14,Verdevivo,2024.0,Diciembre 2024,202412,57,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2025.0,Enero 2025,202501,0,0,0,0,1
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Febrero 2025,202502,0,0,0,1,9
+2026-10-14,Las Mañanitas Casas,2025.0,Febrero 2025,202502,0,0,0,0,1
+2026-10-14,Verdeoliva,2025.0,Febrero 2025,202502,4,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Febrero 2025,202502,3,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Marzo 2025,202503,4,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Marzo 2025,202503,0,0,0,1,7
+2026-10-14,Las Mañanitas Casas,2025.0,Marzo 2025,202503,0,0,0,2,0
+2026-10-14,VERDELIMA,2025.0,Marzo 2025,202503,40,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Marzo 2025,202503,29,0,0,0,0
+2026-10-14,Verdepino,2025.0,Marzo 2025,202503,4,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Marzo 2025,202503,22,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Abril 2025,202504,4,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Abril 2025,202504,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2025.0,Abril 2025,202504,3,0,0,0,0
+2026-10-14,VERDELIMA,2025.0,Abril 2025,202504,34,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Abril 2025,202504,21,0,0,0,0
+2026-10-14,Verdepino,2025.0,Abril 2025,202504,24,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Abril 2025,202504,16,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Mayo 2025,202505,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Mayo 2025,202505,0,0,0,1,3
+2026-10-14,Las Mañanitas Casas,2025.0,Mayo 2025,202505,0,0,0,3,1
+2026-10-14,VERDELIMA,2025.0,Mayo 2025,202505,36,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Mayo 2025,202505,10,0,0,0,0
+2026-10-14,Verdepino,2025.0,Mayo 2025,202505,31,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Mayo 2025,202505,12,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Junio 2025,202506,0,0,0,2,1
+2026-10-14,Las Mañanitas Casas,2025.0,Junio 2025,202506,0,1,0,1,4
+2026-10-14,VERDELIMA,2025.0,Junio 2025,202506,17,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Junio 2025,202506,15,0,0,0,0
+2026-10-14,Verdepino,2025.0,Junio 2025,202506,24,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Junio 2025,202506,9,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Julio 2025,202507,0,0,0,0,2
+2026-10-14,Las Mañanitas Casas,2025.0,Julio 2025,202507,0,0,0,2,2
+2026-10-14,VERDELIMA,2025.0,Julio 2025,202507,23,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Julio 2025,202507,7,0,0,0,0
+2026-10-14,Verdepino,2025.0,Julio 2025,202507,29,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Julio 2025,202507,7,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Agosto 2025,202508,0,0,0,1,3
+2026-10-14,Las Mañanitas Casas,2025.0,Agosto 2025,202508,1,0,0,0,1
+2026-10-14,VERDELIMA,2025.0,Agosto 2025,202508,37,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Agosto 2025,202508,33,0,0,0,0
+2026-10-14,Verdepino,2025.0,Agosto 2025,202508,16,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Agosto 2025,202508,5,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Septiembre 2025,202509,3,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Septiembre 2025,202509,0,0,0,1,3
+2026-10-14,Las Mañanitas Casas,2025.0,Septiembre 2025,202509,0,0,0,3,1
+2026-10-14,VERDELIMA,2025.0,Septiembre 2025,202509,29,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Septiembre 2025,202509,12,0,0,0,0
+2026-10-14,Verdepino,2025.0,Septiembre 2025,202509,14,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Septiembre 2025,202509,5,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Octubre 2025,202510,0,0,0,1,2
+2026-10-14,Las Mañanitas Casas,2025.0,Octubre 2025,202510,0,1,0,1,1
+2026-10-14,VERDELIMA,2025.0,Octubre 2025,202510,23,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Octubre 2025,202510,12,0,0,0,0
+2026-10-14,Verdepino,2025.0,Octubre 2025,202510,11,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Octubre 2025,202510,2,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Noviembre 2025,202511,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Noviembre 2025,202511,0,0,0,0,2
+2026-10-14,Las Mañanitas Casas,2025.0,Noviembre 2025,202511,1,2,0,3,12
+2026-10-14,VERDELIMA,2025.0,Noviembre 2025,202511,14,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Noviembre 2025,202511,13,0,0,0,0
+2026-10-14,Verdepino,2025.0,Noviembre 2025,202511,6,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Noviembre 2025,202511,3,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2025.0,Diciembre 2025,202512,5,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2025.0,Diciembre 2025,202512,1,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2025.0,Diciembre 2025,202512,0,0,0,1,1
+2026-10-14,Las Mañanitas Casas,2025.0,Diciembre 2025,202512,1,0,0,0,2
+2026-10-14,VERDELIMA,2025.0,Diciembre 2025,202512,31,0,0,0,0
+2026-10-14,Verdeoliva,2025.0,Diciembre 2025,202512,24,0,0,0,0
+2026-10-14,Verdepino,2025.0,Diciembre 2025,202512,34,0,0,0,0
+2026-10-14,Verdevivo,2025.0,Diciembre 2025,202512,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2026.0,Enero 2026,202601,0,0,0,0,1
+2026-10-14,Las Mañanitas Apartamentos VIS,2026.0,Febrero 2026,202602,0,0,0,0,2
+2026-10-14,Las Mañanitas Casas,2026.0,Febrero 2026,202602,0,0,0,2,1
+2026-10-14,Azul Club Residencial Celeste,2026.0,Marzo 2026,202603,1,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Marzo 2026,202603,9,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2026.0,Marzo 2026,202603,1,0,0,0,1
+2026-10-14,VERDELIMA,2026.0,Marzo 2026,202603,11,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Marzo 2026,202603,33,0,0,0,0
+2026-10-14,Verdepino,2026.0,Marzo 2026,202603,30,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2026.0,Abril 2026,202604,2,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Abril 2026,202604,4,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2026.0,Abril 2026,202604,2,1,0,0,2
+2026-10-14,VERDELIMA,2026.0,Abril 2026,202604,5,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Abril 2026,202604,24,0,0,0,0
+2026-10-14,Verdepino,2026.0,Abril 2026,202604,19,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Abril 2026,202604,3,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Mayo 2026,202605,3,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2026.0,Mayo 2026,202605,0,0,0,2,1
+2026-10-14,VERDELIMA,2026.0,Mayo 2026,202605,10,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Mayo 2026,202605,9,0,0,0,0
+2026-10-14,Verdepino,2026.0,Mayo 2026,202605,17,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Mayo 2026,202605,17,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Junio 2026,202606,2,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2026.0,Junio 2026,202606,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2026.0,Junio 2026,202606,0,0,0,1,6
+2026-10-14,VERDELIMA,2026.0,Junio 2026,202606,9,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Junio 2026,202606,11,0,0,0,0
+2026-10-14,Verdepino,2026.0,Junio 2026,202606,5,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Junio 2026,202606,16,0,0,0,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Julio 2026,202607,2,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2026.0,Julio 2026,202607,0,0,0,0,1
+2026-10-14,VERDELIMA,2026.0,Julio 2026,202607,4,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Julio 2026,202607,15,0,0,0,0
+2026-10-14,Verdepino,2026.0,Julio 2026,202607,8,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Julio 2026,202607,33,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2026.0,Agosto 2026,202608,2,0,0,0,0
+2026-10-14,Las Mañanitas Casas,2026.0,Agosto 2026,202608,0,0,0,1,1
+2026-10-14,VERDELIMA,2026.0,Agosto 2026,202608,6,1,0,0,0
+2026-10-14,Verdeoliva,2026.0,Agosto 2026,202608,9,0,0,0,0
+2026-10-14,Verdepino,2026.0,Agosto 2026,202608,6,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Agosto 2026,202608,12,0,0,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2026.0,Septiembre 2026,202609,0,0,0,0,1
+2026-10-14,Las Mañanitas Casas,2026.0,Septiembre 2026,202609,0,0,0,0,4
+2026-10-14,VERDELIMA,2026.0,Septiembre 2026,202609,6,0,0,0,0
+2026-10-14,Verdeoliva,2026.0,Septiembre 2026,202609,8,0,0,0,0
+2026-10-14,Verdepino,2026.0,Septiembre 2026,202609,12,0,0,0,0
+2026-10-14,Verdevivo,2026.0,Septiembre 2026,202609,16,0,0,0,0
+2026-10-14,Azul Club Residencial Celeste,2026.0,Octubre 2026,202610,0,1,0,1,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Octubre 2026,202610,0,27,1,36,0
+2026-10-14,Cristales,2026.0,Octubre 2026,202610,0,3,4,0,0
+2026-10-14,Las Mañanitas Apartamentos VIS,2026.0,Octubre 2026,202610,0,0,0,1,1
+2026-10-14,Las Mañanitas Casas,2026.0,Octubre 2026,202610,0,1,0,0,1
+2026-10-14,VERDELIMA,2026.0,Octubre 2026,202610,0,11,8,1,0
+2026-10-14,Verdeoliva,2026.0,Octubre 2026,202610,4,10,0,0,0
+2026-10-14,Verdepino,2026.0,Octubre 2026,202610,6,8,1,2,0
+2026-10-14,Verdevivo,2026.0,Octubre 2026,202610,1,7,4,1,0
+2026-10-14,Azul Club Residencial Celeste,2026.0,Noviembre 2026,202611,0,0,0,1,0
+2026-10-14,Azul Club Residencial Turquesa,2026.0,Noviembre 2026,202611,0,4,0,15,0
+2026-10-14,Cristales,2026.0,Noviembre 2026,202611,0,13,7,5,5
+2026-10-14,Las Mañanitas Casas,2026.0,Noviembre 2026,202611,0,1,0,0,2
+2026-10-14,VERDELIMA,2026.0,Noviembre 2026,202611,0,32,16,18,1
+2026-10-14,Verdeoliva,2026.0,Noviembre 2026,202611,0,26,10,7,3
+2026-10-14,Verdepino,2026.0,Noviembre 2026,202611,0,27,11,6,1
+2026-10-14,Verdevivo,2026.0,Noviembre 2026,202611,0,12,7,2,0
+2026-10-14,Candil,2026.0,Diciembre 2026,202612,0,9,9,12,12
+2026-10-14,Cristales,2026.0,Diciembre 2026,202612,0,20,24,16,28
+2026-10-14,Las Mañanitas Casas,2026.0,Diciembre 2026,202612,0,0,0,1,0
+2026-10-14,VERDELIMA,2026.0,Diciembre 2026,202612,0,38,23,15,12
+2026-10-14,Verdeoliva,2026.0,Diciembre 2026,202612,0,70,37,34,22
+2026-10-14,Verdepino,2026.0,Diciembre 2026,202612,0,43,38,27,18
+2026-10-14,Verdevivo,2026.0,Diciembre 2026,202612,0,28,13,26,14
+2026-10-14,Cristales,2027.0,Enero 2027,202701,0,0,0,0,2
+2026-10-14,VERDELIMA,2027.0,Enero 2027,202701,0,0,0,2,1
+2026-10-14,Verdepino,2027.0,Enero 2027,202701,0,0,0,1,0
+2026-10-14,Cristales,2027.0,Febrero 2027,202702,0,0,0,0,1
+2026-10-14,VERDELIMA,2027.0,Febrero 2027,202702,0,0,0,0,1
+2026-10-14,Verdeoliva,2027.0,Febrero 2027,202702,0,0,1,0,0
+2026-10-14,Verdepino,2027.0,Febrero 2027,202702,0,0,0,0,1
+2026-10-14,Candil,2027.0,Marzo 2027,202703,0,2,1,3,6
+2026-10-14,Cristales,2027.0,Marzo 2027,202703,0,0,0,0,1
+2026-10-14,VERDELIMA,2027.0,Marzo 2027,202703,0,0,0,0,1
+2026-10-14,Verdeoliva,2027.0,Marzo 2027,202703,0,0,0,1,2
+2026-10-14,Verdepino,2027.0,Marzo 2027,202703,0,0,1,0,2
+2026-10-14,Verdevivo,2027.0,Marzo 2027,202703,0,0,0,0,1
+2026-10-14,Candil,2027.0,Abril 2027,202704,0,17,3,12,28
+2026-10-14,Verdeoliva,2027.0,Abril 2027,202704,0,0,0,0,4
+2026-10-14,Verdevivo,2027.0,Abril 2027,202704,0,0,1,0,0
+2026-10-14,Candil,2027.0,Mayo 2027,202705,0,0,0,0,1
+2026-10-14,Cristales,2027.0,Mayo 2027,202705,0,0,0,0,2
+2026-10-14,Verdepino,2027.0,Mayo 2027,202705,0,0,0,1,1
+2026-10-14,Azul Club Residencial Celeste,2027.0,Junio 2027,202706,0,0,0,1,0
+2026-10-14,Candil,2027.0,Junio 2027,202706,0,0,0,0,1
+2026-10-14,Cristales,2027.0,Junio 2027,202706,0,0,0,0,1
+2026-10-14,VERDELIMA,2027.0,Junio 2027,202706,0,0,1,2,7
+2026-10-14,Verdeoliva,2027.0,Junio 2027,202706,0,0,0,1,6
+2026-10-14,Verdepino,2027.0,Junio 2027,202706,0,0,1,4,19
+2026-10-14,Verdevivo,2027.0,Junio 2027,202706,0,1,0,5,19
+2026-10-14,Cristales,2027.0,Julio 2027,202707,0,0,0,0,1
+2026-10-14,VERDELIMA,2027.0,Julio 2027,202707,0,0,0,0,3
+2026-10-14,Verdeoliva,2027.0,Julio 2027,202707,0,0,0,0,2
+2026-10-14,Verdepino,2027.0,Julio 2027,202707,0,0,0,1,7
+2026-10-14,Verdevivo,2027.0,Julio 2027,202707,0,0,0,1,7
+2026-10-14,Candil,2027.0,Agosto 2027,202708,0,0,0,0,1
+2026-10-14,Verdevivo,2027.0,Agosto 2027,202708,0,0,0,1,2
+2026-10-14,Cristales,2027.0,Septiembre 2027,202709,0,1,0,0,0
+2026-10-14,Verdepino,2027.0,Septiembre 2027,202709,0,0,0,0,1
+2026-10-14,Azul Club Residencial Turquesa,2027.0,Octubre 2027,202710,0,0,0,3,0
+2026-10-14,Candil,2027.0,Octubre 2027,202710,0,1,0,3,37
+2026-10-14,Las Mañanitas Casas,2027.0,Octubre 2027,202710,0,0,0,0,1
+2026-10-14,Azul Club Residencial Turquesa,2027.0,Noviembre 2027,202711,0,0,0,2,0
+2026-10-14,Candil,2027.0,Noviembre 2027,202711,0,0,0,1,26
+2026-10-14,Las Mañanitas Casas,2027.0,Noviembre 2027,202711,0,0,0,0,1
+2026-10-14,Verdepino,2027.0,Noviembre 2027,202711,0,0,0,0,1
+2026-10-14,Candil,2027.0,Diciembre 2027,202712,0,0,0,3,13
+2026-10-14,Verdepino,2027.0,Diciembre 2027,202712,0,0,0,0,1
+2026-10-14,Cristales,2028.0,Enero 2028,202801,0,0,0,0,2
+2026-10-14,Verdepino,2028.0,Enero 2028,202801,0,0,0,0,1
+2026-10-14,Cristales,2028.0,Febrero 2028,202802,0,0,0,0,7
+2026-10-14,Verdepino,2028.0,Febrero 2028,202802,0,0,0,0,1
+2026-10-14,Candil,2028.0,Marzo 2028,202803,0,0,0,2,35
+2026-10-14,Cristales,2028.0,Marzo 2028,202803,0,1,0,2,29
+2026-10-14,Verdepino,2028.0,Marzo 2028,202803,0,0,0,2,35
+2026-10-14,Cristales,2028.0,Abril 2028,202804,0,0,0,0,3
+2026-10-14,Verdepino,2028.0,Abril 2028,202804,0,0,0,4,141
+2026-10-14,Verdepino,2028.0,Mayo 2028,202805,0,0,0,1,12
+2026-10-14,Cristales,2028.0,Junio 2028,202806,0,0,0,0,2
+2026-10-14,Verdepino,2028.0,Junio 2028,202806,0,0,0,1,4
+2026-10-14,Cristales,2028.0,Julio 2028,202807,0,0,0,5,30
+2026-10-14,Cristales,2028.0,Agosto 2028,202808,0,0,0,1,6
+2026-10-14,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,0,1,0
+2026-10-14,Candil,,Sin fecha proyectada,999999,0,4,0,0,0
+2026-10-14,Cristales,,Sin fecha proyectada,999999,0,9,0,0,0
+2026-10-14,Las Mañanitas Casas,,Sin fecha proyectada,999999,0,1,0,0,0
+2026-10-14,VERDELIMA,,Sin fecha proyectada,999999,0,3,0,0,0
+2026-10-14,Verdeoliva,,Sin fecha proyectada,999999,0,4,0,0,0
+2026-10-14,Verdepino,,Sin fecha proyectada,999999,0,6,0,0,0
+2026-10-14,Verdevivo,,Sin fecha proyectada,999999,0,1,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Mayo 2021,202105,30,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Junio 2021,202106,18,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Julio 2021,202107,7,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Agosto 2021,202108,14,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Septiembre 2021,202109,8,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Octubre 2021,202110,9,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Noviembre 2021,202111,4,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2021,Diciembre 2021,202112,52,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2021,Diciembre 2021,202112,12,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Febrero 2022,202202,32,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Febrero 2022,202202,10,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Marzo 2022,202203,14,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Marzo 2022,202203,14,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Abril 2022,202204,18,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Abril 2022,202204,5,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Mayo 2022,202205,19,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Mayo 2022,202205,5,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Junio 2022,202206,8,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Junio 2022,202206,3,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2022,Junio 2022,202206,0,1,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Julio 2022,202207,17,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Julio 2022,202207,5,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Agosto 2022,202208,13,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Agosto 2022,202208,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2022,Agosto 2022,202208,0,0,0,0,2
+2026-10-26,Azul Club Residencial Celeste,2022,Septiembre 2022,202209,16,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2022,Septiembre 2022,202209,0,1,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Octubre 2022,202210,6,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Octubre 2022,202210,2,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Noviembre 2022,202211,6,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Noviembre 2022,202211,1,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2022,Diciembre 2022,202212,4,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2022,Diciembre 2022,202212,3,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2023,Febrero 2023,202302,1,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2023,Febrero 2023,202302,1,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2023,Marzo 2023,202303,3,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2023,Marzo 2023,202303,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Marzo 2023,202303,0,0,0,1,0
+2026-10-26,Azul Club Residencial Celeste,2023,Abril 2023,202304,3,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2023,Abril 2023,202304,1,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2023,Abril 2023,202304,0,2,0,2,1
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Mayo 2023,202305,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2023,Mayo 2023,202305,0,0,0,3,0
+2026-10-26,Azul Club Residencial Celeste,2023,Junio 2023,202306,1,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Junio 2023,202306,0,0,0,3,0
+2026-10-26,Las Mañanitas Casas,2023,Junio 2023,202306,0,0,0,2,0
+2026-10-26,Verdevivo,2023,Junio 2023,202306,9,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Julio 2023,202307,0,1,0,1,1
+2026-10-26,Verdevivo,2023,Julio 2023,202307,41,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Agosto 2023,202308,0,0,0,1,0
+2026-10-26,Verdevivo,2023,Agosto 2023,202308,31,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2023,Septiembre 2023,202309,0,0,0,0,1
+2026-10-26,Verdevivo,2023,Septiembre 2023,202309,26,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Octubre 2023,202310,0,1,0,4,2
+2026-10-26,Las Mañanitas Casas,2023,Octubre 2023,202310,0,0,0,1,1
+2026-10-26,Verdevivo,2023,Octubre 2023,202310,11,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Noviembre 2023,202311,0,1,0,6,4
+2026-10-26,Verdevivo,2023,Noviembre 2023,202311,26,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2023,Diciembre 2023,202312,1,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2023,Diciembre 2023,202312,0,0,0,5,4
+2026-10-26,Las Mañanitas Casas,2023,Diciembre 2023,202312,0,0,0,1,2
+2026-10-26,Verdevivo,2023,Diciembre 2023,202312,21,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Enero 2024,202401,0,0,0,2,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Febrero 2024,202402,0,0,0,1,0
+2026-10-26,Verdevivo,2024,Febrero 2024,202402,10,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Marzo 2024,202403,1,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Marzo 2024,202403,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2024,Marzo 2024,202403,0,0,0,2,1
+2026-10-26,Verdevivo,2024,Marzo 2024,202403,4,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Abril 2024,202404,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Abril 2024,202404,0,0,0,1,0
+2026-10-26,Las Mañanitas Casas,2024,Abril 2024,202404,0,1,0,1,0
+2026-10-26,Verdevivo,2024,Abril 2024,202404,4,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Mayo 2024,202405,0,0,0,2,1
+2026-10-26,Las Mañanitas Casas,2024,Mayo 2024,202405,0,1,0,3,0
+2026-10-26,Verdevivo,2024,Mayo 2024,202405,1,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Junio 2024,202406,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2024,Junio 2024,202406,11,1,0,2,2
+2026-10-26,Verdeoliva,2024,Junio 2024,202406,21,0,0,0,0
+2026-10-26,Verdevivo,2024,Junio 2024,202406,1,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Julio 2024,202407,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Julio 2024,202407,0,1,0,2,3
+2026-10-26,Las Mañanitas Casas,2024,Julio 2024,202407,18,1,0,3,1
+2026-10-26,Verdeoliva,2024,Julio 2024,202407,10,0,0,0,0
+2026-10-26,Verdevivo,2024,Julio 2024,202407,5,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Agosto 2024,202408,28,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Agosto 2024,202408,0,0,0,1,3
+2026-10-26,Las Mañanitas Casas,2024,Agosto 2024,202408,16,0,0,1,1
+2026-10-26,Verdeoliva,2024,Agosto 2024,202408,14,0,0,0,0
+2026-10-26,Verdevivo,2024,Agosto 2024,202408,7,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Septiembre 2024,202409,6,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Septiembre 2024,202409,0,0,0,2,3
+2026-10-26,Las Mañanitas Casas,2024,Septiembre 2024,202409,12,1,0,1,0
+2026-10-26,Verdeoliva,2024,Septiembre 2024,202409,11,0,0,0,0
+2026-10-26,Verdevivo,2024,Septiembre 2024,202409,2,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Octubre 2024,202410,12,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Octubre 2024,202410,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2024,Octubre 2024,202410,5,1,0,0,0
+2026-10-26,Verdeoliva,2024,Octubre 2024,202410,7,0,0,0,0
+2026-10-26,Verdevivo,2024,Octubre 2024,202410,3,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Noviembre 2024,202411,6,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Noviembre 2024,202411,0,0,0,0,2
+2026-10-26,Las Mañanitas Casas,2024,Noviembre 2024,202411,4,1,0,1,0
+2026-10-26,Verdeoliva,2024,Noviembre 2024,202411,12,0,0,0,0
+2026-10-26,Verdevivo,2024,Noviembre 2024,202411,12,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2024,Diciembre 2024,202412,8,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2024,Diciembre 2024,202412,0,0,0,0,2
+2026-10-26,Las Mañanitas Casas,2024,Diciembre 2024,202412,12,0,0,1,0
+2026-10-26,VERDELIMA,2024,Diciembre 2024,202412,16,0,0,0,0
+2026-10-26,Verdeoliva,2024,Diciembre 2024,202412,51,0,0,0,0
+2026-10-26,Verdevivo,2024,Diciembre 2024,202412,57,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2025,Enero 2025,202501,0,0,0,0,1
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Febrero 2025,202502,0,0,0,1,9
+2026-10-26,Las Mañanitas Casas,2025,Febrero 2025,202502,0,0,0,0,1
+2026-10-26,Verdeoliva,2025,Febrero 2025,202502,4,0,0,0,0
+2026-10-26,Verdevivo,2025,Febrero 2025,202502,3,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Marzo 2025,202503,4,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Marzo 2025,202503,0,0,0,1,7
+2026-10-26,Las Mañanitas Casas,2025,Marzo 2025,202503,0,0,0,2,0
+2026-10-26,VERDELIMA,2025,Marzo 2025,202503,40,0,0,0,0
+2026-10-26,Verdeoliva,2025,Marzo 2025,202503,29,0,0,0,0
+2026-10-26,Verdepino,2025,Marzo 2025,202503,4,0,0,0,0
+2026-10-26,Verdevivo,2025,Marzo 2025,202503,22,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Abril 2025,202504,4,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Abril 2025,202504,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2025,Abril 2025,202504,3,0,0,0,0
+2026-10-26,VERDELIMA,2025,Abril 2025,202504,34,0,0,0,0
+2026-10-26,Verdeoliva,2025,Abril 2025,202504,21,0,0,0,0
+2026-10-26,Verdepino,2025,Abril 2025,202504,24,0,0,0,0
+2026-10-26,Verdevivo,2025,Abril 2025,202504,16,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Mayo 2025,202505,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Mayo 2025,202505,0,0,0,1,3
+2026-10-26,Las Mañanitas Casas,2025,Mayo 2025,202505,0,0,0,3,1
+2026-10-26,VERDELIMA,2025,Mayo 2025,202505,36,0,0,0,0
+2026-10-26,Verdeoliva,2025,Mayo 2025,202505,10,0,0,0,0
+2026-10-26,Verdepino,2025,Mayo 2025,202505,31,0,0,0,0
+2026-10-26,Verdevivo,2025,Mayo 2025,202505,12,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Junio 2025,202506,0,0,0,2,1
+2026-10-26,Las Mañanitas Casas,2025,Junio 2025,202506,0,1,0,1,4
+2026-10-26,VERDELIMA,2025,Junio 2025,202506,17,0,0,0,0
+2026-10-26,Verdeoliva,2025,Junio 2025,202506,15,0,0,0,0
+2026-10-26,Verdepino,2025,Junio 2025,202506,24,0,0,0,0
+2026-10-26,Verdevivo,2025,Junio 2025,202506,9,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Julio 2025,202507,0,0,0,0,2
+2026-10-26,Las Mañanitas Casas,2025,Julio 2025,202507,0,0,0,2,2
+2026-10-26,VERDELIMA,2025,Julio 2025,202507,23,0,0,0,0
+2026-10-26,Verdeoliva,2025,Julio 2025,202507,7,0,0,0,0
+2026-10-26,Verdepino,2025,Julio 2025,202507,29,0,0,0,0
+2026-10-26,Verdevivo,2025,Julio 2025,202507,7,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Agosto 2025,202508,0,0,0,1,3
+2026-10-26,Las Mañanitas Casas,2025,Agosto 2025,202508,1,0,0,0,1
+2026-10-26,VERDELIMA,2025,Agosto 2025,202508,37,0,0,0,0
+2026-10-26,Verdeoliva,2025,Agosto 2025,202508,33,0,0,0,0
+2026-10-26,Verdepino,2025,Agosto 2025,202508,16,0,0,0,0
+2026-10-26,Verdevivo,2025,Agosto 2025,202508,5,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Septiembre 2025,202509,3,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Septiembre 2025,202509,0,0,0,1,3
+2026-10-26,Las Mañanitas Casas,2025,Septiembre 2025,202509,0,0,0,3,1
+2026-10-26,VERDELIMA,2025,Septiembre 2025,202509,29,0,0,0,0
+2026-10-26,Verdeoliva,2025,Septiembre 2025,202509,12,0,0,0,0
+2026-10-26,Verdepino,2025,Septiembre 2025,202509,14,0,0,0,0
+2026-10-26,Verdevivo,2025,Septiembre 2025,202509,5,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Octubre 2025,202510,0,0,0,1,2
+2026-10-26,Las Mañanitas Casas,2025,Octubre 2025,202510,0,1,0,1,1
+2026-10-26,VERDELIMA,2025,Octubre 2025,202510,23,0,0,0,0
+2026-10-26,Verdeoliva,2025,Octubre 2025,202510,12,0,0,0,0
+2026-10-26,Verdepino,2025,Octubre 2025,202510,11,0,0,0,0
+2026-10-26,Verdevivo,2025,Octubre 2025,202510,2,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Noviembre 2025,202511,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Noviembre 2025,202511,0,0,0,0,2
+2026-10-26,Las Mañanitas Casas,2025,Noviembre 2025,202511,1,2,0,3,12
+2026-10-26,VERDELIMA,2025,Noviembre 2025,202511,14,0,0,0,0
+2026-10-26,Verdeoliva,2025,Noviembre 2025,202511,13,0,0,0,0
+2026-10-26,Verdepino,2025,Noviembre 2025,202511,6,0,0,0,0
+2026-10-26,Verdevivo,2025,Noviembre 2025,202511,3,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2025,Diciembre 2025,202512,5,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2025,Diciembre 2025,202512,1,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2025,Diciembre 2025,202512,0,0,0,1,1
+2026-10-26,Las Mañanitas Casas,2025,Diciembre 2025,202512,1,0,0,0,2
+2026-10-26,VERDELIMA,2025,Diciembre 2025,202512,31,0,0,0,0
+2026-10-26,Verdeoliva,2025,Diciembre 2025,202512,24,0,0,0,0
+2026-10-26,Verdepino,2025,Diciembre 2025,202512,34,0,0,0,0
+2026-10-26,Verdevivo,2025,Diciembre 2025,202512,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,Enero 2026,202601,0,0,0,0,1
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,Febrero 2026,202602,0,0,0,0,2
+2026-10-26,Las Mañanitas Casas,2026,Febrero 2026,202602,0,0,0,2,1
+2026-10-26,Azul Club Residencial Celeste,2026,Marzo 2026,202603,1,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Marzo 2026,202603,9,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2026,Marzo 2026,202603,1,0,0,0,1
+2026-10-26,VERDELIMA,2026,Marzo 2026,202603,11,0,0,0,0
+2026-10-26,Verdeoliva,2026,Marzo 2026,202603,33,0,0,0,0
+2026-10-26,Verdepino,2026,Marzo 2026,202603,30,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2026,Abril 2026,202604,2,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Abril 2026,202604,4,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2026,Abril 2026,202604,2,1,0,0,2
+2026-10-26,VERDELIMA,2026,Abril 2026,202604,5,0,0,0,0
+2026-10-26,Verdeoliva,2026,Abril 2026,202604,24,0,0,0,0
+2026-10-26,Verdepino,2026,Abril 2026,202604,19,0,0,0,0
+2026-10-26,Verdevivo,2026,Abril 2026,202604,3,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Mayo 2026,202605,3,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2026,Mayo 2026,202605,0,0,0,2,1
+2026-10-26,VERDELIMA,2026,Mayo 2026,202605,10,0,0,0,0
+2026-10-26,Verdeoliva,2026,Mayo 2026,202605,9,0,0,0,0
+2026-10-26,Verdepino,2026,Mayo 2026,202605,17,0,0,0,0
+2026-10-26,Verdevivo,2026,Mayo 2026,202605,17,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Junio 2026,202606,2,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,Junio 2026,202606,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2026,Junio 2026,202606,0,0,0,1,6
+2026-10-26,VERDELIMA,2026,Junio 2026,202606,9,0,0,0,0
+2026-10-26,Verdeoliva,2026,Junio 2026,202606,11,0,0,0,0
+2026-10-26,Verdepino,2026,Junio 2026,202606,5,0,0,0,0
+2026-10-26,Verdevivo,2026,Junio 2026,202606,16,0,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Julio 2026,202607,2,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2026,Julio 2026,202607,0,0,0,0,1
+2026-10-26,VERDELIMA,2026,Julio 2026,202607,4,0,0,0,0
+2026-10-26,Verdeoliva,2026,Julio 2026,202607,15,0,0,0,0
+2026-10-26,Verdepino,2026,Julio 2026,202607,8,0,0,0,0
+2026-10-26,Verdevivo,2026,Julio 2026,202607,33,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2026,Agosto 2026,202608,2,0,0,0,0
+2026-10-26,Las Mañanitas Casas,2026,Agosto 2026,202608,0,0,0,1,1
+2026-10-26,VERDELIMA,2026,Agosto 2026,202608,6,1,0,0,0
+2026-10-26,Verdeoliva,2026,Agosto 2026,202608,9,0,0,0,0
+2026-10-26,Verdepino,2026,Agosto 2026,202608,6,0,0,0,0
+2026-10-26,Verdevivo,2026,Agosto 2026,202608,12,0,0,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,Septiembre 2026,202609,0,0,0,0,1
+2026-10-26,Las Mañanitas Casas,2026,Septiembre 2026,202609,0,0,0,0,4
+2026-10-26,VERDELIMA,2026,Septiembre 2026,202609,6,0,0,0,0
+2026-10-26,Verdeoliva,2026,Septiembre 2026,202609,8,0,0,0,0
+2026-10-26,Verdepino,2026,Septiembre 2026,202609,12,0,0,0,0
+2026-10-26,Verdevivo,2026,Septiembre 2026,202609,16,0,0,0,0
+2026-10-26,Azul Club Residencial Celeste,2026,Octubre 2026,202610,1,1,0,0,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Octubre 2026,202610,0,10,0,0,0
+2026-10-26,Cristales,2026,Octubre 2026,202610,0,2,2,0,0
+2026-10-26,Las Mañanitas Apartamentos VIS,2026,Octubre 2026,202610,0,0,0,1,1
+2026-10-26,Las Mañanitas Casas,2026,Octubre 2026,202610,0,1,0,0,1
+2026-10-26,VERDELIMA,2026,Octubre 2026,202610,2,13,7,0,0
+2026-10-26,Verdeoliva,2026,Octubre 2026,202610,6,7,0,0,0
+2026-10-26,Verdepino,2026,Octubre 2026,202610,7,7,2,1,0
+2026-10-26,Verdevivo,2026,Octubre 2026,202610,3,6,2,1,0
+2026-10-26,Azul Club Residencial Celeste,2026,Noviembre 2026,202611,0,0,0,1,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Noviembre 2026,202611,0,10,0,11,0
+2026-10-26,Cristales,2026,Noviembre 2026,202611,0,14,7,6,4
+2026-10-26,Las Mañanitas Casas,2026,Noviembre 2026,202611,0,1,0,0,2
+2026-10-26,VERDELIMA,2026,Noviembre 2026,202611,0,33,15,18,0
+2026-10-26,Verdeoliva,2026,Noviembre 2026,202611,0,29,9,7,2
+2026-10-26,Verdepino,2026,Noviembre 2026,202611,0,30,11,4,1
+2026-10-26,Verdevivo,2026,Noviembre 2026,202611,0,13,8,1,0
+2026-10-26,Azul Club Residencial Turquesa,2026,Diciembre 2026,202612,0,12,1,39,0
+2026-10-26,Candil,2026,Diciembre 2026,202612,0,12,9,9,12
+2026-10-26,Cristales,2026,Diciembre 2026,202612,0,27,21,15,26
+2026-10-26,Las Mañanitas Casas,2026,Diciembre 2026,202612,0,0,0,1,0
+2026-10-26,VERDELIMA,2026,Diciembre 2026,202612,0,39,23,14,11
+2026-10-26,Verdeoliva,2026,Diciembre 2026,202612,0,76,37,29,21
+2026-10-26,Verdepino,2026,Diciembre 2026,202612,0,48,36,26,15
+2026-10-26,Verdevivo,2026,Diciembre 2026,202612,0,30,22,17,12
+2026-10-26,Cristales,2027,Enero 2027,202701,0,0,0,0,2
+2026-10-26,VERDELIMA,2027,Enero 2027,202701,0,0,0,2,1
+2026-10-26,Verdepino,2027,Enero 2027,202701,0,0,0,1,0
+2026-10-26,Cristales,2027,Febrero 2027,202702,0,0,0,0,1
+2026-10-26,VERDELIMA,2027,Febrero 2027,202702,0,0,0,0,1
+2026-10-26,Verdeoliva,2027,Febrero 2027,202702,0,0,1,0,0
+2026-10-26,Verdepino,2027,Febrero 2027,202702,0,0,0,0,1
+2026-10-26,Candil,2027,Marzo 2027,202703,0,2,1,3,6
+2026-10-26,Cristales,2027,Marzo 2027,202703,0,0,0,0,1
+2026-10-26,VERDELIMA,2027,Marzo 2027,202703,0,0,0,0,1
+2026-10-26,Verdeoliva,2027,Marzo 2027,202703,0,0,0,1,2
+2026-10-26,Verdepino,2027,Marzo 2027,202703,0,0,1,0,2
+2026-10-26,Verdevivo,2027,Marzo 2027,202703,0,0,0,0,1
+2026-10-26,Candil,2027,Abril 2027,202704,0,18,4,12,26
+2026-10-26,Cristales,2027,Abril 2027,202704,0,0,0,0,1
+2026-10-26,Verdeoliva,2027,Abril 2027,202704,0,0,0,0,3
+2026-10-26,Verdevivo,2027,Abril 2027,202704,0,0,1,0,0
+2026-10-26,Candil,2027,Mayo 2027,202705,0,0,0,0,1
+2026-10-26,Cristales,2027,Mayo 2027,202705,0,0,0,0,2
+2026-10-26,Verdepino,2027,Mayo 2027,202705,0,0,0,1,1
+2026-10-26,Azul Club Residencial Celeste,2027,Junio 2027,202706,0,0,0,1,0
+2026-10-26,Candil,2027,Junio 2027,202706,0,0,0,0,1
+2026-10-26,Cristales,2027,Junio 2027,202706,0,0,0,0,1
+2026-10-26,VERDELIMA,2027,Junio 2027,202706,0,0,1,1,8
+2026-10-26,Verdeoliva,2027,Junio 2027,202706,0,0,0,1,6
+2026-10-26,Verdepino,2027,Junio 2027,202706,0,0,1,4,19
+2026-10-26,Verdevivo,2027,Junio 2027,202706,0,1,0,6,18
+2026-10-26,Cristales,2027,Julio 2027,202707,0,0,0,0,1
+2026-10-26,VERDELIMA,2027,Julio 2027,202707,0,0,0,0,3
+2026-10-26,Verdeoliva,2027,Julio 2027,202707,0,0,0,0,2
+2026-10-26,Verdepino,2027,Julio 2027,202707,0,0,0,1,7
+2026-10-26,Verdevivo,2027,Julio 2027,202707,0,0,0,1,7
+2026-10-26,Candil,2027,Agosto 2027,202708,0,0,0,0,1
+2026-10-26,Verdevivo,2027,Agosto 2027,202708,0,0,0,1,2
+2026-10-26,Cristales,2027,Septiembre 2027,202709,0,1,0,0,0
+2026-10-26,Verdepino,2027,Septiembre 2027,202709,0,0,0,0,1
+2026-10-26,Azul Club Residencial Turquesa,2027,Octubre 2027,202710,0,0,0,3,0
+2026-10-26,Candil,2027,Octubre 2027,202710,0,1,0,3,37
+2026-10-26,Las Mañanitas Casas,2027,Octubre 2027,202710,0,0,0,0,1
+2026-10-26,Azul Club Residencial Turquesa,2027,Noviembre 2027,202711,0,0,0,2,0
+2026-10-26,Candil,2027,Noviembre 2027,202711,0,0,0,1,25
+2026-10-26,Las Mañanitas Casas,2027,Noviembre 2027,202711,0,0,0,0,1
+2026-10-26,Verdepino,2027,Noviembre 2027,202711,0,0,0,0,1
+2026-10-26,Candil,2027,Diciembre 2027,202712,0,3,0,3,14
+2026-10-26,Verdepino,2027,Diciembre 2027,202712,0,0,0,0,1
+2026-10-26,Cristales,2028,Enero 2028,202801,0,0,0,0,2
+2026-10-26,Verdepino,2028,Enero 2028,202801,0,0,0,0,1
+2026-10-26,Cristales,2028,Febrero 2028,202802,0,0,0,0,7
+2026-10-26,Verdepino,2028,Febrero 2028,202802,0,0,0,0,1
+2026-10-26,Candil,2028,Marzo 2028,202803,0,0,0,2,35
+2026-10-26,Cristales,2028,Marzo 2028,202803,0,1,0,2,29
+2026-10-26,Verdepino,2028,Marzo 2028,202803,0,0,0,2,35
+2026-10-26,Cristales,2028,Abril 2028,202804,0,0,0,0,3
+2026-10-26,Verdepino,2028,Abril 2028,202804,0,0,0,6,139
+2026-10-26,Verdepino,2028,Mayo 2028,202805,0,0,0,1,12
+2026-10-26,Cristales,2028,Junio 2028,202806,0,0,0,0,2
+2026-10-26,Verdepino,2028,Junio 2028,202806,0,0,0,1,4
+2026-10-26,Cristales,2028,Julio 2028,202807,0,0,0,5,28
+2026-10-26,Cristales,2028,Agosto 2028,202808,0,5,0,1,8
+2026-10-26,Azul Club Residencial Turquesa,,Sin fecha proyectada,999999,0,0,0,1,0
+2026-10-26,Candil,,Sin fecha proyectada,999999,0,3,0,0,0
+2026-10-26,Cristales,,Sin fecha proyectada,999999,0,7,0,0,0
+2026-10-26,Las Mañanitas Casas,,Sin fecha proyectada,999999,0,1,0,0,0
+2026-10-26,VERDELIMA,,Sin fecha proyectada,999999,0,6,0,0,0
+2026-10-26,Verdeoliva,,Sin fecha proyectada,999999,0,8,0,0,0
+2026-10-26,Verdepino,,Sin fecha proyectada,999999,0,9,0,0,0
+2026-10-26,Verdevivo,,Sin fecha proyectada,999999,0,1,0,0,0
