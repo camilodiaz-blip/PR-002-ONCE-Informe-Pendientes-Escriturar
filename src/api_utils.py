@@ -24,6 +24,18 @@ ESPERA_ENTRE_LANZAMIENTOS = 0.4  # segundos entre cada envio, para no disparar t
 
 REQUEST_TIMEOUT = 30  # segundos, evita que una llamada colgada bloquee todo el proceso
 
+# Para las descargas masivas (getSales por proyecto en el paso 1, GetPaymentsRecords en el paso 3).
+# Smarthome arma toda la respuesta antes de mandar el primer byte: el 2026-11-23 getSales de
+# Verdeoliva tardo 37 s en empezar a responder, asi que con 30 s los proyectos grandes cortaban
+# siempre por "Read timed out". Tupla (conexion, lectura): si el servidor no contesta la conexion
+# en 15 s si se corta rapido, pero se le dan hasta 5 min para armar la respuesta.
+REQUEST_TIMEOUT_DESCARGA_GRANDE = (15, 300)
+
+# Paso 1: si un proyecto falla en el lote en paralelo (timeout o corte de conexion), se reintenta
+# solo, uno por uno, despues de esta espera -- en vez de seguir con el archivo viejo.
+REINTENTOS_PROYECTO_FALLIDO = 2
+ESPERA_ANTES_DE_REINTENTAR = 20  # segundos
+
 # Año de escrituración objetivo del informe. Cambiar aca afecta scripts 3, 4 y 5.
 ANIO_OBJETIVO_ESCRITURA = 2026
 

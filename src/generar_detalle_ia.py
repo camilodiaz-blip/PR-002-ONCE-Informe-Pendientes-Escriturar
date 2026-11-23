@@ -50,6 +50,9 @@ def _cargar_snapshot_comite(fecha_corte_comite):
         return None
     df_comite = pd.read_parquet(ruta)
     if 'unidades_atadas' not in df_comite.columns:
+        # Fotos guardadas antes de que main.py copiara las atadas al historico: sin dato.
+        print(f"ADVERTENCIA: la foto del comite ({fecha_corte_comite}) no tiene 'unidades_atadas'; "
+              "los cambios de 'Unidad atada' contra ese comite no son confiables.")
         df_comite['unidades_atadas'] = 0
     return df_comite
 
@@ -131,13 +134,6 @@ def run():
         print(f"ADVERTENCIA: no se encontro el snapshot de clientes del corte de comite "
               f"({fecha_corte_comite}) en {RUTA_HISTORICO} -- 'cambios_vs_comite.csv' sale "
               f"vacio y las columnas '*_comite' de 'detalle_clientes.csv' quedan sin dato.")
-    if df_comite is not None:
-        print("ADVERTENCIA: 'unidades_atadas_comite' puede estar desactualizado -- ese "
-              "snapshot se guarda ANTES de calcularse 'unidades_atadas' ese dia (ver "
-              "5_no_escriturados_staging.py), asi que puede reflejar el valor del dia "
-              "anterior y no el del dia real del comite. Se deja asi a proposito (sin "
-              "cambios al orden del pipeline), como advertencia nada mas.")
-
     return ruta_detalle, ruta_cambios
 
 

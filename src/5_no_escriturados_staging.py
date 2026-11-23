@@ -63,6 +63,46 @@ def _fecha_por_tarea(df_tareas, nombre_tarea):
     return subset.set_index('prospectId_limpio')['fecha']
 
 
+def _calcular_pago_6_cuotas(df, pagos_con_clave):
+    """Agrega a df la columna pago_6_cuotas (ver comentario en run()) y quita las claves limpias."""
+    cuotas_6 = pagos_con_clave[
+        (pagos_con_clave['Type'] == 1)
+        & (pagos_con_clave['PaymentType'] == 1)
+        & (pagos_con_clave['Title'].astype(str).str.strip().isin([
+            'Cuota 01', 'Cuota 02', 'Cuota 03', 'Cuota 04', 'Cuota 05', 'Cuota 06'
+        ]))
+    ]
+    pagos_tipo2_paymenttype1 = pagos_con_clave[
+        (pagos_con_clave['Type'] == 2) & (pagos_con_clave['PaymentType'] == 1)
+    ]
+
+    suma_cuotas = (
+        cuotas_6.groupby(['Project_limpio', 'Module_limpio'])['Amount']
+        .sum()
+        .reset_index(name='suma_cuotas')
+    )
+    suma_pagos = (
+        pagos_tipo2_paymenttype1.groupby(['Project_limpio', 'Module_limpio'])['Amount']
+        .sum()
+        .reset_index(name='suma_pagos')
+    )
+
+    resumen = suma_cuotas.merge(suma_pagos, on=['Project_limpio', 'Module_limpio'], how='outer')
+    resumen['suma_cuotas'] = resumen['suma_cuotas'].fillna(0)
+    resumen['suma_pagos'] = resumen['suma_pagos'].fillna(0)
+    resumen['pago_6_cuotas'] = (resumen['suma_cuotas'] < resumen['suma_pagos']).astype(int)
+
+    resumen = resumen.rename(columns={'Project_limpio': 'proyecto_limpio', 'Module_limpio': 'modulo_limpio'})
+    df = df.merge(
+        resumen[['proyecto_limpio', 'modulo_limpio', 'pago_6_cuotas']],
+        on=['proyecto_limpio', 'modulo_limpio'],
+        how='left'
+    )
+    df['pago_6_cuotas'] = df['pago_6_cuotas'].fillna(0).astype(int)
+    df = df.drop(columns=['proyecto_limpio', 'modulo_limpio'])
+    return df
+
+
 def run():
     df = cargar_clientes_staging()
 
@@ -146,41 +186,16 @@ def run():
 
     # Indicador binario: 1 si la suma de Amount de las cuotas 01 a 06 (Type=1, PaymentType=1)
     # es menor que la suma de Amount de los pagos (Type=2, PaymentType=1), y 0 en caso contrario.
-    cuotas_6 = pagos_con_clave[
-        (pagos_con_clave['Type'] == 1)
-        & (pagos_con_clave['PaymentType'] == 1)
-        & (pagos_con_clave['Title'].astype(str).str.strip().isin([
-            'Cuota 01', 'Cuota 02', 'Cuota 03', 'Cuota 04', 'Cuota 05', 'Cuota 06'
-        ]))
-    ]
-    pagos_tipo2_paymenttype1 = pagos_con_clave[
-        (pagos_con_clave['Type'] == 2) & (pagos_con_clave['PaymentType'] == 1)
-    ]
-
-    suma_cuotas = (
-        cuotas_6.groupby(['Project_limpio', 'Module_limpio'])['Amount']
-        .sum()
-        .reset_index(name='suma_cuotas')
-    )
-    suma_pagos = (
-        pagos_tipo2_paymenttype1.groupby(['Project_limpio', 'Module_limpio'])['Amount']
-        .sum()
-        .reset_index(name='suma_pagos')
-    )
-
-    resumen = suma_cuotas.merge(suma_pagos, on=['Project_limpio', 'Module_limpio'], how='outer')
-    resumen['suma_cuotas'] = resumen['suma_cuotas'].fillna(0)
-    resumen['suma_pagos'] = resumen['suma_pagos'].fillna(0)
-    resumen['pago_6_cuotas'] = (resumen['suma_cuotas'] < resumen['suma_pagos']).astype(int)
-
-    resumen = resumen.rename(columns={'Project_limpio': 'proyecto_limpio', 'Module_limpio': 'modulo_limpio'})
-    df = df.merge(
-        resumen[['proyecto_limpio', 'modulo_limpio', 'pago_6_cuotas']],
-        on=['proyecto_limpio', 'modulo_limpio'],
-        how='left'
-    )
-    df['pago_6_cuotas'] = df['pago_6_cuotas'].fillna(0).astype(int)
-    df = df.drop(columns=['proyecto_limpio', 'modulo_limpio'])
+    # Desde el corte 2026-11-03 GetPaymentsRecords ya no trae la columna 'Title' (nombre de la
+    # cuota), sin la cual no se pueden identificar las cuotas 01 a 06. Mientras se define la regla
+    # nueva, el indicador queda vacio (el dashboard no lo usa).
+    if 'Title' not in pagos_con_clave.columns:
+        print("ADVERTENCIA: los pagos raw no traen la columna 'Title' (Smarthome la quito de "
+              "GetPaymentsRecords). 'pago_6_cuotas' queda vacio en este corte.")
+        df['pago_6_cuotas'] = pd.Series(pd.NA, index=df.index, dtype='Int64')
+        df = df.drop(columns=['proyecto_limpio', 'modulo_limpio'])
+    else:
+        df = _calcular_pago_6_cuotas(df, pagos_con_clave)
 
     #validacion si el subsidio tiene fecha de aprobacion
     df['fecha_subsidio_aprobado'] = df_id_limpio.map(_fecha_por_tarea(df_tareas, 'Aprobación del subisidio'))

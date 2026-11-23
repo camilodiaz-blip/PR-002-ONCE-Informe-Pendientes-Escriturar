@@ -5,7 +5,8 @@ Orquesta el pipeline completo del informe de pendientes por escriturar:
 -> 4 (tareas de no escriturados, por cliente) -> 5 (consolidado final)
 -> estado de cuentas raw (Drive) -> unidades atadas (cruce vs. estado de cuentas)
 -> unidades atadas por fiducia (cruce vs. tareas/tramites)
--> 6 (dashboard HTML)
+-> 6 (dashboard HTML) -> publicar el informe en Drive (COMITE DE PROYECTOS, ver
+publicar_informe_drive.py; si falla solo avisa)
 
 El circuito de conversaciones (cargue_conversaciones_raw.py -> cargue_conversaciones_staging.py
 -> analisis_conversaciones.py) NO esta incluido aca por el momento -- se saco de main.py a
@@ -39,6 +40,34 @@ paso_estado_cuentas = importlib.import_module("cargue_estado_cuentas_raw")
 paso_unidades_atadas = importlib.import_module("actualizar_unidades_atadas")
 paso_unidades_atadas_fiducia = importlib.import_module("actualizar_unidades_atadas_fiducia")
 paso_6 = importlib.import_module("6_dashboard")
+paso_publicar_drive = importlib.import_module("publicar_informe_drive")
+
+
+def _guardar_atadas_en_historico():
+    """
+    El paso 5 guarda la foto del dia (data/historico/clientes_detallado_YYYYMMDD.parquet) ANTES
+    de que se calculen las unidades atadas (estado de cuentas y fiducia), asi que la foto quedaba
+    sin la columna 'unidades_atadas'. Eso hacia que el comparativo contra el comite
+    (generar_detalle_ia.py) tomara 0 atadas en el comite y marcara como "Unidad atada" a todas
+    las atadas de hoy. Aca se copia la columna ya calculada (clientes_detallado.csv) a la foto
+    del mismo corte.
+    """
+    import os
+    import pandas as pd
+    from api_utils import RUTA_ANALYTICS, RUTA_HISTORICO
+
+    actual = pd.read_csv(os.path.join(RUTA_ANALYTICS, "clientes_detallado.csv"), encoding='utf-8-sig',
+                         usecols=['id_prospecto', 'unidades_atadas', 'fecha_corte'])
+    fecha = str(actual['fecha_corte'].dropna().iloc[0]).replace('-', '')
+    ruta = os.path.join(RUTA_HISTORICO, f"clientes_detallado_{fecha}.parquet")
+    if not os.path.exists(ruta):
+        print(f"ADVERTENCIA: no existe la foto {ruta}; no se pudieron guardar las unidades atadas en el historico.")
+        return
+    foto = pd.read_parquet(ruta).drop(columns=['unidades_atadas'], errors='ignore')
+    atadas = actual.drop_duplicates('id_prospecto').set_index('id_prospecto')['unidades_atadas']
+    foto['unidades_atadas'] = foto['id_prospecto'].map(atadas).fillna(0).astype(int)
+    foto.to_parquet(ruta, index=False, compression='snappy')
+    print(f"'unidades_atadas' guardado en la foto {ruta} ({int(foto['unidades_atadas'].sum())} unidades atadas).")
 
 
 def _validar_actualizacion_clientes(resultado):
@@ -121,8 +150,24 @@ def main():
         print(f"ADVERTENCIA: no se pudo actualizar 'unidades_atadas' por fiducia ({e}). "
               "Se continua con el resto del pipeline igual.")
 
+    print("\n=== Unidades atadas en la foto historica del dia ===")
+    try:
+        _guardar_atadas_en_historico()
+    except Exception as e:
+        print(f"ADVERTENCIA: no se pudo guardar 'unidades_atadas' en la foto historica ({e}). "
+              "El comparativo contra el comite puede mostrar cambios de atadas que no son reales.")
+
     print("\n=== Paso 6: dashboard HTML ===")
     paso_6.run()
+
+    # Sube el informe a la carpeta del comite del mes en Drive (COMITE DE PROYECTOS / "NNN
+    # INFORME ..."). Si falla (sin red, sin permiso), el informe ya quedo generado en local.
+    print("\n=== Publicar informe en Drive (COMITE DE PROYECTOS) ===")
+    try:
+        paso_publicar_drive.run()
+    except Exception as e:
+        print(f"ADVERTENCIA: no se pudo subir el informe a Drive ({e}). "
+              "Se puede subir despues con: python publicar_informe_drive.py")
 
     print("\nPipeline completo.")
 

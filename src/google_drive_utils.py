@@ -37,18 +37,22 @@ import os
 
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from googleapiclient.http import MediaIoBaseDownload
+from googleapiclient.errors import HttpError  # noqa: F401  (reexportado para quien use este modulo)
+from googleapiclient.http import MediaIoBaseDownload, MediaFileUpload
 
-# Solo lectura -- este modulo no necesita (ni deberia tener) permiso de escritura en Drive.
+# Por defecto solo lectura. Solo subir_archivo() (ver publicar_informe_drive.py) pide permiso de
+# escritura, y solo puede escribir en las carpetas compartidas con la cuenta de servicio.
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
+SCOPES_ESCRITURA = ['https://www.googleapis.com/auth/drive']
 
 
-def _cliente_drive(ruta_credenciales=None):
+def _cliente_drive(ruta_credenciales=None, escritura=False):
     """
     Crea el cliente autenticado de la API de Drive.
 
     ruta_credenciales: ruta al JSON de la cuenta de servicio. Si no se pasa, se usa la
     variable de entorno GOOGLE_APPLICATION_CREDENTIALS.
+    escritura: True solo para subir archivos (scope de escritura).
     """
     ruta_credenciales = ruta_credenciales or os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
     if not ruta_credenciales:
@@ -60,8 +64,57 @@ def _cliente_drive(ruta_credenciales=None):
     if not os.path.exists(ruta_credenciales):
         raise FileNotFoundError(f"No existe el archivo de credenciales: {ruta_credenciales}")
 
-    credenciales = service_account.Credentials.from_service_account_file(ruta_credenciales, scopes=SCOPES)
+    credenciales = service_account.Credentials.from_service_account_file(
+        ruta_credenciales, scopes=SCOPES_ESCRITURA if escritura else SCOPES)
     return build('drive', 'v3', credentials=credenciales)
+
+
+def listar_subcarpetas(carpeta_id, ruta_credenciales=None):
+    """Subcarpetas directas de una carpeta: lista de dicts {id, name, createdTime}."""
+    servicio = _cliente_drive(ruta_credenciales)
+    carpetas, page_token = [], None
+    while True:
+        respuesta = servicio.files().list(
+            q=f"'{carpeta_id}' in parents and trashed = false "
+              "and mimeType = 'application/vnd.google-apps.folder'",
+            fields="nextPageToken, files(id, name, createdTime)",
+            pageToken=page_token, supportsAllDrives=True, includeItemsFromAllDrives=True,
+        ).execute(num_retries=3)
+        carpetas.extend(respuesta.get('files', []))
+        page_token = respuesta.get('nextPageToken')
+        if not page_token:
+            return carpetas
+
+
+def subir_archivo(ruta_local, carpeta_id, nombre=None, mime_type=None, ruta_credenciales=None):
+    """
+    Sube ruta_local a la carpeta de Drive. Si ya existe un archivo con el mismo nombre en esa
+    carpeta, lo REEMPLAZA (nueva version del mismo archivo, mismo enlace) en vez de duplicarlo.
+
+    Retorna dict {id, name, webViewLink, accion} con accion 'creado' o 'actualizado'.
+    """
+    servicio = _cliente_drive(ruta_credenciales, escritura=True)
+    nombre = nombre or os.path.basename(ruta_local)
+    nombre_q = nombre.replace("\\", "\\\\").replace("'", "\\'")
+    existentes = servicio.files().list(
+        q=f"'{carpeta_id}' in parents and trashed = false and name = '{nombre_q}'",
+        fields="files(id)", supportsAllDrives=True, includeItemsFromAllDrives=True,
+    ).execute(num_retries=3).get('files', [])
+
+    media = MediaFileUpload(ruta_local, mimetype=mime_type, resumable=True)
+    campos = 'id, name, webViewLink'
+    if existentes:
+        archivo = servicio.files().update(
+            fileId=existentes[0]['id'], media_body=media, fields=campos, supportsAllDrives=True,
+        ).execute(num_retries=3)
+        archivo['accion'] = 'actualizado'
+    else:
+        archivo = servicio.files().create(
+            body={'name': nombre, 'parents': [carpeta_id]}, media_body=media, fields=campos,
+            supportsAllDrives=True,
+        ).execute(num_retries=3)
+        archivo['accion'] = 'creado'
+    return archivo
 
 
 def listar_archivos(carpeta_id, ruta_credenciales=None, incluir_subcarpetas=False):

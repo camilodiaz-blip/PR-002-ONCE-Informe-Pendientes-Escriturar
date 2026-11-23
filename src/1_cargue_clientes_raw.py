@@ -6,7 +6,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import pandas as pd
 import requests
 
-from api_utils import get_session, MAX_WORKERS_RAFAGA_CORTA, ESPERA_ENTRE_LANZAMIENTOS, REQUEST_TIMEOUT
+from api_utils import (
+    get_session, MAX_WORKERS_RAFAGA_CORTA, ESPERA_ENTRE_LANZAMIENTOS, REQUEST_TIMEOUT_DESCARGA_GRANDE,
+    REINTENTOS_PROYECTO_FALLIDO, ESPERA_ANTES_DE_REINTENTAR,
+)
 
 proyects_id = {
     "Azul Club Residencial Celeste": "1001",
@@ -34,7 +37,7 @@ def get_sales(proyect, proyectid):
     url = f'https://api.smart-home.com.co/api/v1/getSales/10595/{proyectid}'
     session = get_session()
     try:
-        response = session.get(url, timeout=REQUEST_TIMEOUT)
+        response = session.get(url, timeout=REQUEST_TIMEOUT_DESCARGA_GRANDE)
         if response.status_code == 200:
             payload = response.json()  # Cargue de archivo JSON
             prospects = payload.get('prospects', [])
@@ -68,6 +71,12 @@ def run():
     # Concurrencia baja + pequeño espera entre envios: con solo 10 proyectos, lanzar todo
     # de una (8 conexiones casi simultaneas) ha provocado que el servidor corte la conexion
     # (ConnectionResetError / "Connection aborted") en varios proyectos a la vez.
+    def guardar(proyect, data):
+        ruta_archivo = os.path.join(CARPETA_BASE_RAW, f"{proyect}.parquet")
+        data.to_parquet(ruta_archivo, index=False, compression='snappy')
+        print(f"Guardado: {ruta_archivo}")
+        actualizados.append(proyect)
+
     with ThreadPoolExecutor(max_workers=MAX_WORKERS_RAFAGA_CORTA) as executor:
         futures = []
         for proyect, proyectid in proyects_id.items():
@@ -76,11 +85,23 @@ def run():
         for future in as_completed(futures):
             proyect, data = future.result()
             if not data.empty:
-                nombre_archivo = f"{proyect}.parquet"
-                ruta_archivo = os.path.join(CARPETA_BASE_RAW, nombre_archivo)
-                data.to_parquet(ruta_archivo, index=False, compression='snappy')
-                print(f"Guardado: {ruta_archivo}")
-                actualizados.append(proyect)
+                guardar(proyect, data)
+            else:
+                fallidos.append(proyect)
+
+    # Los que fallaron en el lote (timeout o corte de conexion del servidor) se reintentan
+    # uno por uno, sin otras descargas en paralelo, despues de una pausa.
+    for intento in range(1, REINTENTOS_PROYECTO_FALLIDO + 1):
+        if not fallidos:
+            break
+        print(f"Reintento {intento} de {REINTENTOS_PROYECTO_FALLIDO} para {len(fallidos)} proyecto(s) "
+              f"en {ESPERA_ANTES_DE_REINTENTAR} s: {', '.join(fallidos)}")
+        time.sleep(ESPERA_ANTES_DE_REINTENTAR)
+        pendientes, fallidos = fallidos, []
+        for proyect in pendientes:
+            _, data = get_sales(proyect, proyects_id[proyect])
+            if not data.empty:
+                guardar(proyect, data)
             else:
                 fallidos.append(proyect)
 

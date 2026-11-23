@@ -51,7 +51,15 @@ def _fecha_corte_comite(fecha_corte):
     fila = cortes[cortes['anio_mes'] == fecha_corte[:7]]
     if fila.empty:
         return None
-    return fila.iloc[0]['fecha_corte_comite'].strip()
+    fecha_comite = fila.iloc[0]['fecha_corte_comite'].strip()
+
+    # El informe del DIA del comite (o uno corrido antes de esa fecha dentro del mismo mes) no
+    # puede compararse contra si mismo: se compara contra el comite anterior mas reciente
+    # (ej. el informe del comite de noviembre, 2026-11-03, compara contra el de octubre, 2026-10-14).
+    if fecha_comite >= fecha_corte:
+        anteriores = sorted(f.strip() for f in cortes['fecha_corte_comite'].dropna() if f.strip() < fecha_corte)
+        return anteriores[-1] if anteriores else None
+    return fecha_comite
 
 # --- Matriz de categorizacion (Credito x Subsidio) ---
 # Reemplaza el esquema anterior de "Listos/En Gestión/Sin Cartas" + subcategoria por unidad
@@ -1258,13 +1266,13 @@ function pasaFiltroAtadas(registro, filtroAtadas) {{
 // proyectado", ver ESTADO_ACTUAL_CORTE_ANTERIOR): los mismos clientes no escriturados del
 // corte de comité, reclasificados por su categoria/atadas DE HOY -- se busca por id_prospecto
 // en CATEGORIA_TRAMITES (que ya trae el estado de hoy de TODOS los clientes). Si un
-// id_prospecto ya no aparece ahi (ej. desistimiento), queda "Fuera del reporte". ---
+// id_prospecto ya no aparece ahi (ej. desistimiento), queda como "Desistidos". ---
 const LOOKUP_CATEGORIA_HOY = {{}};
 CATEGORIA_TRAMITES.forEach(c => {{ LOOKUP_CATEGORIA_HOY[c.id_prospecto] = c; }});
 
 function estadoActualCategoria(idProspecto) {{
     const c = LOOKUP_CATEGORIA_HOY[idProspecto];
-    return c ? c.categoria : 'Fuera del reporte';
+    return c ? c.categoria : 'Desistidos';
 }}
 
 function pasaFiltroAtadasHoy(idProspecto, filtroAtadas) {{
@@ -1749,10 +1757,10 @@ function actualizarGraficaCategoriaPrincipal(seleccionProyectos, seleccionTorres
         : [];
 
     const ordenApiladoChart = estadoActualFiltrado.length > 0
-        ? ORDEN_CATEGORIA_PRINCIPAL.concat(['Fuera del reporte'])
+        ? ORDEN_CATEGORIA_PRINCIPAL.concat(['Desistidos'])
         : ORDEN_CATEGORIA_PRINCIPAL;
     const coloresChart = estadoActualFiltrado.length > 0
-        ? {{ ...COLORES_CATEGORIA_PRINCIPAL, 'Fuera del reporte': '{COLOR_FUERA_REPORTE}' }}
+        ? {{ ...COLORES_CATEGORIA_PRINCIPAL, 'Desistidos': '{COLOR_FUERA_REPORTE}' }}
         : COLORES_CATEGORIA_PRINCIPAL;
 
     _actualizarCategoriaPrincipalConComparativo(

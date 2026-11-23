@@ -3,7 +3,7 @@ import os
 import pandas as pd
 import requests
 
-from api_utils import get_session, REQUEST_TIMEOUT
+from api_utils import get_session, REQUEST_TIMEOUT_DESCARGA_GRANDE
 
 
 CARPETA_BASE_RAW = os.path.join(
@@ -18,7 +18,7 @@ def get_payments():
     url = 'https://manage.smart-home.com.co/api/bi/GetPaymentsRecords/YWZjYjZhYWUtMDUxMC00NDg4LWFmYzAtZjQ3MzUyNWRmMmY2O2E5Zjg3NTA3LTRjOWEtNDA1Mi04NzgxLTM5Y2QzMTk3NTk2YTsxMS8yMi8yMDIz'
     session = get_session()
     try:
-        response = session.get(url, timeout=REQUEST_TIMEOUT)
+        response = session.get(url, timeout=REQUEST_TIMEOUT_DESCARGA_GRANDE)
         if response.status_code == 200:
             payload = response.json()
             records = payload.get('records', [])
